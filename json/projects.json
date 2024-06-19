@@ -1,0 +1,17 @@
+{
+    "cards": {
+        "portfolioPier": {
+            "title": "Portfolio Pier",
+            "img": "img/portfolio-pier-logo.png",
+            "body": {
+                "type": "paragraph",
+                "content": "Portfolio pier is yada yada yada"
+            },
+            "footer": {
+                "type": "link",
+                "href": "",
+                "message": "More Info"
+            } 
+        } 
+    }
+}
