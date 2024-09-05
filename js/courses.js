@@ -17,6 +17,11 @@ function createElement(type, attrs, ...children) {
 }
 
 async function main() {
+    
+    const courses = await loadFile("./json/courses.json");
+    
+    console.log(courses);
+
 
     const contentArea = document.querySelector("main > section > div > div");
 
@@ -106,7 +111,7 @@ async function main() {
 
     pastRows.forEach((row) => contentArea.appendChild(row));
 
-    console.log(await loadFile("./json/projects.json"));
+    console.log(await loadFile("./json/courses.json"));
 
 }
 
@@ -114,7 +119,7 @@ async function loadFile(filePath) {
     try {
         const response = await fetch(filePath);
         if (response.ok) {
-            const result = await response.text();
+            const result = await response.json();
             return result;
         } else {
             console.error('Failed to load file:', response.statusText);
@@ -123,166 +128,5 @@ async function loadFile(filePath) {
     } catch (error) {
         console.error('Error loading file:', error);
         return null;
-    }
-}
-
-const courses = {
-    cards: {
-        current: [
-            {
-                "title": "Applied Machine Learning",
-                "date": "Fall 2024"
-            }, 
-            {
-                "title": "Senior Design Capstone Project",
-                "date": "Fall 2024"
-            },
-            {
-                "title": "Future of Medicine",
-                "date": "Fall 2024"
-            },
-            {
-                "title": "Theory of Everything",
-                "date": "Fall 2024"
-            },
-            {
-                "title": "Foundations of 2D",
-                "date": "Fall 2024"
-            }
-        ],
-        past: [
-            {
-                "title": "Operating Systems",
-                "date": "Spring 2024"
-            },
-            {
-                "title": "Software Engineering",
-                "date": "Spring 2024"
-            },
-            {
-                "title": "Applied Internet Technology",
-                "date": "Spring 2024"
-            },
-            {
-                "title": "Communication Networks",
-                "date": "Spring 2024"
-            },
-            {
-                "title": "Theater & Immigration",
-                "date": "January 2024"
-            },
-            {
-                "title": "Computer Architecture & Organization",
-                "date": "Fall 2023"
-            },
-            {
-                "title": "Haptics & Telerobotics in Medicine",
-                "date": "Fall 2023"
-            },
-            {
-                "title": "Data Structures & Algorithms",
-                "date": "Fall 2023"
-            },
-            {
-                "title": "Embedded Systems Design",
-                "date": "Fall 2023"
-            },
-            {
-                "title": "Natural Language Processing",
-                "date": "Fall 2023"
-            },
-            {
-                "title": "Advanced Digital Logic",
-                "date": "Spring 2023"
-            },
-            {
-                "title": "Advanced Circuits",
-                "date": "Spring 2023"
-            },
-            {
-                "title": "Probability & Statistics",
-                "date": "Spring 2023"
-            },
-            {
-                "title": "Object-Oriented Programming",
-                "date": "Spring 2023"
-            },
-            {
-                "title": "Engineering Ethics",
-                "date": "Spring 2023"
-            },
-            {
-                "title": "Numerical Methods",
-                "date": "Spring 2023"
-            },
-            {
-                "title": "Ordinary Differential Equations",
-                "date": "Spring 2023"
-            },
-            {
-                "title": "Quantitative Synthetic Biology",
-                "date": "Spring 2023"
-            },
-            {
-                "title": "Sustainable Urban Transport Planning",
-                "date": "January 2023"
-            },
-            {
-                "title": "Engineering Statics",
-                "date": "Fall 2022"
-            },
-            {
-                "title": "Conservation Laws",
-                "date": "Fall 2022"
-            },
-            {
-                "title": "Digital Logic",
-                "date": "Fall 2022"
-            },
-            {
-                "title": "Circuits",
-                "date": "Fall 2022"
-            },
-            {
-                "title": "Life in the Universe",
-                "date": "Fall 2022"
-            },
-            {
-                "title": "Number Theory & Cryptography",
-                "date": "Fall 2022"
-            },
-            {
-                "title": "Discrete Mathematics",
-                "date": "Spring 2022"
-            },
-            {
-                "title": "Manus et Machina",
-                "date": "Spring 2022"
-            },
-            {
-                "title": "Linear Algebra",
-                "date": "Spring 2022"
-            },
-            {
-                "title": "World of Babel",
-                "date": "Spring 2022"
-            },
-            {
-                "title": "Design & Innovation",
-                "date": "January 2022"
-            },
-            {
-                "title": "Foundations of Science",
-                "date": "Fall 2021"
-            },
-            {
-                "title": "Computer Programming for Engineers",
-                "date": "Fall 2021"
-            },
-            {
-                "title": "Multivariable Calculus",
-                "date": "Fall 2021"
-            },
-        ]
     }
 }
