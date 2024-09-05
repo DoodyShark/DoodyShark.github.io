@@ -1,159 +1,347 @@
 {
+    "config": {
+        "num_columns": 3,
+        "card_components": [
+            "header",
+            "body"
+        ]
+    },
     "cards": {
-        "current": [
+        "Current Courses": [
             {
-                "title": "Applied Machine Learning",
-                "date": "Fall 2024"
+                "header": {
+                    "title": "Foundations of 2D"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Fall 2024"
+                }
             }, 
             {
-                "title": "Senior Design Capstone Project",
-                "date": "Fall 2024"
-            },
+                "header": {
+                    "title": "Theory of Everything"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Fall 2024"
+                }
+            }, 
             {
-                "title": "Future of Medicine",
-                "date": "Fall 2024"
-            },
+                "header": {
+                    "title": "Future of Medicine"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Fall 2024"
+                }
+            }, 
             {
-                "title": "Theory of Everything",
-                "date": "Fall 2024"
-            },
-            {
-                "title": "Foundations of 2D",
-                "date": "Fall 2024"
+                "header": {
+                    "title": "Senior Design Capstone Project"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Fall 2024"
+                }
             }
         ],
-        "past": [
+        "Past Courses": [
             {
-                "title": "Operating Systems",
-                "date": "Spring 2024"
+                "header": {
+                    "title": "Operating Systems"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Spring 2025"
+                }
+            }, 
+            {
+                "header": {
+                    "title": "Software Engineering"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Spring 2025"
+                }
+            }, 
+            {
+                "header": {
+                    "title": "Communication Networks"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Spring 2025"
+                }
+            }, 
+            {
+                "header": {
+                    "title": "Applied Internet Technology"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Spring 2025"
+                }
             },
             {
-                "title": "Software Engineering",
-                "date": "Spring 2024"
+                "header": {
+                    "title": "Theater & Immigration"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "January 2024"
+                }
             },
             {
-                "title": "Applied Internet Technology",
-                "date": "Spring 2024"
+                "header": {
+                    "title": "Computer Architecture & Organization"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Fall 2023"
+                }
             },
             {
-                "title": "Communication Networks",
-                "date": "Spring 2024"
+                "header": {
+                    "title": "Haptics & Telerobotics in Medicine"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Fall 2023"
+                }
             },
             {
-                "title": "Theater & Immigration",
-                "date": "January 2024"
+                "header": {
+                    "title": "Data Structures & Algorithms"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Fall 2023"
+                }
             },
             {
-                "title": "Computer Architecture & Organization",
-                "date": "Fall 2023"
+                "header": {
+                    "title": "Embedded Systems Design"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Fall 2023"
+                }
             },
             {
-                "title": "Haptics & Telerobotics in Medicine",
-                "date": "Fall 2023"
+                "header": {
+                    "title": "Natural Language Processing"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Fall 2023"
+                }
             },
             {
-                "title": "Data Structures & Algorithms",
-                "date": "Fall 2023"
+                "header": {
+                    "title": "Advanced Digital Logic"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Spring 2023"
+                }
             },
             {
-                "title": "Embedded Systems Design",
-                "date": "Fall 2023"
+                "header": {
+                    "title": "Advanced Circuits"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Spring 2023"
+                }
             },
             {
-                "title": "Natural Language Processing",
-                "date": "Fall 2023"
+                "header": {
+                    "title": "Probability & Statistics"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Spring 2023"
+                }
             },
             {
-                "title": "Advanced Digital Logic",
-                "date": "Spring 2023"
+                "header": {
+                    "title": "Object-Oriented Programming"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Spring 2023"
+                }
             },
             {
-                "title": "Advanced Circuits",
-                "date": "Spring 2023"
+                "header": {
+                    "title": "Engineering Ethics"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Spring 2023"
+                }
             },
             {
-                "title": "Probability & Statistics",
-                "date": "Spring 2023"
+                "header": {
+                    "title": "Numerical Methods"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Spring 2023"
+                }
             },
             {
-                "title": "Object-Oriented Programming",
-                "date": "Spring 2023"
+                "header": {
+                    "title": "Ordinary Differential Equations"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Spring 2023"
+                }
             },
             {
-                "title": "Engineering Ethics",
-                "date": "Spring 2023"
+                "header": {
+                    "title": "Quantitative Synthetic Biology"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Spring 2023"
+                }
             },
             {
-                "title": "Numerical Methods",
-                "date": "Spring 2023"
+                "header": {
+                    "title": "Sustainable Urban Transport Planning"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "January 2023"
+                }
             },
             {
-                "title": "Ordinary Differential Equations",
-                "date": "Spring 2023"
+                "header": {
+                    "title": "Engineering Statics"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Fall 2022"
+                }
             },
             {
-                "title": "Quantitative Synthetic Biology",
-                "date": "Spring 2023"
+                "header": {
+                    "title": "Conservation Laws"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Fall 2022"
+                }
             },
             {
-                "title": "Sustainable Urban Transport Planning",
-                "date": "January 2023"
+                "header": {
+                    "title": "Digital Logic"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Fall 2022"
+                }
             },
             {
-                "title": "Engineering Statics",
-                "date": "Fall 2022"
+                "header": {
+                    "title": "Circuits"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Fall 2022"
+                }
             },
             {
-                "title": "Conservation Laws",
-                "date": "Fall 2022"
+                "header": {
+                    "title": "Life in the Universe"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Fall 2022"
+                }
             },
             {
-                "title": "Digital Logic",
-                "date": "Fall 2022"
+                "header": {
+                    "title": "Number Theory & Cryptography"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Fall 2022"
+                }
             },
             {
-                "title": "Circuits",
-                "date": "Fall 2022"
+                "header": {
+                    "title": "Discrete Mathematics"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Spring 2022"
+                }
             },
             {
-                "title": "Life in the Universe",
-                "date": "Fall 2022"
+                "header": {
+                    "title": "Manus et Machina"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Spring 2022"
+                }
             },
             {
-                "title": "Number Theory & Cryptography",
-                "date": "Fall 2022"
+                "header": {
+                    "title": "Linear Algebra"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Spring 2022"
+                }
             },
             {
-                "title": "Discrete Mathematics",
-                "date": "Spring 2022"
+                "header": {
+                    "title": "World of Babel"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Spring 2022"
+                }
             },
             {
-                "title": "Manus et Machina",
-                "date": "Spring 2022"
+                "header": {
+                    "title": "Design & Innovation"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "January 2022"
+                }
             },
             {
-                "title": "Linear Algebra",
-                "date": "Spring 2022"
+                "header": {
+                    "title": "Foundations of Science"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Fall 2021"
+                }
             },
             {
-                "title": "World of Babel",
-                "date": "Spring 2022"
+                "header": {
+                    "title": "Multivariable Calculus"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Fall 2021"
+                }
             },
             {
-                "title": "Design & Innovation",
-                "date": "January 2022"
-            },
-            {
-                "title": "Foundations of Science",
-                "date": "Fall 2021"
-            },
-            {
-                "title": "Computer Programming for Engineers",
-                "date": "Fall 2021"
-            },
-            {
-                "title": "Multivariable Calculus",
-                "date": "Fall 2021"
+                "header": {
+                    "title": "Computer Programming for Engineers"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Fall 2021"
+                }
             }
         ]
     }

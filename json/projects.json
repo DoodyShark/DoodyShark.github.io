@@ -1,17 +1,31 @@
 {
+    "config": {
+        "num_columns": "3",
+        "card_components": [
+            "header",
+            "body",
+            "footer"
+        ]
+    },
     "cards": {
-        "portfolioPier": {
-            "title": "Portfolio Pier",
-            "img": "img/portfolio-pier-logo.png",
-            "body": {
-                "type": "paragraph",
-                "content": "Portfolio pier is yada yada yada"
-            },
-            "footer": {
-                "type": "link",
-                "href": "",
-                "message": "More Info"
-            } 
-        } 
+        "Projects": [
+            {
+                "featured": true,
+                "header": {
+                    "title": "Portfolio Pier",
+                    "img": "img/portfolio-pier-logo.png"
+                },
+                "body": {
+                    "type": "paragraph",
+                    "content": "Portfolio pier is yada yada yada"
+                },
+                "footer": {
+                    "type": "link",
+                    "href": "#",
+                    "message": "More Info"
+                }  
+            }
+            
+        ]
     }
 }

@@ -20,12 +20,7 @@ async function main() {
     
     const courses = await loadFile("./json/courses.json");
     
-    console.log(courses);
-
-
     const contentArea = document.querySelector("main > section > div > div");
-
-    console.log(contentArea)
 
     const currentCourses = Object.entries(courses['cards']['current']).map(([_, {title, date}]) => {
         

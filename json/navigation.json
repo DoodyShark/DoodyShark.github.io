@@ -1,0 +1,9 @@
+{
+    "paths": {
+        "Home": "index.html",
+        "Projects": "projects.html",
+        "Courses": "courses.html",
+        "Experience": "experience.html",
+        "Community": "community.html"
+    }
+}

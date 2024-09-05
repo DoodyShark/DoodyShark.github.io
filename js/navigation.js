@@ -1,6 +1,8 @@
+document.addEventListener('DOMContentLoaded', main);
+
 function createElement(type, attrs, ...children) {
     const ele = document.createElement(type);
-  
+
     // add element attributes
     for (const prop in attrs) {
       if (attrs.hasOwnProperty(prop)) {
@@ -14,9 +16,11 @@ function createElement(type, attrs, ...children) {
     return ele;
 }
 
-function main() {
+async function main() {
     const path = window.location.pathname;
     const page = path.split("/").pop();
+
+    data = await loadFile("./json/navigation.json");
 
     header = document.querySelector('header');
     const lis = Object.entries(data["paths"]).map(([title, path]) => {
@@ -41,14 +45,19 @@ function main() {
     header.appendChild(nav_div);
 }
 
-data = {
-    "paths": {
-        "Home": "index.html",
-        "Projects": "projects.html",
-        "Courses": "courses.html",
-        "Experience": "experience.html",
-        "Community": "projects.html"
+
+async function loadFile(filePath) {
+    try {
+        const response = await fetch(filePath);
+        if (response.ok) {
+            const result = await response.json();
+            return result;
+        } else {
+            console.error('Failed to load file:', response.statusText);
+            return null;
+        }
+    } catch (error) {
+        console.error('Error loading file:', error);
+        return null;
     }
 }
-
-main();
