@@ -1,0 +1,24 @@
+{
+    "config": {
+        "num_columns": 1,
+        "template": "default"
+    },
+    "cards": {
+        "Experiences": [
+            {
+                "featured": true,
+                "header": [
+                    ["img", "./img/CAIR_logo.png"],
+                    ["title", "Research Assistant"],
+                    ["subtitle", "Center for Artificial Intelligence & Robotics (CAIR)"],
+                    ["subsubtitle", "Feb 2024 - Present"]
+                ],
+                "body": [
+                    ["paragraph", "Short description paragraph"],
+                    ["paragraph", "And this is a paragraph"]
+                ]
+            }
+            
+        ]
+    }
+}

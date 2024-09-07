@@ -12,161 +12,18 @@
     <header>
     </header>
     <script src="js/navigation.js"></script>
+    <script src="js/generate_cards.js"></script>
     <main>
-        <div class="uk-section uk-section-default" style="padding-top: 30px" uk-scrollspy="cls: uk-animation-fade; target: #card; delay: 500; repeat: false">
-            <div class="uk-container uk-container">
-          
-          <h1 style="padding-bottom: 20px; font-weight: 300; font-size: 25px;">Experience</h1>
-          
-          <div class="uk-child-width-expand@s uk-text-center" uk-grid uk-height-match="target: > div >  #card">
-                            
-            <div>
-            <div class="uk-card-default uk-width-1-1@m" id="card">
-            <div class="uk-card-header">
-                    <div class="uk-grid-small uk-flex-middle" uk-grid>
-                        <div class="uk-width-auto">
-                            <img class="uk-border-rounded uk-child-width-auto" width="80" height="80" style="border-style: solid; border-width: 0.75px; border-color: #e2e2e2; padding: 0px;" src="img/MeriitLogo.png">
-        
-                        </div>
-                        <div class="uk-width-expand">
-                            <h3 class="uk-card-title uk-margin-remove-bottom"  style="font-weight: 500" >Engineering Research Assistant</h3>
-                              <h3 style="padding: 0px; margin: 0px; font-size: 17px; color: #666666;">MERIIT - New York University</h3>
-                              <p class="uk-text-meta uk-margin-remove-top" style="text-align: center"><time>Feb 2024 - <span style="color: #40c060">Present</span></time></p>
-        
-                        </div>
-                    </div>
-                </div>
-                <div class="uk-card-body"style="min-height: 10px">
-                    <ul>
-                        <li>
-                            <p  style="text-align: left; margin: 10px;">
-                                Training transformer models on EMG and sEMG signals to decipher electrical signals into hand gestures for
-                                prosthesis control                                
-                            </p> 
-                        </li>
-                        <li>
-                            <p  style="text-align: left; margin: 10px;">
-                                Incorporating LLMs into the system for higher performance    
-                            </p>
-                        </li>
-                      </ul>
-                  </div>
-            </div>  
-            </div>
-        
-            </div>
-
-          <div class="uk-child-width-expand@s uk-text-center" uk-grid uk-height-match="target: > div >  #card">
-                            
-            <div>
-            <div class="uk-card-default uk-width-1-1@m" id="card">
-            <div class="uk-card-header">
-                    <div class="uk-grid-small uk-flex-middle" uk-grid>
-                        <div class="uk-width-auto">
-                            <img class="uk-border-rounded uk-child-width-auto" width="80" height="80" style="border-style: solid; border-width: 0.75px; border-color: #e2e2e2; padding: 0px;" src="img/nyuadspace.png">
-        
-                        </div>
-                        <div class="uk-width-expand">
-                            <h3 class="uk-card-title uk-margin-remove-bottom"  style="font-weight: 500" >nyuad.space</h3>
-                              <h3 style="padding: 0px; margin: 0px; font-size: 17px; color: #666666;">Engineering Design Studio - New York University Abu Dhabi</h3>
-                              <p class="uk-text-meta uk-margin-remove-top" style="text-align: center"><time>Aug 2022 - Jun 2023</time></p>
-        
-                        </div>
-                    </div>
-                </div>
-                <div class="uk-card-body"style="min-height: 10px">
-                    <ul>
-                        <li>
-                            <p  style="text-align: left; margin: 10px;">
-                                Successfully launched Project Haloship in the Spaceport America Cup 2023 in New Mexico
-                            </p> 
-                        </li>
-                        <li>
-                            <p  style="text-align: left; margin: 10px;">Duis aute irure dolor in 
-                                Designed, developed, and tested reusable Hold-Down Release Mechanism (HDRM) for the Jet Propulsion Lab (JPL) as part of the JPL University Crowdsourcing Initiative (JUCI)
-
-                            </p>
-                        </li>
-                        <li>
-                            <p  style="text-align: left; margin: 10px;">
-                                Presented HDRM design at JPL headquarters in Los Angeles, California
-                            </p> 
-                        </li>
-                        <li>
-                            <p  style="text-align: left; margin: 10px;">
-                                Designed, developed, and simulated structural components for the internal rocket skeleton of project Haloship
-                            </p>
-                        </li>
-                        <li>
-                            <p  style="text-align: left; margin: 10px;">
-                                Designed, developed, and simulated reusable recovery subsystem for project Haloship.
-                            </p> 
-                        </li>
-                        <li>
-                            <p  style="text-align: left; margin: 10px;">
-                                Won the Dr. Gil Moore Aware for Technical Innovation for the design of the recovery subsystem
-                            </p>
-                        </li>
-                      </ul>
-                  </div>
-            </div>  
-            </div>
-        
-            </div>
-          
-          
-              <div class="uk-child-width-expand@s uk-text-center" uk-grid uk-height-match="target: > div >  #card">
-                            
-                <div>
-                <div class="uk-card-default uk-width-1-1@m" id="card">
-                <div class="uk-card-header">
-                        <div class="uk-grid-small uk-flex-middle" uk-grid>
-                            <div class="uk-width-auto">
-                                <img class="uk-border-rounded uk-child-width-auto" width="80" height="80" style="border-style: solid; border-width: 0.75px; border-color: #e2e2e2; padding: 0px;" src="img/NYUAD_Logo.png">
+        <section class="projects"  uk-scrollspy="cls: uk-animation-fade; target: #card; delay: 250; repeat: false">
             
-                            </div>
-                            <div class="uk-width-expand">
-                                <h3 class="uk-card-title uk-margin-remove-bottom"  style="font-weight: 500" >Engineering Research Assistant</h3>
-                                  <h3 style="padding: 0px; margin: 0px; font-size: 17px; color: #666666;">Applied Interactive Multimedia Lab - New York University Abu Dhabi</h3>
-                                  <p class="uk-text-meta uk-margin-remove-top" style="text-align: center"><time>Feb 2022 - Sep 2022</time></p>
-            
-                            </div>
-                        </div>
-                    </div>
-                    <div class="uk-card-body"style="min-height: 10px">
-                        <ul>
-                            <li>
-                                <p  style="text-align: left; margin: 10px;">
-                                    Built a full-stack application for Katib, a device aimed at assisting post-stroke patients and children with motor
-                                    disabilities (re)acquiring their writing skills
-                                </p> 
-                            </li>
-                            <li>
-                                <p  style="text-align: left; margin: 10px;">
-                                    Developed and tested a set of occupational therapy ”games” aimed at post-stroke patients according to established
-                                    procedures in partnership with physicians at Cleveland Clinic Abu Dhabi
-                                </p>
-                            </li>
-                            <li>
-                                <p  style="text-align: left; margin: 10px;">
-                                    Modified the ”games” to assist children in acquiring handwriting skills in partnership with education professionals
-                                    at Cranleigh Schools Abu Dhabi
-                                </p>
-                            </li>
-                            <li>
-                                <p  style="text-align: left; margin: 10px;">
-                                    Built tools for recording and processing data to utilize in the Katib platform
-                                </p>
-                            </li>
-                          </ul>
-                      </div>
-                </div>  
-                </div>
-            
-                </div>
+            <div class="uk-section uk-section-default" style="padding-top: 30px">
+                <div class="uk-container uk-container-medium">
                 
-          
-                  
+                    <!-- Content -->
+                    
+                </div>            
+            </div>
+        </section>
     </main>
     <footer>
         <div class="navigation navigation-styled">

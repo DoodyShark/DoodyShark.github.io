@@ -11,30 +11,74 @@ function createElement(type, attrs, ...children) {
     }
   
     // add child nodes to element
-    children.forEach(c => ele.appendChild(typeof c === 'string' ? document.createTextNode(c) : c));
+    children.forEach(c => {
+        c && ele.appendChild( typeof c === 'string' ? document.createTextNode(c) : c)
+    } );
   
     return ele;
 }
 
-function create_card(entry, config) {
+function create_card(entry, config, template) {
+
+    const sections = Object.keys(entry).filter((section) => template.hasOwnProperty(section)).map((section) => {
+        console.log(section);
+        const section_components = entry[section].map(([key, value]) => {
+            const current_templ = {...template[section]["children"][key]};
+            // Search for "VALUE"
+            let index = -1;
+            
+            index = Object.entries(current_templ.attrs).findIndex(([_, value]) => value === "VALUE");
+            if (index !== -1) {
+                current_templ.attrs[Object.keys(current_templ.attrs)[index]] = value;
+            }
+
+            current_templ.children.forEach((child, ind) => {
+                if (child === "VALUE") {
+                    current_templ.children[ind] = value;
+                    console.log("Yup")
+                } else if (child.children[0] == "VALUE") {
+                    current_templ.children[ind].children[0] = value;
+                } else {
+                    let attr_index = Object.entries(child.attrs).findIndex(([_, value]) => value === "VALUE")
+                    if (attr_index !== -1) {
+                        current_templ.children[ind].attrs[Object.keys(child.attrs)[attr_index]] = value;
+                    }
+                }
+            })
+
+            return createElement(current_templ.type, current_templ.attrs, 
+                ...current_templ.children.map((child)=>{
+                    return typeof child === 'string' ? child : createElement(child.type, child.attrs, ...child.children)
+                })
+            );
+        });
+        
+        return createElement(template[section].type, template[section].attrs, 
+            ...section_components
+        );
+    });
+
+    console.log(sections);
+
     return createElement('div', {},
         createElement('div', {class: "uk-card-default uk-width-1-1@m", id: "card"},
-            createElement('div', {class: "uk-card-body"},
-                createElement('div', {"uk-grid": "", class:"uk-grid-small uk-flex-middle"},
-                    createElement('div', {class: "uk-width-expand"}, 
-                        createElement('h3', {class: "uk-card-title uk-margin-remove-bottom"}, entry.header.title),
-                    )
-                )
-            ), 
-            createElement('div', {class: "uk-card-footer"},
-                createElement('div', {"uk-grid": "", class:"uk-grid-small uk-flex-middle"},
-                    createElement('div', {class: "uk-width-expand"}, 
-                        createElement('p', {class: "uk-text-meta uk-margin-remove-top"}, 
-                            createElement('time', {style: "color: #40c060"}, entry.body.content)
-                        ),
-                    )
-                )
-            )
+            ...sections
+            // createElement('div', {class: "uk-card-body"},
+            //     createElement('div', {"uk-grid": "", class:"uk-grid-small uk-flex-middle"},
+            //         createElement('div', {class: "uk-width-expand"}, 
+            //             createElement('h3', {class: "uk-card-title uk-margin-remove-bottom"}, entry.header.title),
+            //         )
+            //     )
+            // ), 
+            // createElement('div', {class: "uk-card-footer"},
+            //     createElement('div', {"uk-grid": "", class:"uk-grid-small uk-flex-middle"},
+            //         createElement('div', {class: "uk-width-expand"}, 
+            //             createElement('p', {class: "uk-text-meta uk-margin-remove-top"}, 
+            //                 createElement('time', {style: "color: #40c060"}, entry.body.content)
+            //             ),
+            //         )
+            //     )
+            // )
         )
     )
 }
@@ -51,9 +95,11 @@ async function main() {
     }
     
     const data = await loadFile(`./json/${currentPage}.json`);
+    const templates = await loadFile(`./json/card_templates.json`);
     
-    config = data.config;
-    cards = data.cards;
+    const config = data.config;
+    const template = templates[data.config.template];
+    const cards = data.cards;
 
     console.log(config);
     console.log(cards);
@@ -71,7 +117,7 @@ async function main() {
 
         const sectionContent = Object.entries(content).map(([_, entry]) => {
         
-            return create_card(entry, config);
+            return create_card(entry, config, template);
         });
 
         sectionRows = []

@@ -1,0 +1,19 @@
+{
+    "config": {
+        "num_columns": "1",
+        "theme": "default"
+    },
+    "cards": {
+        "Experiences": [
+            {
+                "featured": true,
+                "side_image": "img/portfolio-pier-logo.png",
+                "body": {
+                    "type": "paragraph",
+                    "content": "Short description paragraph"
+                }
+            }
+            
+        ]
+    }
+}
