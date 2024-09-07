@@ -106,8 +106,6 @@ async function main() {
 
     pastRows.forEach((row) => contentArea.appendChild(row));
 
-    console.log(await loadFile("./json/courses.json"));
-
 }
 
 async function loadFile(filePath) {

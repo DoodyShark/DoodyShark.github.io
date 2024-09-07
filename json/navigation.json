@@ -1,9 +1,9 @@
 {
     "paths": {
         "Home": "index.html",
-        "Projects": "projects.html",
-        "Courses": "courses.html",
-        "Experience": "experience.html",
-        "Community": "community.html"
+        "Projects": "content.html?type=projects",
+        "Courses": "content.html?type=courses",
+        "Experience": "content.html?type=experience",
+        "Community": "content.html?type=community"
     }
 }

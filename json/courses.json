@@ -1,18 +1,116 @@
 {
-    "config": {
-        "num_columns": 3,
-        "template": "default"
-    },
-    "cards": {
-        "Current Courses": [
-            {
-                "header": [
-                    ["title", "Foundations of 2D"]
+    "sections": {
+        "Current Courses": {
+            "featured": true,
+            "config": {
+                "num_columns": 2
+            },
+            "content": [
+                [
+                    [
+                        "header", [
+                            ["title", "Senior Capstone Design Project"]
+                        ]
+                    ],
+                    [
+                        "body", [
+                            ["date", "Fall 2024"]
+                        ]
+                    ]
                 ],
-                "body": [
-                    ["paragraph", "Fall 2024"]
+                [
+                    [
+                        "header", [
+                            ["title", "Foundations of 2D"]
+                        ]
+                    ],
+                    [
+                        "body", [
+                            ["date", "Fall 2024"]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", [
+                            ["title", "Theory of Everything"]
+                        ]
+                    ],
+                    [
+                        "body", [
+                            ["date", "Fall 2024"]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", [
+                            ["title", "Future of Medicine"]
+                        ]
+                    ],
+                    [
+                        "body", [
+                            ["date", "Fall 2024"]
+                        ]
+                    ]
                 ]
-            }
-        ]
+            ]
+        },
+        "Past Courses": {
+            "featured": false,
+            "config": {
+                "num_columns": 3
+            },
+            "content": [
+                [
+                    [
+                        "header", [
+                            ["title", "Senior Capstone Design Project"]
+                        ]
+                    ],
+                    [
+                        "body", [
+                            ["date", "Fall 2024"]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", [
+                            ["title", "Foundations of 2D"]
+                        ]
+                    ],
+                    [
+                        "body", [
+                            ["date", "Fall 2024"]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", [
+                            ["title", "Theory of Everything"]
+                        ]
+                    ],
+                    [
+                        "body", [
+                            ["date", "Fall 2024"]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", [
+                            ["title", "Future of Medicine"]
+                        ]
+                    ],
+                    [
+                        "body", [
+                            ["date", "Fall 2024"]
+                        ]
+                    ]
+                ]
+            ]  
+        }
     }
 }

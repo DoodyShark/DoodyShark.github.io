@@ -1,24 +1,64 @@
 {
-    "config": {
-        "num_columns": 1,
-        "template": "default"
-    },
-    "cards": {
-        "Experiences": [
-            {
-                "featured": true,
-                "header": [
-                    ["img", "./img/CAIR_logo.png"],
-                    ["title", "Research Assistant"],
-                    ["subtitle", "Center for Artificial Intelligence & Robotics (CAIR)"],
-                    ["subsubtitle", "Feb 2024 - Present"]
-                ],
-                "body": [
-                    ["paragraph", "Short description paragraph"],
-                    ["paragraph", "And this is a paragraph"]
+    "sections": {
+        "Current Positions": {
+            "featured": true,
+            "config": {
+                "num_columns": 1
+            },
+            "content": [
+                [
+                    [
+                        "header", [
+                            ["small_icon", "./img/CAIR_logo.png"],
+                            ["title", "Research Assistant"],
+                            ["subtitle", "Center for Artificial Intelligence & Robotics (CAIR)"],
+                            ["date", "Feb 2024 - Present"]
+                        ]
+                    ],
+                    [
+                        "body", [
+                            ["paragraph", "Short description paragraph"],
+                            ["bullets", [
+                                    ["item", "This is an item"],
+                                    ["item", "This is another item"],
+                                    ["item", "This is a third item"]
+                                ]
+                            ],
+                            ["paragraph", "And this is a paragraph"]
+                        ]
+                    ]
                 ]
-            }
-            
-        ]
+            ]
+        },
+        "Past Positions": {
+            "featured": false,
+            "config": {
+                "num_columns": 1
+            },
+            "content": [
+                [
+                    [
+                        "header", [
+                            ["small_icon", "./img/CAIR_logo.png"],
+                            ["title", "Research Assistant"],
+                            ["subtitle", "Center for Artificial Intelligence & Robotics (CAIR)"],
+                            ["date", "Feb 2024 - Present"]
+                        ]
+                    ],
+                    [
+                        "body", [
+                            ["paragraph", "Short description paragraph"],
+                            ["bullets", [
+                                    ["item", "This is an item"],
+                                    ["item", "This is another item"],
+                                    ["item", "This is a third item"]
+                                ]
+                            ],
+                            ["paragraph", "And this is a paragraph"]
+                        ]
+                    ]
+                ]
+            ]  
+        }
     }
 }

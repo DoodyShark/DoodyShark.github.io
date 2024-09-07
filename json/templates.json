@@ -1,0 +1,108 @@
+{
+    "header": [null , [
+        "div",
+        {"class": "uk-card-header"},
+        null
+    ]],
+    "body": [null , [
+        "div",
+        {"class": "uk-card-body"},
+        null
+    ]],
+    "footer": [null , [
+        "div",
+        {"class": "uk-card-footer"},
+        null
+    ]],
+    "small_icon": [[2, 0, 1, "src"],[
+        "div",
+        {"class": "uk-width-auto"},
+        [
+            [
+                "img",
+                {
+                    "class": "uk-border-rounded uk-child-width-auto", 
+                    "width":"80", 
+                    "height":"80", 
+                    "style":"border-style: solid; border-width: 0.75px; border-color: #e2e2e2; padding: 0px;", 
+                    "src": "PLACE_HERE"
+                },
+                null
+            ]
+        ]
+    ]],
+    "title": [[2, 0], [
+        "h3",
+        {
+            "class": "uk-card-title uk-margin-remove-bottom",
+            "style": "font-weight: 500"
+        },
+        ["PLACE_HERE"]
+    ]],
+    "subtitle": [[2, 0], [
+        "h3",
+        {
+            "style": "padding: 0px; margin: 0px; font-size: 17px; color: #666666;"
+        },
+        ["PLACE_HERE"]
+    ]],
+    "subsubtitle": [[2, 0], [
+        "h3",
+        {
+            "class": "uk-text-meta uk-margin-remove-top",
+            "style": "text-align: center; color: #40c060"
+        },
+        ["PLACE_HERE"]
+    ]],
+    "paragraph": [[2, 0, 2, 0], [
+        "div",
+        {
+            "uk-grid": "", 
+            "class":"uk-grid-small uk-flex-middle"
+        },
+        [
+            [
+                "p",
+                {
+                    "class": "uk-card-title uk-margin-remove-bottom"
+                },
+                ["PLACE_HERE"]
+            ]
+        ]
+    ]],
+    "date": [[2, 0, 2, 0, 2, 0], [
+        "div",
+        {
+            "uk-grid": "", 
+            "class":"uk-grid-small uk-flex-middle"
+        },
+        [
+            [
+                "p",
+                {
+                    "class": "uk-card-title uk-width-expand uk-margin-remove-bottom"
+                },
+                [
+                    [
+                        "time",
+                        {
+                            "style": "color: #40c060"
+                        },
+                        ["PLACE_HERE"]
+                    ]
+                ]
+            ]
+        ]
+    ]],
+    "bullets": [ null, [
+            "ul",
+            {},
+            null
+        ]
+    ],
+    "item": [[2, 0], [
+        "li",
+        {},
+        ["PLACE_HERE"]
+    ]]
+}
