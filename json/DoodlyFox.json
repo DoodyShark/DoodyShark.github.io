@@ -1,0 +1,124 @@
+{
+    "sections": {
+        "Sewing": {
+            "featured": false,
+            "config": {
+                "num_columns": 3,
+                "match": true
+            },
+            "content": [
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/placeholder.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/placeholder.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/placeholder.png", null]
+                        ]
+                    ]
+                ]
+            ]
+        },
+        "Clay": {
+            "featured": false,
+            "config": {
+                "num_columns": 3,
+                "match": true
+            },
+            "content": [
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/placeholder.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/placeholder.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/placeholder.png", null]
+                        ]
+                    ]
+                ]
+            ]
+        },
+        "Digital Illustration": {
+            "featured": false,
+            "config": {
+                "num_columns": 3,
+                "match": true
+            },
+            "content": [
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/placeholder.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/placeholder.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/placeholder.png", null]
+                        ]
+                    ]
+                ]
+            ]
+        },
+        "Ink": {
+            "featured": false,
+            "config": {
+                "num_columns": 3,
+                "match": true
+            },
+            "content": [
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/placeholder.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/placeholder.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/placeholder.png", null]
+                        ]
+                    ]
+                ]
+            ]
+        }
+    }
+}

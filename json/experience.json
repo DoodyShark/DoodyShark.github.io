@@ -3,28 +3,44 @@
         "Current Positions": {
             "featured": true,
             "config": {
-                "num_columns": 1
+                "num_columns": 1,
+                "match": true
             },
             "content": [
                 [
                     [
-                        "header", [
-                            ["small_icon", "./img/CAIR_logo.png"],
-                            ["title", "Research Assistant"],
-                            ["subtitle", "Center for Artificial Intelligence & Robotics (CAIR)"],
-                            ["date", "Feb 2024 - Present"]
+                        "header", null, [
+                            ["small_icon", "./img/CAIR_logo.png", null],
+                            ["title", "Research Assistant", null],
+                            ["subtitle", "Center for Artificial Intelligence & Robotics (CAIR)", null],
+                            ["date", "Feb 2024 - Present", null]
                         ]
                     ],
                     [
-                        "body", [
-                            ["paragraph", "Short description paragraph"],
-                            ["bullets", [
-                                    ["item", "This is an item"],
-                                    ["item", "This is another item"],
-                                    ["item", "This is a third item"]
+                        "body", null, [
+                            ["paragraph", "Current Project: Uncertainty Quantification for Breast Cancer Diagnosis & Prognosis", null],
+                            ["paragraph", "Completed Project: Single-Grid Hand Gesture Recognition Leveraging Agonistic-Antagonistic Coactivation", null],
+                            ["bullets", null, [
+                                    ["item", "Designed & trained sEMG-based hand gesture classification models with 95% accuracy.", null],
+                                    ["item", "Utilized XAI visualization techniques to identify important channels contributing to model predictions.", null],
+                                    ["item", "Conducted ablation studies to evaluate the impact of dropping specific channels on model performance.", null],
+                                    ["item", "Co-first authored paper currently in process to be reviewed for IEEE RA-L journal.", null]
                                 ]
-                            ],
-                            ["paragraph", "And this is a paragraph"]
+                            ]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null, [
+                            ["title", "Computer Engineering Member", null],
+                            ["subtitle", "Team Triton", null],
+                            ["date", "Sept 2024 - Present", null]
+                        ]
+                    ],
+                    [
+                        "body", null, [
+                            ["paragraph", "To Be Updated...", null]
                         ]
                     ]
                 ]
@@ -33,28 +49,48 @@
         "Past Positions": {
             "featured": false,
             "config": {
-                "num_columns": 1
+                "num_columns": 2,
+                "match": true
+
             },
             "content": [
                 [
                     [
-                        "header", [
-                            ["small_icon", "./img/CAIR_logo.png"],
-                            ["title", "Research Assistant"],
-                            ["subtitle", "Center for Artificial Intelligence & Robotics (CAIR)"],
-                            ["date", "Feb 2024 - Present"]
+                        "header", null, [
+                            ["small_icon", "./img/nyuadspace.png", null],
+                            ["title", "Research Assistant", null],
+                            ["subtitle", "nyuad.space", null],
+                            ["date", "August 2022 - June 2023", null]
                         ]
                     ],
                     [
-                        "body", [
-                            ["paragraph", "Short description paragraph"],
-                            ["bullets", [
-                                    ["item", "This is an item"],
-                                    ["item", "This is another item"],
-                                    ["item", "This is a third item"]
+                        "body", null, [
+                            ["bullets", null, [
+                                    ["item", "Designed & Implemented a full-stack application for custom rehabilitative system", null],
+                                    ["item", "Developed & tested a set of occupational therapy games aimed at post-stroke patients according to established procedures with advice from physicians at Cleveland Clinic Abu Dhabi", null],
+                                    ["item", "Modified the games to assist children in acquiring handwriting skills with advice from education professionals at Cranleigh Schools Abu Dhabi", null]
                                 ]
-                            ],
-                            ["paragraph", "And this is a paragraph"]
+                            ]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null, [
+                            ["small_icon", "./img/AIM.jpg", null],
+                            ["title", "Research Assistant", null],
+                            ["subtitle", "Applied Interactive Multimedia (AIM)", null],
+                            ["date", "Feb 2022 - July 2022", null]
+                        ]
+                    ],
+                    [
+                        "body", null, [
+                            ["bullets", null, [
+                                    ["item", "Designed & Implemented a full-stack application for custom rehabilitative system", null],
+                                    ["item", "Developed & tested a set of occupational therapy games aimed at post-stroke patients according to established procedures with advice from physicians at Cleveland Clinic Abu Dhabi", null],
+                                    ["item", "Modified the games to assist children in acquiring handwriting skills with advice from education professionals at Cranleigh Schools Abu Dhabi", null]
+                                ]
+                            ]
                         ]
                     ]
                 ]

@@ -23,17 +23,46 @@ header {
     background-color: rgb(32, 29, 39);
 }
 
+html.doodlyfox {
+    background-color: rgb(198, 225, 237);
+}
+
+.doodlyfox header {
+    background-color: rgb(68, 92, 147);
+}
+
+.doodlyfox footer {
+    background-color: rgb(68, 92, 147);
+}
+
+.doodlyfox .navigation li a {
+    color: white;
+}
+
+.doodlyfox .navigation li a:hover {
+    color: black;
+}
+
+.navigation {
+    vertical-align: middle;
+    text-align: center;
+}
+
 .navigation ul {
+    vertical-align: middle;
+    display: inline-block;
     list-style-type: none;
     overflow: hidden;
     text-align: center;
 }
 
 .navigation li {
+    vertical-align: middle;
     display: inline;
 }
 
 .navigation li a {
+    vertical-align: middle;
     display: inline-block;
 }
 
@@ -43,6 +72,7 @@ header {
 }
 
 .navigation-styled li a {
+    vertical-align: middle;
     color: gray;
     padding: 25px 16px;
     text-decoration: none;
@@ -61,6 +91,8 @@ header {
 .intro {
     max-width: fit-content;
     max-height: fit-content;
+    margin-left: 200px;
+    margin-right: 200px;
     margin-top: 100px;
     margin-bottom: 100px;
     padding-left: auto;

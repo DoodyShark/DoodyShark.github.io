@@ -6,13 +6,30 @@
     ]],
     "body": [null , [
         "div",
-        {"class": "uk-card-body"},
+        {
+            "class": "uk-card-body",
+            "style": "text-align: left"
+        },
         null
     ]],
     "footer": [null , [
         "div",
         {"class": "uk-card-footer"},
         null
+    ]],
+    "image": [[2, 0, 1, "src"],[
+        "div",
+        {"class": "uk-width-auto"},
+        [
+            [
+                "img",
+                {
+                    "class": "uk-child-width-auto", 
+                    "src": "PLACE_HERE"
+                },
+                null
+            ]
+        ]
     ]],
     "small_icon": [[2, 0, 1, "src"],[
         "div",
@@ -30,6 +47,27 @@
                 null
             ]
         ]
+    ]],
+    "embedded_link": [[1, "href"],[
+        "a",
+        {
+            "class": "uk-button uk-button-text", 
+            "style": "",
+            "href": "PLACE_HERE"
+        },
+        null
+    ]],
+    "link_text": [[2, 0],[
+        "span",
+        {
+            "style": "color: #bc56d5;"
+        },
+        ["PLACE_HERE"]
+    ]], 
+    "text": [[2, 0],[
+        "span",
+        {},
+        ["PLACE_HERE"]
     ]],
     "title": [[2, 0], [
         "h3",
@@ -64,7 +102,8 @@
             [
                 "p",
                 {
-                    "class": "uk-card-title uk-margin-remove-bottom"
+                    "class": "uk-card-title uk-margin-remove-bottom",
+                    "style": "font-size: 18px;"
                 },
                 ["PLACE_HERE"]
             ]

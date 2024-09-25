@@ -8,7 +8,52 @@ async function main() {
     const data = await loadFile("./json/navigation.json");
 
     header = document.querySelector('header');
-    const lis = Object.entries(data["paths"]).map(([title, path]) => {
+
+    const imageLinks = data["imgs_left"].map(([imgPath, path]) => {
+        return createElement(
+            [
+                'li', 
+                {},
+                [
+                    createElement(
+                        [
+                            'a', {'href': path, }, [
+                                createElement([
+                                    'img',
+                                    {'src': imgPath, "style": "width: 50px; height: 50px; border-radius: 25px"},
+                                    []
+                                ])
+                            ]
+                        ]
+                    )
+                ]
+            ]
+        )
+    })
+
+    const imageLinksRight = data["imgs_right"].map(([imgPath, path]) => {
+        return createElement(
+            [
+                'li', 
+                {},
+                [
+                    createElement(
+                        [
+                            'a', {'href': path, }, [
+                                createElement([
+                                    'img',
+                                    {'src': imgPath, "style": "width: 50px; height: 50px; border-radius: 25px"},
+                                    []
+                                ])
+                            ]
+                        ]
+                    )
+                ]
+            ]
+        )
+    })
+
+    const links = Object.entries(data["paths"]).map(([title, path]) => {
         if (path === page) {
             return createElement(
                 [
@@ -54,8 +99,24 @@ async function main() {
                             createElement(
                                 [
                                     'ul', 
+                                    {"style": "padding-right: 100px"}, 
+                                    imageLinks.slice()
+                                ]
+                            ),
+
+                            createElement(
+                                [
+                                    'ul', 
                                     {}, 
-                                    lis
+                                    links
+                                ]
+                            ),
+
+                            createElement(
+                                [
+                                    'ul', 
+                                    {"style": "padding-left: 200px"}, 
+                                    imageLinksRight
                                 ]
                             )
                         ]

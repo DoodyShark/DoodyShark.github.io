@@ -1,31 +1,126 @@
 {
-    "config": {
-        "num_columns": "3",
-        "card_components": [
-            "header",
-            "body",
-            "footer"
-        ]
-    },
-    "cards": {
-        "Projects": [
-            {
-                "featured": true,
-                "header": {
-                    "title": "Portfolio Pier",
-                    "img": "img/portfolio-pier-logo.png"
-                },
-                "body": {
-                    "type": "paragraph",
-                    "content": "Portfolio pier is yada yada yada"
-                },
-                "footer": {
-                    "type": "link",
-                    "href": "#",
-                    "message": "More Info"
-                }  
-            }
-            
-        ]
+    "sections": {
+        "Featured Projects": {
+            "featured": true,
+            "config": {
+                "num_columns": 3,
+                "match": false
+            },
+            "content": [
+                [
+                    [
+                        "header", null, [
+                            ["title", "Portfolio Pier", null],
+                            ["date", "Mar 2024 - April 2024", null]
+                        ]
+                    ],
+                    [
+                        "body", null, [
+                            ["paragraph", "Applied Internet Technologies term project", null],
+                            ["bullets", null, [
+                                    ["item", "Developed a website for building portfolio websites quickly and easily as a class project.", null],
+                                    ["item", "Utilized NextJS for both front-end and back-end development and MongoDB for database interactions.", null],
+                                    ["item", "Deployed the website on school servers.", null]
+                                ]
+                            ]
+                        ]
+                    ],
+                    [
+                        "footer", null, [
+                            [
+                                "embedded_link", 
+                                "https://github.com/nyu-csci-ua-0467-001-002-spring-2024/final-project-DoodyShark", 
+                                [
+                                    ["link_text", "Github Repo", null]
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null, [
+                            ["title", "FizzbuzzDraw", null],
+                            ["date", "Apr 2024", null]
+                        ]
+                    ],
+                    [
+                        "body", null, [
+                            ["paragraph", "One of the Software Engineering assigned projects", null],
+                            ["bullets", null, [
+                                    ["item", "Created a webapp game as a final class project for software engineering.", null],
+                                    ["item", "Employed Flask for the backend, HTML/CSS for the frontend, and websockets for real-time interactions.", null],
+                                    ["item", "Deployed each subcomponent within a Docker environment and the final project on Digital Ocean.", null],
+                                    ["item", "Integrated standard software engineering tools/workflows including build tools, unit testing tools, linting tools, GitHub Actions, and published on PyPI.", null]
+                                ]
+                            ]
+                        ]
+                    ],
+                    [
+                        "footer", null, [
+                            [
+                                "embedded_link", 
+                                "https://github.com/software-students-spring2024/5-final-project-spring-2024-team-fizzbuzz-final", 
+                                [
+                                    ["link_text", "Github Repo", null]
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null, [
+                            ["title", "Ma Tahtahu Khat", null],
+                            ["date", "Mar 2024 - April 2024", null]
+                        ]
+                    ],
+                    [
+                        "body", null, [
+                            ["paragraph", "Natural Language Processing course term project aimed to create a toolchain to perform I’rab, or the Arabic grammatical process of extended sequence tagging.", null],
+                            ["bullets", null, [
+                                    ["item", "Utilized state-of-the-art morphological analyzers and disambiguators (SAMA & MADAMIRA)", null],
+                                    ["item", "Implemented HMM bigram approach with post-processing to POS tag a given sentence.", null],
+                                    ["item", "Featured engineering POS-tagged sentences to extract appropriate information.", null],
+                                    ["item", "Implemented MEMMs and SVMs to produce appropriate semantic role labels for each word.", null]
+                                ]
+                            ]
+                        ]
+                    ],
+                    [
+                        "footer", null, [
+                            [
+                                "embedded_link", 
+                                "https://github.com/DoodyShark/Ma-Tahtahu-Khat", 
+                                [
+                                    ["link_text", "Github Repo", null]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        },
+        "More Projects": {
+            "featured": false,
+            "config": {
+                "num_columns": 1,
+                "match": true
+
+            },
+            "content": [
+                [
+                    [
+                        "body", null, [
+                            [
+                                "paragraph",
+                                "To Be Updated...",
+                                null
+                            ]
+                        ]
+                    ]
+                ]
+            ]  
+        }
     }
 }

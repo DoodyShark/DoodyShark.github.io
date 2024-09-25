@@ -1,0 +1,94 @@
+{
+    "sections": {
+        "Arabic Cuisine": {
+            "featured": false,
+            "config": {
+                "num_columns": 3,
+                "match": true
+            },
+            "content": [
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/placeholder.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/placeholder.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/placeholder.png", null]
+                        ]
+                    ]
+                ]
+            ]
+        },
+        "Arabic Desserts": {
+            "featured": false,
+            "config": {
+                "num_columns": 3,
+                "match": true
+            },
+            "content": [
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/placeholder.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/placeholder.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/placeholder.png", null]
+                        ]
+                    ]
+                ]
+            ]
+        },
+        "Italian": {
+            "featured": false,
+            "config": {
+                "num_columns": 3,
+                "match": true
+            },
+            "content": [
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/placeholder.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/placeholder.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/placeholder.png", null]
+                        ]
+                    ]
+                ]
+            ]
+        }
+    }
+}

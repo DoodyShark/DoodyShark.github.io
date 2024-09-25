@@ -3,54 +3,55 @@
         "Current Courses": {
             "featured": true,
             "config": {
-                "num_columns": 2
+                "num_columns": 2,
+                "match": true
             },
             "content": [
                 [
                     [
-                        "header", [
-                            ["title", "Senior Capstone Design Project"]
+                        "header", null, [
+                            ["title", "Senior Capstone Design Project", null]
                         ]
                     ],
                     [
-                        "body", [
-                            ["date", "Fall 2024"]
+                        "footer", null, [
+                            ["date", "Fall 2024", null]
                         ]
                     ]
                 ],
                 [
                     [
-                        "header", [
-                            ["title", "Foundations of 2D"]
+                        "header", null,  [
+                            ["title", "Foundations of 2D", null]
                         ]
                     ],
                     [
-                        "body", [
-                            ["date", "Fall 2024"]
+                        "footer", null,  [
+                            ["date", "Fall 2024", null]
                         ]
                     ]
                 ],
                 [
                     [
-                        "header", [
-                            ["title", "Theory of Everything"]
+                        "header", null,  [
+                            ["title", "Theory of Everything", null]
                         ]
                     ],
                     [
-                        "body", [
-                            ["date", "Fall 2024"]
+                        "footer", null,  [
+                            ["date", "Fall 2024", null]
                         ]
                     ]
                 ],
                 [
                     [
-                        "header", [
-                            ["title", "Future of Medicine"]
+                        "header", null,  [
+                            ["title", "Future of Medicine", null]
                         ]
                     ],
                     [
-                        "body", [
-                            ["date", "Fall 2024"]
+                        "footer", null,  [
+                            ["date", "Fall 2024", null]
                         ]
                     ]
                 ]
@@ -59,54 +60,404 @@
         "Past Courses": {
             "featured": false,
             "config": {
-                "num_columns": 3
+                "num_columns": 3,
+                "match": true
+
             },
             "content": [
                 [
                     [
-                        "header", [
-                            ["title", "Senior Capstone Design Project"]
+                        "header", null,  [
+                            ["title", "Operating Systems", null]
                         ]
                     ],
                     [
-                        "body", [
-                            ["date", "Fall 2024"]
+                        "footer", null,  [
+                            ["date", "Spring 2024", null]
                         ]
                     ]
                 ],
                 [
                     [
-                        "header", [
-                            ["title", "Foundations of 2D"]
+                        "header", null,  [
+                            ["title", "Communication Networks", null]
                         ]
                     ],
                     [
-                        "body", [
-                            ["date", "Fall 2024"]
+                        "footer", null,  [
+                            ["date", "Spring 2024", null]
                         ]
                     ]
                 ],
                 [
                     [
-                        "header", [
-                            ["title", "Theory of Everything"]
+                        "header", null,  [
+                            ["title", "Applied Internet Technologies", null]
                         ]
                     ],
                     [
-                        "body", [
-                            ["date", "Fall 2024"]
+                        "footer", null,  [
+                            ["date", "Spring 2024", null]
                         ]
                     ]
                 ],
                 [
                     [
-                        "header", [
-                            ["title", "Future of Medicine"]
+                        "header", null,  [
+                            ["title", "Software Engineering", null]
                         ]
                     ],
                     [
-                        "body", [
-                            ["date", "Fall 2024"]
+                        "footer", null,  [
+                            ["date", "Spring 2024", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Theater and Immigration", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "January 2024", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Natural Language Processing", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Fall 2023", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Embedded Systems", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Fall 2023", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Computer Architecture & Organization", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Fall 2023", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Data Structures & Algorithms", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Fall 2023", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Haptics & Telerobotics in Medicine", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Fall 2023", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Advanced Digital Logic", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Spring 2023", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Advanced Circuits", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Spring 2023", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Object-Oriented Programming", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Spring 2023", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Engineering Ethics", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Spring 2023", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Probability & Statistics", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Spring 2023", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Quantitative Synthetic Biology", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Spring 2023", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Numerical Methods", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Spring 2023", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Fundamentals of Ordinary Differential Equations", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Spring 2023", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Sustainable Urban Transport Planning", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "January 2023", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Engineering Statics", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Fall 2022", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Digital Logic", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Fall 2022", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Conversation Laws", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Fall 2022", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Life in the Universe", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Fall 2022", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Number Theory & Cryptography", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Fall 2022", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Circuits Fundamentals", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Fall 2022", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Discrete Mathematics", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Spring 2022", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Manus et Machina", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Spring 2022", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "The World of Babel", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Spring 2022", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Linear Algebra", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Spring 2022", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Design & Innovation", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "January 2022", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Foundations of Science 1 & 2", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Fall 2021", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Computer Programming for Engineers", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Fall 2021", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Multivariable Calculus", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Fall 2021", null]
                         ]
                     ]
                 ]
