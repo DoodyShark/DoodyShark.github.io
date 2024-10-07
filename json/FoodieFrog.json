@@ -3,28 +3,63 @@
         "Arabic Cuisine": {
             "featured": false,
             "config": {
-                "num_columns": 3,
+                "num_columns": 2,
                 "match": true
             },
             "content": [
                 [
                     [
                         "body", null, [
-                            ["image", "/img/placeholder.png", null]
+                            ["image", "/img/FoodieFrog/falafel.jpeg", null]
                         ]
                     ]
                 ],
                 [
                     [
                         "body", null, [
-                            ["image", "/img/placeholder.png", null]
+                            ["image", "/img/FoodieFrog/jaaj_bikreima.jpeg", null]
                         ]
                     ]
                 ],
                 [
                     [
                         "body", null, [
-                            ["image", "/img/placeholder.png", null]
+                            ["image", "/img/FoodieFrog/mulukhia.jpeg", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/FoodieFrog/kusa_2.jpeg", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/FoodieFrog/mjaddara.jpeg", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/FoodieFrog/oozi.jpeg", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/FoodieFrog/kusa_mu5shi.jpeg", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/FoodieFrog/butter_chicken_2.jpeg", null]
                         ]
                     ]
                 ]
@@ -40,21 +75,7 @@
                 [
                     [
                         "body", null, [
-                            ["image", "/img/placeholder.png", null]
-                        ]
-                    ]
-                ],
-                [
-                    [
-                        "body", null, [
-                            ["image", "/img/placeholder.png", null]
-                        ]
-                    ]
-                ],
-                [
-                    [
-                        "body", null, [
-                            ["image", "/img/placeholder.png", null]
+                            ["image", "/img/FoodieFrog/basboosa.jpeg", null]
                         ]
                     ]
                 ]
@@ -70,21 +91,7 @@
                 [
                     [
                         "body", null, [
-                            ["image", "/img/placeholder.png", null]
-                        ]
-                    ]
-                ],
-                [
-                    [
-                        "body", null, [
-                            ["image", "/img/placeholder.png", null]
-                        ]
-                    ]
-                ],
-                [
-                    [
-                        "body", null, [
-                            ["image", "/img/placeholder.png", null]
+                            ["image", "/img/FoodieFrog/pizza.jpeg", null]
                         ]
                     ]
                 ]
