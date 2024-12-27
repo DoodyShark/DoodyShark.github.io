@@ -1,0 +1,20 @@
+{
+    "sections": {
+        "Arabic Desserts": {
+            "featured": false,
+            "config": {
+                "num_columns": 3,
+                "match": true
+            },
+            "content": [
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/FoodieFrog/basboosa.jpeg", null]
+                        ]
+                    ]
+                ]
+            ]
+        }
+    }
+}

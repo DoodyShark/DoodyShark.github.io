@@ -1,71 +1,28 @@
 {
     "sections": {
-        "Arabic Cuisine": {
+        "": {
             "featured": false,
             "config": {
-                "num_columns": 2,
+                "num_columns": 1,
                 "match": true
             },
             "content": [
                 [
                     [
-                        "body", null, [
-                            ["image", "/img/FoodieFrog/falafel.jpeg", null]
+                        "header", null, [
+                            ["round_icon", "./img/DoodlyFox.png", null],
+                            ["title", "Welcome to DoodlyFox", null]
                         ]
-                    ]
-                ],
-                [
+                    ],
                     [
                         "body", null, [
-                            ["image", "/img/FoodieFrog/jaaj_bikreima.jpeg", null]
-                        ]
-                    ]
-                ],
-                [
-                    [
-                        "body", null, [
-                            ["image", "/img/FoodieFrog/mulukhia.jpeg", null]
-                        ]
-                    ]
-                ],
-                [
-                    [
-                        "body", null, [
-                            ["image", "/img/FoodieFrog/kusa_2.jpeg", null]
-                        ]
-                    ]
-                ],
-                [
-                    [
-                        "body", null, [
-                            ["image", "/img/FoodieFrog/mjaddara.jpeg", null]
-                        ]
-                    ]
-                ],
-                [
-                    [
-                        "body", null, [
-                            ["image", "/img/FoodieFrog/oozi.jpeg", null]
-                        ]
-                    ]
-                ],
-                [
-                    [
-                        "body", null, [
-                            ["image", "/img/FoodieFrog/kusa_mu5shi.jpeg", null]
-                        ]
-                    ]
-                ],
-                [
-                    [
-                        "body", null, [
-                            ["image", "/img/FoodieFrog/butter_chicken_2.jpeg", null]
+                            ["paragraph", "This is where I like to share my art! I enjoy a variety of media such as digital illustration, clay sculpting, and sewing.", null]
                         ]
                     ]
                 ]
             ]
         },
-        "Arabic Desserts": {
+        "Featured Art": {
             "featured": false,
             "config": {
                 "num_columns": 3,
@@ -75,27 +32,61 @@
                 [
                     [
                         "body", null, [
-                            ["image", "/img/FoodieFrog/basboosa.jpeg", null]
+                            ["image", "/img/DoodlyFox/Usagi.png", null]
                         ]
                     ]
-                ]
-            ]
-        },
-        "Italian": {
-            "featured": false,
-            "config": {
-                "num_columns": 3,
-                "match": true
-            },
-            "content": [
+                ],
                 [
                     [
                         "body", null, [
-                            ["image", "/img/FoodieFrog/pizza.jpeg", null]
+                            ["image", "/img/DoodlyFox/100 Follower Special.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/DoodlyFox/Falling Girl Edit.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/DoodlyFox/Fire GuyEdit2.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/DoodlyFox/Turn Around.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/DoodlyFox/Safe.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/DoodlyFox/Star Done Black.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/DoodlyFox/Ladybug on nose.png", null]
                         ]
                     ]
                 ]
             ]
         }
+        
     }
 }

@@ -1,0 +1,20 @@
+{
+    "sections": {
+        "Clay": {
+            "featured": false,
+            "config": {
+                "num_columns": 1,
+                "match": true
+            },
+            "content": [
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/DoodlyFox/Usagi.png", null]
+                        ]
+                    ]
+                ]
+            ]
+        }
+    }
+}

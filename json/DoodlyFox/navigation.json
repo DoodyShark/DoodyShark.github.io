@@ -1,0 +1,15 @@
+{
+    "imgs_left": [
+        ["/img/DoodyShark.png", "/"],
+        ["/img/DoodlyFox.png", "DoodlyFox.html"],
+        ["/img/FoodieFrog.png", "FoodieFrog.html"]
+    ],
+    "paths": {
+        "Home": "DoodlyFox.html?type=home",
+        "Illustrations": "DoodlyFox.html?type=illustrations",
+        "Paintings": "DoodlyFox.html?type=paintings",
+        "Sculptures": "DoodlyFox.html?type=sculptures"
+    },
+    "imgs_right": [
+    ]
+}

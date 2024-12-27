@@ -1,0 +1,41 @@
+{
+    "sections": {
+        "Ink": {
+            "featured": false,
+            "config": {
+                "num_columns": 1,
+                "match": true
+            },
+            "content": [
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/DoodlyFox/table_alarm.jpg", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/DoodlyFox/pauline.jpg", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/DoodlyFox/Portrait.jpg", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/DoodlyFox/Landscape.jpg", null]
+                        ]
+                    ]
+                ]
+            ]
+        }
+    }
+}

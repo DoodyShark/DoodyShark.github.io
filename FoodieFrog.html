@@ -17,29 +17,18 @@
     <script src="js/generate_cards.js"></script>
 
     <main>
-        
-        <section class="intro">
-                <div class="hello">
-                    <h1>Welcome to FoodieFrog!</h1>
-                </div>
-                <div class="intro-para">
-                    <p>
-                        I sure hope you're hungry cuz you're in for a treat! 
-                        FoodieFrog is the corner of my website where I like to share some of my favorite recipes.
-                    </p>
-                </div>
-        </section>
         <section class="courses"  uk-scrollspy="cls: uk-animation-fade; target: #card; delay: 250; repeat: false">
             
             <div class="uk-section uk-section-default" style="padding-top: 30px">
                 <div class="uk-container uk-container-medium" id="contentArea">
                     <script defer>
-                        const currentPage = "FoodieFrog";
+                        const urlParams = new URLSearchParams(window.location.search);
+                        const currentPage = urlParams.get('type') || "home";
 
-                        const contentFile = `./json/${currentPage}.json`;
+                        const contentFile = `./json/FoodieFrog/${currentPage}.json`;
                         const templateFile = `./json/templates.json`;
 
-                        generateCards(contentFile, templateFile, "#contentArea",  (...arr) => {return true})
+                        generateCards(contentFile, templateFile, "#contentArea", (...arr) => {return true})
                     </script>
                     
                     <!-- Content -->

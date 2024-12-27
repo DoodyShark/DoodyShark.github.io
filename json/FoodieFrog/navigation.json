@@ -1,0 +1,14 @@
+{
+    "imgs_left": [
+        ["/img/DoodyShark.png", "/"],
+        ["/img/DoodlyFox.png", "DoodlyFox.html"],
+        ["/img/FoodieFrog.png", "FoodieFrog.html"]
+    ],
+    "paths": {
+        "Home": "FoodieFrog.html?type=home",
+        "Savory": "FoodieFrog.html?type=savory",
+        "Sweet": "FoodieFrog.html?type=sweet"
+    },
+    "imgs_right": [
+    ]
+}

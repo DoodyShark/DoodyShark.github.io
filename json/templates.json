@@ -48,6 +48,23 @@
             ]
         ]
     ]],
+    "round_icon": [[2, 0, 1, "src"],[
+        "div",
+        {"class": "uk-width-auto"},
+        [
+            [
+                "img",
+                {
+                    "class": "uk-border-rounded uk-child-width-auto", 
+                    "width":"100", 
+                    "height":"100", 
+                    "style":"border-style: solid; border-radius: 50%; border-width: 0.75px; border-color: #e2e2e2; padding: 0px;", 
+                    "src": "PLACE_HERE"
+                },
+                null
+            ]
+        ]
+    ]],
     "embedded_link": [[1, "href"],[
         "a",
         {

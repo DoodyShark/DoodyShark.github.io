@@ -1,0 +1,71 @@
+{
+    "sections": {
+        "": {
+            "featured": false,
+            "config": {
+                "num_columns": 1,
+                "match": true
+            },
+            "content": [
+                [
+                    [
+                        "header", null, [
+                            ["round_icon", "./img/FoodieFrog.png", null],
+                            ["title", "Welcome to FoodieFrog", null]
+                        ]
+                    ],
+                    [
+                        "body", null, [
+                            ["paragraph", "I sure hope you're hungry cuz you're in for a treat! FoodieFrog is the corner of my website where I like to share some of my favorite recipes.", null]
+                        ]
+                    ]
+                ]
+            ]
+        },
+        "Featured": {
+            "featured": false,
+            "config": {
+                "num_columns": 3,
+                "match": true
+            },
+            "content": [
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/FoodieFrog/falafel.jpeg", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/FoodieFrog/jaaj_bikreima.jpeg", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/FoodieFrog/mjaddara.jpeg", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/FoodieFrog/kusa_2.jpeg", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/FoodieFrog/mulukhia.jpeg", null]
+                        ]
+                    ]
+                ]
+            ]
+        }
+        
+    }
+}

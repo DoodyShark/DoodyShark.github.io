@@ -4,12 +4,40 @@ async function main() {
 
     const currentPath = window.location.pathname;
     const page = currentPath.split("/").pop() + window.location.search; 
-
-    const data = await loadFile("./json/navigation.json");
+    let data = await loadFile("./json/navigation.json");
+    
+    if (page.includes("DoodlyFox")) {
+        data = await loadFile("./json/DoodlyFox/navigation.json");
+    } else if (page.includes("FoodieFrog")) {
+        data = await loadFile("./json/FoodieFrog/navigation.json");
+    }
 
     header = document.querySelector('header');
 
     const imageLinks = data["imgs_left"].map(([imgPath, path]) => {
+        isActive = path.includes("DoodlyFox") && page.includes("DoodlyFox") || path.includes("FoodieFrog") && page.includes("FoodieFrog");
+        isActive |= (!path.includes("DoodlyFox") && !page.includes("DoodlyFox") && !path.includes("FoodieFrog") && !page.includes("FoodieFrog")); 
+        if (isActive) {
+            return createElement(
+                [
+                    'li', 
+                    {},
+                    [
+                        createElement(
+                            [
+                                'a', {'href': path, }, [
+                                    createElement([
+                                        'img',
+                                        {'src': imgPath, "style": "width: 50px; height: 50px; border-radius: 25px", 'class': 'active'},
+                                        []
+                                    ])
+                                ]
+                            ]
+                        )
+                    ]
+                ]
+            )
+        }
         return createElement(
             [
                 'li', 

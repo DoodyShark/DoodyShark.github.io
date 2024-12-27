@@ -1,21 +1,5 @@
 {
     "sections": {
-        "Clay": {
-            "featured": false,
-            "config": {
-                "num_columns": 1,
-                "match": true
-            },
-            "content": [
-                [
-                    [
-                        "body", null, [
-                            ["image", "/img/DoodlyFox/Usagi.png", null]
-                        ]
-                    ]
-                ]
-            ]
-        },
         "Digital Illustration": {
             "featured": false,
             "config": {
@@ -69,29 +53,6 @@
                     [
                         "body", null, [
                             ["image", "/img/DoodlyFox/Ladybug on nose.png", null]
-                        ]
-                    ]
-                ]
-            ]
-        },
-        "Ink": {
-            "featured": false,
-            "config": {
-                "num_columns": 1,
-                "match": true
-            },
-            "content": [
-                [
-                    [
-                        "body", null, [
-                            ["image", "/img/DoodlyFox/table_alarm.jpg", null]
-                        ]
-                    ]
-                ],
-                [
-                    [
-                        "body", null, [
-                            ["image", "/img/DoodlyFox/pauline.jpg", null]
                         ]
                     ]
                 ]
