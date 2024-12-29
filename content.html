@@ -15,8 +15,9 @@
     <script src="js/loadFile.js"></script>
     <script src="js/navigation.js" defer></script>
     <script src="js/generate_cards.js"></script>
-
     <main>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+
         <section class="courses"  uk-scrollspy="cls: uk-animation-fade; target: #card; delay: 250; repeat: false">
             
             <div class="uk-section uk-section-default" style="padding-top: 30px">
@@ -24,11 +25,25 @@
                     <script defer>
                         const urlParams = new URLSearchParams(window.location.search);
                         const currentPage = urlParams.get('type');
-
-                        const contentFile = `./json/${currentPage}.json`;
+                        const currentProject = urlParams.get('project');
                         const templateFile = `./json/templates.json`;
 
-                        generateCards(contentFile, templateFile, "#contentArea", (...arr) => {return true})
+                        let filterFunc, contentFile;
+                        let showSectionTitle = true;
+
+                        if (currentProject) {
+                            console.log(currentProject)
+                            contentFile = `./json/detailed.json`;
+                            filterFunc = (section) => {return section[0].includes(currentProject)};
+                            
+                            showSectionTitle = false;
+                        }
+                        else {
+                            contentFile = `./json/${currentPage}.json`;
+                            filterFunc = (...arr) => {return true};
+                        }
+
+                        generateCards(contentFile, templateFile, "#contentArea", filterFunc, showSectionTitle);
                     </script>
                     
                     <!-- Content -->

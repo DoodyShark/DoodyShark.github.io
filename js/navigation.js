@@ -1,6 +1,26 @@
 document.addEventListener('DOMContentLoaded', main);
 
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
 async function main() {
+
+    let scrollToTop = document.getElementById("myBtn");
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollToTop.style.display = "block";
+        } else {
+            scrollToTop.style.display = "none";
+        }
+    }
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
 
     const currentPath = window.location.pathname;
     const page = currentPath.split("/").pop() + window.location.search; 

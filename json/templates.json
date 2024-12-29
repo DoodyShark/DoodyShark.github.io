@@ -31,6 +31,23 @@
             ]
         ]
     ]],
+    "icon": [[2, 0, 1, "src"],[
+        "div",
+        {"class": "uk-width-auto"},
+        [
+            [
+                "img",
+                {
+                    "class": "uk-border-rounded uk-child-width-auto", 
+                    "width":"80", 
+                    "height":"80", 
+                    "style":"padding: 0px;", 
+                    "src": "PLACE_HERE"
+                },
+                null
+            ]
+        ]
+    ]],
     "small_icon": [[2, 0, 1, "src"],[
         "div",
         {"class": "uk-width-auto"},

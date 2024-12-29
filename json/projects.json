@@ -16,22 +16,16 @@
                     ],
                     [
                         "body", null, [
-                            ["paragraph", "Applied Internet Technologies term project", null],
-                            ["bullets", null, [
-                                    ["item", "Developed a website for building portfolio websites quickly and easily as a class project.", null],
-                                    ["item", "Utilized NextJS for both front-end and back-end development and MongoDB for database interactions.", null],
-                                    ["item", "Deployed the website on school servers.", null]
-                                ]
-                            ]
+                            ["paragraph", "Applied Internet Technologies term project. Portfolio Pier is a platform to host your own portfolio website with custom themes, webpages, and content. Users can register and login to pick their websites theme, desired webpages, and content. Once a portfolio site is created, it becomes visible for the public. Users can easily update their own pages in a process as simple as creating a social media post.", null]
                         ]
                     ],
                     [
                         "footer", null, [
                             [
                                 "embedded_link", 
-                                "https://github.com/nyu-csci-ua-0467-001-002-spring-2024/final-project-DoodyShark", 
+                                "/content.html?project=portfolio-pier", 
                                 [
-                                    ["link_text", "Github Repo", null]
+                                    ["link_text", "More Info", null]
                                 ]
                             ]
                         ]
@@ -46,21 +40,14 @@
                     ],
                     [
                         "body", null, [
-                            ["paragraph", "One of the Software Engineering assigned projects", null],
-                            ["bullets", null, [
-                                    ["item", "Created a webapp game as a final class project for software engineering.", null],
-                                    ["item", "Employed Flask for the backend, HTML/CSS for the frontend, and websockets for real-time interactions.", null],
-                                    ["item", "Deployed each subcomponent within a Docker environment and the final project on Digital Ocean.", null],
-                                    ["item", "Integrated standard software engineering tools/workflows including build tools, unit testing tools, linting tools, GitHub Actions, and published on PyPI.", null]
-                                ]
-                            ]
+                            ["paragraph", "One of the Software Engineering assigned projects", null]
                         ]
                     ],
                     [
                         "footer", null, [
                             [
                                 "embedded_link", 
-                                "https://github.com/software-students-spring2024/5-final-project-spring-2024-team-fizzbuzz-final", 
+                                "https://github.com/software-students-spring2024/5-final-project-spring-2024-team-fizzbuzz-final?tab=readme-ov-file", 
                                 [
                                     ["link_text", "Github Repo", null]
                                 ]
@@ -77,15 +64,7 @@
                     ],
                     [
                         "body", null, [
-                            ["paragraph", "Natural Language Processing course term project aimed to create a toolchain to perform I’rab, or the Arabic grammatical process of extended sequence tagging.", null],
-                            ["bullets", null, [
-                                    ["item", "Utilized state-of-the-art morphological analyzers and disambiguators (SAMA & MADAMIRA)", null],
-                                    ["item", "Implemented HMM bigram approach with post-processing to POS tag a given sentence.", null],
-                                    ["item", "Featured engineering POS-tagged sentences to extract appropriate information.", null],
-                                    ["item", "Implemented MEMMs and SVMs to produce appropriate semantic role labels for each word.", null]
-                                ]
-                            ]
-                        ]
+                            ["paragraph", "Natural Language Processing course term project aimed to create a toolchain to perform I’rab, or the Arabic grammatical process of extended sequence tagging.", null]                        ]
                     ],
                     [
                         "footer", null, [

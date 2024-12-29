@@ -1,0 +1,81 @@
+{
+    "sections": {
+        "portfolio-pier-0": {
+            "featured": false,
+            "config": {
+                "num_columns": 1,
+                "match": true
+            },
+            "content": [
+                [
+                    [
+                        "header", null, [
+                            ["icon", "./img/portfolio-pier-logo.png", null],
+                            ["title", "Portfolio Pier", null]
+                        ]
+                    ],
+                    [
+                        "body", null, [
+                            ["paragraph", "Applied Internet Technologies term project. Portfolio Pier is a platform to host your own portfolio website with custom themes, webpages, and content. Users can register and login to pick their websites theme, desired webpages, and content. Once a portfolio site is created, it becomes visible for the public. Users can easily update their own pages in a process as simple as creating a social media post.", null]
+                        ]
+                    ],
+                    [
+                        "footer", null, [
+                            [
+                                "embedded_link", 
+                                "https://github.com/nyu-csci-ua-0467-001-002-spring-2024/final-project-DoodyShark", 
+                                [
+                                    ["link_text", "Github Repo", null]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        },
+        "portfolio-pier-1": {
+            "featured": false,
+            "config": {
+                "num_columns": 2,
+                "match": true
+            },
+            "content": [
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/portfolio-pier/register.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/portfolio-pier/editsite.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/portfolio-pier/editpage.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/portfolio-pier/notloggedin.png", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "body", null, [
+                            ["image", "/img/portfolio-pier/viewpage.png", null]
+                        ]
+                    ]
+                ]
+            ]
+        }
+    }
+}

@@ -45,7 +45,7 @@ function createCard(content, templates) {
     )
 }
 
-async function generateCards(fileName, templateFile, id, filter_func) {
+async function generateCards(fileName, templateFile, id, filter_func, showSectionTitle = true) {
     
     const data = await loadFile(fileName);
     const templates = await loadFile(templateFile);
@@ -70,7 +70,7 @@ async function generateCards(fileName, templateFile, id, filter_func) {
                             "h1", 
                             {style: "padding-bottom: 0px; font-size: 25px; font-weight: 300;"},
                             [
-                                sectionTitle
+                                showSectionTitle && sectionTitle
                             ]
                         ]
                     ]
@@ -100,4 +100,3 @@ async function generateCards(fileName, templateFile, id, filter_func) {
 
     })
 }
-
