@@ -3,49 +3,49 @@
         "Polymer Clay": {
             "featured": false,
             "config": {
-                "num_columns": 2,
+                "num_columns": 3,
                 "match": true
             },
             "content": [
                 [
                     [
                         "body", null, [
-                            ["image", "/img/DoodlyFox/WalterMelon.jpg", null]
+                            ["image", "/img/DoodlyFox/birbs.jpg", null]
                         ]
                     ]
                 ],
                 [
                     [
                         "body", null, [
-                            ["image", "/img/DoodlyFox/Hakim.jpg", null]
+                            ["image", "/img/DoodlyFox/yinyang.jpg", null]
                         ]
                     ]
                 ],
                 [
                     [
                         "body", null, [
-                            ["image", "/img/DoodlyFox/Clemente.jpg", null]
+                            ["image", "/img/DoodlyFox/jirf.jpg", null]
                         ]
                     ]
                 ],
                 [
                     [
                         "body", null, [
-                            ["image", "/img/DoodlyFox/Baba.jpg", null]
+                            ["image", "/img/DoodlyFox/polabeah.jpg", null]
                         ]
                     ]
                 ],
                 [
                     [
                         "body", null, [
-                            ["image", "/img/DoodlyFox/Usagi.png", null]
+                            ["image", "/img/DoodlyFox/chemken.jpg", null]
                         ]
                     ]
                 ],
                 [
                     [
                         "body", null, [
-                            ["image", "/img/DoodlyFox/Dill.jpg", null]
+                            ["image", "/img/DoodlyFox/lapin.jpg", null]
                         ]
                     ]
                 ]

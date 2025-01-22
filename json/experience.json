@@ -10,21 +10,22 @@
                 [
                     [
                         "header", null, [
-                            ["small_icon", "./img/CAIR_logo.png", null],
+                            ["small_icon", "./img/ClinicalAILab.png", null],
                             ["title", "Research Assistant", null],
-                            ["subtitle", "Center for Artificial Intelligence & Robotics (CAIR)", null],
-                            ["date", "Feb 2024 - Present", null]
+                            ["subtitle", "Clinical Artificial Intelligence Lab", null],
+                            ["date", "Aug 2024 - Present", null]
                         ]
                     ],
                     [
                         "body", null, [
-                            ["paragraph", "Current Project: Uncertainty Quantification for Breast Cancer Diagnosis & Prognosis", null],
-                            ["paragraph", "Completed Project: Single-Grid Hand Gesture Recognition Leveraging Agonistic-Antagonistic Coactivation", null],
+                            ["paragraph", "Funded by the Center for Artificial Intelligence and Robotics (CAIR).", null],
                             ["bullets", null, [
-                                    ["item", "Designed & trained sEMG-based hand gesture classification models with 95% accuracy.", null],
-                                    ["item", "Utilized XAI visualization techniques to identify important channels contributing to model predictions.", null],
-                                    ["item", "Conducted ablation studies to evaluate the impact of dropping specific channels on model performance.", null],
-                                    ["item", "Co-first authored paper currently in process to be reviewed for IEEE RA-L journal.", null]
+                                    ["item", "Reviewed, & extracted 20 papers on Covidence to co-author a research proposal, identifying major gaps in Uncertainty Quantification (UQ) for multimodal & cost-sensitive feature acquisition for BC diagnosis.", null],
+                                    ["item", "Attended reading groups to discuss state-of-the-art (SOTA) research", null],
+                                    ["item", "Moderated roundtable discussions with clinicians and AI experts during the Clinical AI Bootcamp to align research objectives with clinical practices and needs.", null],
+                                    ["item", "Conducting an ongoing review, with 70 papers reviewed and extracted on Covidence so far.", null],
+                                    ["item", "Working with a PhD student to compile review findings in a forthcoming paper in npj Digital Medicine.", null],
+                                    ["item", "Translating existing models into JAX implementations to integrate UQ techniques.", null]
                                 ]
                             ]
                         ]
@@ -33,14 +34,22 @@
                 [
                     [
                         "header", null, [
-                            ["title", "Computer Engineering Member", null],
-                            ["subtitle", "Team Triton", null],
-                            ["date", "Sept 2024 - Present", null]
+                            ["small_icon", "./img/MERITTLogo.png", null],
+                            ["title", "Research Assistant", null],
+                            ["subtitle", "Medical Robotics and Interactive Intelligent Technologies Lab", null],
+                            ["date", "Feb 2024 - Aug 2024", null]
                         ]
                     ],
                     [
                         "body", null, [
-                            ["paragraph", "To Be Updated...", null]
+                            ["paragraph", "Funded by the Center for Artificial Intelligence and Robotics (CAIR).", null],
+                            ["bullets", null, [
+                                    ["item", "Co-first authored a research paper ready for submission to IEEE RA-L.", null],
+                                    ["item", "Reviewed & Extracted around 20 papers to co-author a proposal, identifying agonist-antagonist coactivation as an untapped source of redundancy for electrode dropping in sEMG-based hand gesture recognition tasks.", null],
+                                    ["item", "Experimented iteratively on the High Performance Cluster (HPC) with evolving architectures and XAI tools.", null],
+                                    ["item", "Achieved SOTA performance (90% balanced accuracy) after reducing both architecture size and data requirements by 50%.", null]
+                                ]
+                            ]
                         ]
                     ]
                 ]
@@ -57,26 +66,6 @@
                 [
                     [
                         "header", null, [
-                            ["small_icon", "./img/nyuadspace.png", null],
-                            ["title", "Research Assistant", null],
-                            ["subtitle", "nyuad.space", null],
-                            ["date", "August 2022 - June 2023", null]
-                        ]
-                    ],
-                    [
-                        "body", null, [
-                            ["bullets", null, [
-                                    ["item", "Designed & Implemented a full-stack application for custom rehabilitative system", null],
-                                    ["item", "Developed & tested a set of occupational therapy games aimed at post-stroke patients according to established procedures with advice from physicians at Cleveland Clinic Abu Dhabi", null],
-                                    ["item", "Modified the games to assist children in acquiring handwriting skills with advice from education professionals at Cranleigh Schools Abu Dhabi", null]
-                                ]
-                            ]
-                        ]
-                    ]
-                ],
-                [
-                    [
-                        "header", null, [
                             ["small_icon", "./img/AIM.jpg", null],
                             ["title", "Research Assistant", null],
                             ["subtitle", "Applied Interactive Multimedia (AIM)", null],
@@ -86,9 +75,8 @@
                     [
                         "body", null, [
                             ["bullets", null, [
-                                    ["item", "Designed & Implemented a full-stack application for custom rehabilitative system", null],
-                                    ["item", "Developed & tested a set of occupational therapy games aimed at post-stroke patients according to established procedures with advice from physicians at Cleveland Clinic Abu Dhabi", null],
-                                    ["item", "Modified the games to assist children in acquiring handwriting skills with advice from education professionals at Cranleigh Schools Abu Dhabi", null]
+                                    ["item", "Developed rehabilitation tasks using kinesthetic feedback via under-screen magnets to aid post-stroke recovery, in collaboration with Cleveland Clinic Abu Dhabi physicians", null],
+                                    ["item", "Designed and developed serious games to help children develop handwriting skills, with input from education professionals at Cranleigh School Abu Dhabi", null]
                                 ]
                             ]
                         ]

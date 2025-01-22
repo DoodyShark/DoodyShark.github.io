@@ -8,7 +8,8 @@
         "Home": "DoodlyFox.html?type=home",
         "Illustrations": "DoodlyFox.html?type=illustrations",
         "Paintings": "DoodlyFox.html?type=paintings",
-        "Sculptures": "DoodlyFox.html?type=sculptures"
+        "Sculptures": "DoodlyFox.html?type=sculptures",
+        "Sewing": "DoodlyFox.html?type=sewing"
     },
     "imgs_right": [
     ]

@@ -20,7 +20,16 @@
                             ["image", "/img/DoodlyFox/pauline.jpg", null]
                         ]
                     ]
-                ],
+                ]
+            ]
+        },
+        "Acrylic": {
+            "featured": false,
+            "config": {
+                "num_columns": 1,
+                "match": true
+            },
+            "content": [
                 [
                     [
                         "body", null, [

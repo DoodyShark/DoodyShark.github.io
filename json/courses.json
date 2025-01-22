@@ -10,7 +10,53 @@
                 [
                     [
                         "header", null, [
-                            ["title", "Senior Capstone Design Project", null]
+                            ["title", "Senior Capstone Design Project II", null]
+                        ]
+                    ],
+                    [
+                        "footer", null, [
+                            ["date", "Spring 2025", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Systems Security", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Spring 2025", null]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "header", null,  [
+                            ["title", "Introduction to Modern Arabic Literature", null]
+                        ]
+                    ],
+                    [
+                        "footer", null,  [
+                            ["date", "Spring 2025", null]
+                        ]
+                    ]
+                ]
+            ]
+        },
+        "Past Courses": {
+            "featured": false,
+            "config": {
+                "num_columns": 3,
+                "match": true
+
+            },
+            "content": [
+                [
+                    [
+                        "header", null, [
+                            ["title", "Senior Capstone Design Project I", null]
                         ]
                     ],
                     [
@@ -54,17 +100,7 @@
                             ["date", "Fall 2024", null]
                         ]
                     ]
-                ]
-            ]
-        },
-        "Past Courses": {
-            "featured": false,
-            "config": {
-                "num_columns": 3,
-                "match": true
-
-            },
-            "content": [
+                ],
                 [
                     [
                         "header", null,  [
