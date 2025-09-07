@@ -4,7 +4,8 @@
             "featured": false,
             "config": {
                 "num_columns": 1,
-                "match": true
+                "match": true,
+                "show_section_title": false
             },
             "content": [
                 [
@@ -37,7 +38,8 @@
             "featured": false,
             "config": {
                 "num_columns": 2,
-                "match": true
+                "match": true,
+                "show_section_title": false
             },
             "content": [
                 [

@@ -65,6 +65,23 @@
             ]
         ]
     ]],
+    "borderless_small_icon": [[2, 0, 1, "src"],[
+        "div",
+        {"class": "uk-width-auto"},
+        [
+            [
+                "img",
+                {
+                    "class": "uk-border-rounded uk-child-width-auto", 
+                    "width":"80", 
+                    "height":"80", 
+                    "style":"", 
+                    "src": "PLACE_HERE"
+                },
+                null
+            ]
+        ]
+    ]],
     "round_icon": [[2, 0, 1, "src"],[
         "div",
         {"class": "uk-width-auto"},

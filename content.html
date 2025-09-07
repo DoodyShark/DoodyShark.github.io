@@ -29,21 +29,19 @@
                         const templateFile = `./json/templates.json`;
 
                         let filterFunc, contentFile;
-                        let showSectionTitle = true;
 
                         if (currentProject) {
                             console.log(currentProject)
                             contentFile = `./json/detailed.json`;
                             filterFunc = (section) => {return section[0].includes(currentProject)};
                             
-                            showSectionTitle = false;
                         }
                         else {
                             contentFile = `./json/${currentPage}.json`;
                             filterFunc = (...arr) => {return true};
                         }
 
-                        generateCards(contentFile, templateFile, "#contentArea", filterFunc, showSectionTitle);
+                        generateCards(contentFile, templateFile, "#contentArea", filterFunc);
                     </script>
                     
                     <!-- Content -->

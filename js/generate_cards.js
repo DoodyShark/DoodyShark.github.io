@@ -45,7 +45,7 @@ function createCard(content, templates) {
     )
 }
 
-async function generateCards(fileName, templateFile, id, filter_func, showSectionTitle = true) {
+async function generateCards(fileName, templateFile, id, filter_func, force_show_title = false) {
     
     const data = await loadFile(fileName);
     const templates = await loadFile(templateFile);
@@ -55,7 +55,7 @@ async function generateCards(fileName, templateFile, id, filter_func, showSectio
     const contentArea = document.querySelector(id);
 
     Object.entries(sections).filter(filter_func).forEach(([sectionTitle, section]) => {
-        console.log(sectionTitle);
+        // console.log(sectionTitle);
         const config = section.config;
         const content = section.content;
 
@@ -70,7 +70,7 @@ async function generateCards(fileName, templateFile, id, filter_func, showSectio
                             "h1", 
                             {style: "padding-bottom: 0px; font-size: 25px; font-weight: 300;"},
                             [
-                                showSectionTitle && sectionTitle
+                                (force_show_title || section.config["show_section_title"]) && sectionTitle
                             ]
                         ]
                     ]

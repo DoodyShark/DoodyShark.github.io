@@ -1,10 +1,11 @@
 {
     "sections": {
-        "Polymer Clay": {
+        "Sewing": {
             "featured": false,
             "config": {
                 "num_columns": 3,
-                "match": true
+                "match": true,
+                "show_section_title": true
             },
             "content": [
                 [

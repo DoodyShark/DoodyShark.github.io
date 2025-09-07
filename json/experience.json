@@ -4,7 +4,8 @@
             "featured": true,
             "config": {
                 "num_columns": 1,
-                "match": true
+                "match": true,
+                "show_section_title": true
             },
             "content": [
                 [
@@ -12,7 +13,14 @@
                         "header", null, [
                             ["small_icon", "./img/ClinicalAILab.png", null],
                             ["title", "Research Assistant", null],
-                            ["subtitle", "Clinical Artificial Intelligence Lab", null],
+                            [
+                                "embedded_link", 
+                                "https://clinicalailab.com/", 
+                                [
+                                    ["link_text", "Clinical Artificial Intelligence Lab", null]
+                                ]
+                            ]
+                            ,
                             ["date", "Aug 2024 - Present", null]
                         ]
                     ],
@@ -36,7 +44,13 @@
                         "header", null, [
                             ["small_icon", "./img/MERITTLogo.png", null],
                             ["title", "Research Assistant", null],
-                            ["subtitle", "Medical Robotics and Interactive Intelligent Technologies Lab", null],
+                            [
+                                "embedded_link", 
+                                "https://wp.nyu.edu/meriit/", 
+                                [
+                                    ["link_text", "Medical Robotics and Interactive Intelligent Technologies Lab", null]
+                                ]
+                            ],
                             ["date", "Feb 2024 - Aug 2024", null]
                         ]
                     ],
@@ -59,7 +73,8 @@
             "featured": false,
             "config": {
                 "num_columns": 2,
-                "match": true
+                "match": true,
+                "show_section_title": true
 
             },
             "content": [
@@ -68,7 +83,14 @@
                         "header", null, [
                             ["small_icon", "./img/AIM.jpg", null],
                             ["title", "Research Assistant", null],
-                            ["subtitle", "Applied Interactive Multimedia (AIM)", null],
+                            ["subtitle", "", null],
+                            [
+                                "embedded_link", 
+                                "https://aimlab-haptics.com/", 
+                                [
+                                    ["link_text", "Applied Interactive Multimedia Lab", null]
+                                ]
+                            ],
                             ["date", "Feb 2022 - July 2022", null]
                         ]
                     ],
