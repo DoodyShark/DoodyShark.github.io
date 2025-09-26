@@ -6,6 +6,7 @@ import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
 
 import { useTranslations } from "next-intl";
+import Navbar from "@/components/Navbar";
 
 type Slide = {
   title: string;
@@ -41,7 +42,6 @@ export default function Home() {
 
   return (
     <>
-
       {/* Section header */}
       <div className="text-center mb-8">
         <Image
