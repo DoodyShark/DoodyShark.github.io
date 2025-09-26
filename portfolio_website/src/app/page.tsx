@@ -2,11 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import ThemeToggle from "@/components/ThemeToggle";
-
-import { useTranslations } from "next-intl";
-import Navbar from "@/components/Navbar";
 
 type Slide = {
   title: string;
@@ -15,33 +10,53 @@ type Slide = {
   link: string;
 };
 
-
 const slides: Slide[] = [
   {
-    title: "art",
-    img: "/art.png",
+    title: "personal",
+    img: "/personal.jpg",
     logo: "/DoodlyFox.png",
     link: "/art",
   },
   {
     title: "career",
-    img: "/career.png",
+    img: "/career.jpg",
     logo: "/DoodyShark.png",
     link: "/career",
   },
-  {
-    title: "food",
-    img: "/food.png",
-    logo: "/FoodieFrog.png",
-    link: "/food",
-  },
+  // {
+  //   title: "food",
+  //   img: "/food.png",
+  //   logo: "/FoodieFrog.png",
+  //   link: "/food",
+  // },
 ];
 
 export default function Home() {
   const [active, setActive] = useState(1);
 
+  const prevSlide = () => setActive((p) => (p === 0 ? slides.length - 1 : p - 1));
+  const nextSlide = () => setActive((p) => (p === slides.length - 1 ? 0 : p + 1));
+
+  // Touch/swipe support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX = e.changedTouches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    touchEndX = e.changedTouches[0].clientX;
+    if (touchStartX - touchEndX > 50) {
+      nextSlide(); // swipe left
+    }
+    if (touchEndX - touchStartX > 50) {
+      prevSlide(); // swipe right
+    }
+  };
+
   return (
-    <>
+    <div className="flex flex-col items-center">
       {/* Section header */}
       <div className="text-center mb-8">
         <Image
@@ -49,34 +64,46 @@ export default function Home() {
           alt={`${slides[active].title} logo`}
           width={60}
           height={60}
-          className="mx-auto mb-3"
+          className="mx-auto mb-3 rounded-full shadow-2xl"
         />
         <h2 className="text-2xl font-semibold">{slides[active].title}</h2>
       </div>
 
-      {/* Slider */}
-      <div className="flex items-center justify-center gap-6 h-[60vh]">
-        {slides.map((slide, i) => (
-          <div
-            key={i}
-            className={`transition-all duration-500 cursor-pointer ${
-              i === active
-                ? "opacity-100 blur-0 scale-100"
-                : "opacity-50 blur-sm scale-95"
-            }`}
-            onClick={() =>
-              i === active ? (window.location.href = slide.link) : setActive(i)
-            }
-          >
-            <Image
-              src={slide.img}
-              alt={slide.title}
-              width={300}
-              height={400}
-              className="object-contain"
-            />
-          </div>
-        ))}
+      {/* Slider with arrows beside */}
+      <div
+        className="flex items-center justify-center gap-4 h-[60vh] w-full max-w-xl"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
+        {/* Left arrow */}
+        <button
+          onClick={prevSlide}
+          className="items-center border solid rounded-full p-2 text-2xl text-gray-700 dark:text-gray-300 hover:bg-gray-200 hover:dark:bg-gray-900"
+        >
+          ←
+        </button>
+
+        {/* Active slide */}
+        <div
+          className="cursor-pointer"
+          onClick={() => (window.location.href = slides[active].link)}
+        >
+          <Image
+            src={slides[active].img}
+            alt={slides[active].title}
+            width={300}
+            height={400}
+            className="p-3 bg-black dark:bg-white object-contain cursor-pointer transition-shadow duration-300 ease-in-out shadow-l hover:shadow-slate-700 hover:shadow-2xl rounded-full"
+          />
+        </div>
+
+        {/* Right arrow */}
+        <button
+          onClick={nextSlide}
+          className="items-center border solid rounded-full p-2 text-2xl text-gray-700 dark:text-gray-300 hover:bg-gray-200 hover:dark:bg-gray-900"
+        >
+          →
+        </button>
       </div>
 
       {/* Dots */}
@@ -86,11 +113,11 @@ export default function Home() {
             key={i}
             onClick={() => setActive(i)}
             className={`w-3 h-3 rounded-full cursor-pointer transition-colors ${
-              i === active ? "bg-gray-800" : "bg-gray-400"
+              i === active ? "bg-gray-800 dark:bg-white" : "bg-gray-400"
             }`}
           />
         ))}
       </div>
-    </>
+    </div>
   );
 }

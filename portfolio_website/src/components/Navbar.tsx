@@ -5,11 +5,16 @@ import { usePathname, useRouter } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
 import LanguageToggle from "./LanguageToggle";
 import { useNav } from "@/context/NavContext";
+import Image from "next/image";
+import { useTheme } from "next-themes";
+
+
 
 export default function Navbar() {
   const { navItems, setNavItems } = useNav();
   const pathname = usePathname();
   const router = useRouter();
+  const {theme} = useTheme();
 
   const handleHomeClick = () => {
     setNavItems([]); // clear items
@@ -17,17 +22,25 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="flex justify-between items-center px-6 py-4 bg-gray-900 text-white shadow-md w-full">
+    <nav className="flex justify-between items-center px-4 py-3 bg-gray-600 dark:bg-gray-500 text-white shadow-2xl w-full transition-colors duration-500 ease-in-out;">
       {/* Left side: Home + nav items */}
       <div className="flex items-center space-x-6">
         {/* Home button */}
         <button
           onClick={handleHomeClick}
-          className={`ml-4 p-2 rounded transition-colors bg-gray-200 dark:bg-blue-700 font-semibold transition-colors ${
+          className={`rounded transition-colors font-semibold transition-colors ${
             pathname === "/" ? "text-gray-50" : "hover:text-gray-300"
           }`}
         >
-          Home
+          <Image
+            suppressHydrationWarning
+            src={'/white_home.png'} 
+            // src={theme === "dark"? '/black_home.png': '/white_home.png'} 
+            alt={'Back to home button'}
+            width={30}
+            height={30}
+            className="mx-auto mb-3"
+          />
         </button>
 
         {/* Section nav items */}
@@ -38,7 +51,7 @@ export default function Navbar() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`transition-colors ${
+                  className={`transition-colors duration-100 ease-in-out; ${
                     isActive
                       ? "text-blue-400 underline"
                       : "hover:text-gray-300"

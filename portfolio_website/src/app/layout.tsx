@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body className="transition-colors duration-500 ease-in-out bg-gray-100 dark:bg-gray-700">
         <Providers>
           <NavProvider>
             <header>

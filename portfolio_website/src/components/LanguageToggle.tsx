@@ -14,7 +14,7 @@ export default function LanguageToggle() {
   return (
     <button
       onClick={switchLang}
-      className="px-3 py-1 rounded bg-gray-200 dark:bg-gray-700"
+      className="px-3 py-1 rounded text-white"
     >
       {locale === "en" ? "AR" : "EN"}
     </button>

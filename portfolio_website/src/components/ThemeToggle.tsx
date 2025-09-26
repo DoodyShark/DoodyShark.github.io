@@ -14,7 +14,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="ml-4 p-2 rounded transition-colors bg-gray-200 dark:bg-gray-700"
+      className="ml-4 p-2 rounded text-xl"
     >
       {theme === "light" ? "🌞" : "🌙"}
     </button>
