@@ -29,7 +29,7 @@ export default function MarkdownCards({ folder }: { folder: string }) {
       {cards.map((card, i) => (
         <Link
           key={i}
-          href={`/career/blog/read?path=${encodeURIComponent(card.link)}`}
+          href={`/career/blog/${encodeURIComponent(card.link.split("/")[0])}`}
           className="bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
         >
           <div className="relative w-full h-48">
