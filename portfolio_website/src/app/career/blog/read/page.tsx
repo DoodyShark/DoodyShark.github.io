@@ -7,6 +7,7 @@ export default function BlogReadPage() {
   const searchParams = useSearchParams();
   const postSlug = searchParams.get("post");
   const [content, setContent] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!postSlug) return;
@@ -16,16 +17,17 @@ export default function BlogReadPage() {
         if (!res.ok) throw new Error("Markdown not found");
         return res.text();
       })
-      .then(setContent)
-      .catch(() => setContent("Markdown file not found."));
+      .then((text) => setContent(text))
+      .catch(() => setContent("Markdown file not found."))
+      .finally(() => setLoading(false));
   }, [postSlug]);
 
   if (!postSlug) return <p>No post specified.</p>;
-  if (!content) return <p>Loading...</p>;
+  if (loading) return <p>Loading...</p>;
 
   return (
     <div className="p-6">
-      <MarkdownRenderer content={content} />
+      <MarkdownRenderer content={content!} />
     </div>
   );
 }
