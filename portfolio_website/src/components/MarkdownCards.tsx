@@ -1,35 +1,37 @@
-// src/components/BlogCards.tsx
-import fs from "fs";
-import path from "path";
+"use client";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 type CardData = {
+  slug: string;
   title: string;
   image: string;
   description: string;
-  link: string; // relative path to md file
 };
 
-export default function MarkdownCards({ folder }: { folder: string }) {
-  const postsDir = path.join(process.cwd(), folder);
-  const postFolders = fs.readdirSync(postsDir);
+export default function MarkdownCards({ file, href_path }: { file: string , href_path: string}) {
+  const [cards, setCards] = useState<CardData[]>([]);
 
-  const cards: CardData[] = postFolders
-    .map((postFolder) => {
-      const cardPath = path.join(postsDir, postFolder, "card.json");
-      if (!fs.existsSync(cardPath)) return null;
-      const fileContent = fs.readFileSync(cardPath, "utf-8");
-      return JSON.parse(fileContent) as CardData;
-    })
-    .filter(Boolean) as CardData[];
+  useEffect(() => {
+    async function loadCards() {
+      console.log(`fetching from /json/${file}`)
+      const res = await fetch(`/json/${file}`);
+      console.log(res)
+      const data: CardData[] = await res.json();
+      setCards(data);
+    }
+    loadCards();
+  }, []);
+
+  if (!cards.length) return <p>Loading...</p>;
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {cards.map((card, i) => (
+      {cards.map((card) => (
         <Link
-          key={i}
-          href={`/career/blog/${encodeURIComponent(card.link.split("/")[0])}`}
+          key={card.slug}
+          href={`${href_path}?post=${encodeURIComponent(card.slug)}`}
           className="bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
         >
           <div className="relative w-full h-48">
