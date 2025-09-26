@@ -2,10 +2,10 @@ import fs from "fs";
 import path from "path";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 
-// No change to generateStaticParams()
 export async function generateStaticParams() {
   const postsDir = path.join(process.cwd(), "src/md/blog");
 
+  // Get all folder names
   const folders = fs.readdirSync(postsDir, { withFileTypes: true })
     .filter((f) => f.isDirectory())
     .map((f) => f.name);
@@ -13,10 +13,9 @@ export async function generateStaticParams() {
   return folders.map((slug) => ({ slug }));
 }
 
-// Mark page as async
-export default async function BlogReadPage({ params }: { params: { slug: string } }) {
-  // Await params
-  const { slug: folderName } = await params;
+// Synchronous page for static export
+export default function BlogReadPage({ params }: { params: { slug: string } }) {
+  const folderName = params.slug; // no await
 
   const postsDir = path.join(process.cwd(), "src/md/blog", folderName);
 
