@@ -39,16 +39,19 @@ export default function MarkdownCards({ file, href_path, row_width }: { file: st
               <div className={`relative w-50 h-50 sm:w-60 sm:h-60 ${row_width === 1? "lg:w-120 lg:h-120": "lg:w-70 lg:h-70"}`}>
                   <Image
                     src={card.image}
-                    alt={card.title}
+                    alt={card.title || card.slug}
                     fill
                     className="object-cover"
                   />
               </div>
             }
-          <div className="p-4">
-            {card.title !== "" && <h2 className="text-gray-200 text-xl font-semibold mb-2">{card.title}</h2>}
-            {card.description !== "" && <p className="text-gray-400 dark:text-gray-200 text-sm">{card.description}</p>}
-          </div>
+          {
+            (card.title !== "" || card.description !== "") &&
+            (<div className="p-4">
+              {card.title !== "" && <h2 className="text-gray-200 text-xl font-semibold mb-2">{card.title}</h2>}
+              {card.description !== "" && <p className="text-gray-400 dark:text-gray-200 text-sm">{card.description}</p>}
+            </div>)
+          }
         </Link>
       ))}
     </div>

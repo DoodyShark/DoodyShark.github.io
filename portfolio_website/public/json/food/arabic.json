@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "post1",
+    "title": "This is my recipe",
+    "description": "",
+    "image": "/career.jpg",
+    "linked": true
+  },
+  {
+    "slug": "post2",
+    "title": "This is my recipe",
+    "description": "",
+    "image": "/career.jpg",
+    "linked": false
+  },
+  {
+    "slug": "post3",
+    "title": "This is my recipe",
+    "description": "",
+    "image": "/career.jpg",
+    "linked": false
+  }
+]

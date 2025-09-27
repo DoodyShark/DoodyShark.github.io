@@ -2,15 +2,6 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-  --color-bgContrast: #f9f9f9;
-}
-
-@layer theme {
-  .dark {
-    --color-bgContrast: #66C8B6;
-  }
-}
 
 html, body {
   overflow-x: hidden;

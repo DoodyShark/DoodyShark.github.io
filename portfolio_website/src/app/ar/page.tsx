@@ -6,13 +6,14 @@ import Image from "next/image";
 type Slide = {
   title: string;
   img: string;
+  img2: string;
   logo: string;
   link: string;
 };
 
 const slides: Slide[] = [
-  { title: "مسيرتي", img: "/career.jpg", logo: "/DoodyShark.png", link: "/ar/career" },
-  { title: "موقعي الشخصي", img: "/personal.jpg", logo: "/DoodlyFox.png", link: "/ar/art" },
+  { title: "مسيرتي", img: "/career.jpg",  img2: "/career2.jpg", logo: "/DoodyShark.png", link: "/ar/career" },
+  { title: "موقعي الشخصي", img: "/personal.jpg",  img2: "/personal2.jpg", logo: "/DoodlyFox.png", link: "/ar/art" },
 ];
 
 export default function HomeCarousel() {
@@ -142,6 +143,7 @@ export default function HomeCarousel() {
           height={60}
           className="mx-auto mb-3 rounded-full shadow-2xl"
         />
+
         <h2 className="text-2xl font-semibold">{slides[activeIndex].title}</h2>
       </div>
 
@@ -178,9 +180,31 @@ export default function HomeCarousel() {
                   src={slide.img}
                   alt={slide.title}
                   fill
-                  className="dark:bg-white object-contain cursor-pointer transition-shadow duration-300 ease-in-out shadow-lg hover:shadow-slate-700 hover:dark:shadow-black rounded-3xl"
+                  className="object-cover dark:bg-white transition-opacity duration-300 hover:opacity-0 object-contain cursor-pointer transition-shadow duration-300 ease-in-out shadow-lg hover:shadow-slate-700 hover:dark:shadow-black rounded-3xl"
                   sizes="(max-width: 500px) 200px, 400px"
                 />
+                <Image
+                  src={slide.img2}
+                  alt={slide.title}
+                  fill
+                  className="object-cover dark:bg-white opacity-0 transition-opacity duration-300 hover:opacity-100 object-contain cursor-pointer transition-shadow duration-300 ease-in-out shadow-lg hover:shadow-slate-700 hover:dark:shadow-black rounded-3xl"
+                  sizes="(max-width: 500px) 200px, 400px"
+                />
+                
+        {/* <div className="sm:hidden items-center relative w-48 h-64 mt-6 md:mt-0">
+          <Image
+            src="/me1.png" // first image
+            alt="Profile photo"
+            fill
+            className="object-cover rounded-lg transition-opacity duration-300 hover:opacity-0"
+          />
+          <Image
+            src="/me2.png" // second image
+            alt="Profile hover photo"
+            fill
+            className="object-cover rounded-lg opacity-0 transition-opacity duration-300 hover:opacity-100"
+          />
+        </div> */}
               </div>
 
             </div>
