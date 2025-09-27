@@ -21,7 +21,7 @@ It supports *italic*, **bold**, and `inline code`.
 
 Here’s a [link to GitHub](https://github.com).  
 
-![Placeholder image](https://doodyshark.github.io/art.png)
+![Placeholder image](https://doodyshark.github.io/personal.png)
 
 ---
 

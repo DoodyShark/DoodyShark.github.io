@@ -8,21 +8,40 @@ export default function CareerAboutPage() {
       {/* Intro Section */}
       <section className="flex flex-col md:flex-row md:space-x-8 items-start">
         {/* Text */}
+
         <div className="flex-1 space-y-4">
-          <h1 className="text-4xl font-bold">Your Name</h1>
-          <p className="text-lg text-gray-300">
+          <h1 className="text-4xl font-bold">Dhiyaa Al Jorf</h1>
+
+          {/* Photo with hover swap */}
+        <div className="sm:hidden items-center relative w-48 h-64 mt-6 md:mt-0">
+          <Image
+            src="/me1.png" // first image
+            alt="Profile photo"
+            fill
+            className="object-cover rounded-lg transition-opacity duration-300 hover:opacity-0"
+          />
+          <Image
+            src="/me2.png" // second image
+            alt="Profile hover photo"
+            fill
+            className="object-cover rounded-lg opacity-0 transition-opacity duration-300 hover:opacity-100"
+          />
+        </div>
+          <span className="transition-colors text-gray-600 dark:text-gray-300">
+          <p className="text-lg">
             Short professional intro — e.g. your current role, research focus, or
             what you’re passionate about. Expand with a couple of sentences like
             in your screenshot.
           </p>
-          <p className="text-gray-400">
+          <p className="mt-5">
             Add more detail about your research/work areas. Maybe 2–3 bullet
             points or short paragraphs summarizing your focus.
           </p>
+          </span>
         </div>
 
         {/* Photo with hover swap */}
-        <div className="relative w-48 h-64 mt-6 md:mt-0">
+        <div className="hidden sm:block relative w-48 h-64 mt-6 md:mt-0">
           <Image
             src="/me1.png" // first image
             alt="Profile photo"

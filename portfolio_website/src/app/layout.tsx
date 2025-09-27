@@ -14,6 +14,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+        />
+      </head>
+
       <body className="transition-colors duration-500 ease-in-out bg-gray-100 dark:bg-gray-700">
         <Providers>
           <NavProvider>

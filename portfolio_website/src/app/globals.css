@@ -11,3 +11,8 @@
     --color-bgContrast: #66C8B6;
   }
 }
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
