@@ -18,12 +18,11 @@ export default function MarkdownCards({ file, href_path, row_width }: { file: st
     async function loadCards() {
       console.log(`fetching from /json/${file}`)
       const res = await fetch(`/json/${file}`);
-      console.log(res)
       const data: CardData[] = await res.json();
       setCards(data);
     }
     loadCards();
-  }, []);
+  }, [file]); // <-- add file here
 
   if (!cards.length) return <p>Loading...</p>;
 

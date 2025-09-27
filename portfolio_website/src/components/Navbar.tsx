@@ -6,7 +6,6 @@ import ThemeToggle from "./ThemeToggle";
 import LanguageToggle from "./LanguageToggle";
 import { useNav } from "@/context/NavContext";
 import Image from "next/image";
-import { useTheme } from "next-themes";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 

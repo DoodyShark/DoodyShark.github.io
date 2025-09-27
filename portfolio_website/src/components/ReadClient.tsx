@@ -22,7 +22,7 @@ export default function ReadClient({ md_path }: { md_path: string}) {
       .then((text) => setContent(text))
       .catch(() => setContent("Markdown file not found."))
       .finally(() => setLoading(false));
-  }, [postSlug]);
+  }, [postSlug, md_path]); // <--- add md_path here
 
   if (!postSlug) return <p>No post specified.</p>;
   if (loading) return <p>Loading...</p>;

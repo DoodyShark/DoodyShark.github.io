@@ -104,7 +104,10 @@ export default function HomeCarousel() {
       const width = rowRef.current.clientWidth / (n + 2); // width of one slide frame
       const baseTranslate = -internalIndex * 100;
       const offsetPercent = (touchDeltaRef.current / width) * 100;
-      (rowRef.current.style as any).transform = `translateX(${baseTranslate + offsetPercent}%)`;
+      if (rowRef.current) {
+        const style = rowRef.current.style; // CSSStyleDeclaration
+        style.transform = `translateX(${baseTranslate + offsetPercent}%)`;
+      }    
     }
   };
 
