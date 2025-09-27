@@ -14,7 +14,6 @@ export default function Navbar() {
   const { navItems, setNavItems } = useNav();
   const pathname = usePathname();
   const router = useRouter();
-  const { theme } = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleHomeClick = () => {

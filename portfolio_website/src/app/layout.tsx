@@ -2,7 +2,7 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
-import { NavProvider, useNav } from "@/context/NavContext";
+import { NavProvider } from "@/context/NavContext";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

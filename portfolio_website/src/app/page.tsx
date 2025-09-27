@@ -28,9 +28,6 @@ export default function HomeCarousel() {
   // For rendering the "active slide" index for UI (0..n-1)
   const activeIndex = ((internalIndex - 1) % n + n) % n;
 
-  // Transition duration in ms (used for timing manual jump)
-  const TRANS_MS = 500;
-
   // Move to next / prev with animation
   const next = () => {
     setTransitionEnabled(true);
