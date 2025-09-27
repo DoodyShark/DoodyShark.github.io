@@ -27,7 +27,7 @@ export default function MarkdownCards({ file, href_path, row_width }: { file: st
   if (!cards.length) return <p>Loading...</p>;
 
   return (
-    <div className={`grid grid-cols-1 sm:grid-cols-${(row_width < 2)? row_width:2} lg:grid-cols-${(row_width < 3)? row_width:3} gap-6`}>
+    <div className={`grid grid-cols-1 ${(row_width < 2)? `sm:grid-cols-${row_width}`: "sm:grid-cols-2"} ${(row_width < 3)? `lg:grid-cols-${row_width}`: "lg:grid-cols-3"} gap-6`}>
       {cards.map((card) => (
         <Link
           key={card.slug}

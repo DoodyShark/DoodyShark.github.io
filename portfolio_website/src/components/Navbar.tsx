@@ -11,27 +11,26 @@ import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const { navItems, setNavItems } = useNav();
-  const pathname = usePathname();
+  const pathname = usePathname() || "/";
   const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  const isArabic = pathname.startsWith("/ar");
+
   const handleHomeClick = () => {
     setNavItems([]); // clear items
-    router.push("/"); // navigate to home
+    router.push(isArabic ? "/ar" : "/"); // navigate to home in current language
   };
 
   return (
-    <nav className="bg-gray-600 p-2 dark:bg-gray-500 text-white shadow-2xl w-full transition-colors duration-500 ease-in-out">
+    <nav className={`bg-gray-600 p-2 dark:bg-gray-500 text-white shadow-2xl w-full transition-colors duration-500 ease-in-out ${isArabic ? "rtl" : "ltr"}`}>
       {/* Top row */}
-      <div className="flex justify-between items-center px-4 py-3">
-        {/* Left side */}
-        <div className="flex items-center space-x-6">
-          {/* Home button */}
+      <div className={`flex justify-between items-center px-4 py-3 ${isArabic ? "flex-row-reverse" : ""}`}>
+        {/* Left/Right side */}
+        <div className={`flex items-center ${isArabic ? "space-x-reverse" : ""} space-x-6 ${isArabic ? "flex-row-reverse" : ""}`}>
           <button
             onClick={handleHomeClick}
-            className={`rounded font-semibold ${
-              pathname === "/" ? "text-gray-50" : "hover:text-gray-300"
-            }`}
+            className={`rounded font-semibold ${pathname === (isArabic ? "/ar" : "/") ? "text-gray-50" : "hover:text-gray-300"}`}
           >
             <Image
               suppressHydrationWarning
@@ -44,18 +43,14 @@ export default function Navbar() {
           </button>
 
           {/* Desktop nav items */}
-          <ul className="hidden md:flex space-x-6">
+          <ul className={`hidden md:flex space-x-6 ${isArabic ? "flex-row-reverse" : ""}`}>
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`transition-colors duration-100 ease-in-out ${
-                      isActive
-                        ? "text-blue-400 underline"
-                        : "hover:text-gray-300"
-                    }`}
+                    className={`transition-colors duration-100 ease-in-out ${isActive ? "text-blue-400 underline" : "hover:text-gray-300"}`}
                   >
                     {item.label}
                   </Link>
@@ -65,8 +60,8 @@ export default function Navbar() {
           </ul>
         </div>
 
-        {/* Right side */}
-        <div className="flex items-center space-x-3">
+        {/* Right/Left side */}
+        <div className={`flex items-center ${isArabic ? "space-x-reverse" : "space-x-3"}   ${isArabic ? "flex-row-reverse" : ""}`}>
           <LanguageToggle />
           <ThemeToggle />
           {/* Mobile menu button */}
@@ -81,7 +76,7 @@ export default function Navbar() {
 
       {/* Mobile dropdown – pushes content down */}
       {mobileOpen && (
-        <div className="flex flex-col items-start px-4 pb-4 space-y-3 md:hidden">
+        <div className={`flex flex-col items-start px-4 pb-4 space-y-3 md:hidden ${isArabic ? "text-right" : "text-left"}`}>
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
@@ -89,9 +84,7 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
-                className={`w-full text-left transition-colors ${
-                  isActive ? "text-blue-400 underline" : "hover:text-gray-300"
-                }`}
+                className={`w-full transition-colors ${isActive ? "text-blue-400 underline" : "hover:text-gray-300"}`}
               >
                 {item.label}
               </Link>

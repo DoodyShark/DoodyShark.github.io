@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "post1",
+    "title": "منشوري الأول",
+    "image": "/career.jpg",
+    "description": "ملخص قصير للمنشور الأول",
+    "linked": true
+  },
+  {
+    "slug": "post2",
+    "title": "المنشور الثاني",
+    "image": "/white_home.png",
+    "description": "ملخص قصير للمنشور الثاني",
+    "linked": true
+  },
+  {
+    "slug": "post3",
+    "title": "منشوري الثالث",
+    "image": "/DoodlyFox.png",
+    "description": "ملخص قصير للمنشور الثالث",
+    "linked": true
+  },
+  {
+    "slug": "post4",
+    "title": "المنشور الرابع",
+    "image": "/img/CAIR_logo.png",
+    "description": "ملخص قصير للمنشور الرابع",
+    "linked": true
+  },
+  {
+    "slug": "post5",
+    "title": "منشوري الخامس",
+    "image": "/img/linkedin.png",
+    "description": "ملخص قصير للمنشور الخامس",
+    "linked": true
+  },
+  {
+    "slug": "post6",
+    "title": "المنشور السادس",
+    "image": "/img/me_cropped.jpg",
+    "description": "ملخص قصير للمنشور السادس",
+    "linked": true
+  }
+]
