@@ -19,7 +19,7 @@ export default function ArtPage() {
 
       {/* Short description */}
       <p className="text-center text-gray-600 dark:text-gray-300 mb-8">
-        I love to do art art. Yeah that's pretty much it
+        I love to do art art. Yeah that&apos;s pretty much it
       </p>
 
       {/* Markdown cards */}

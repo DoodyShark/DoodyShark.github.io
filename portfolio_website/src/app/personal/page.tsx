@@ -27,7 +27,7 @@ export default function PersonalAboutPage() {
         {showOverlay && (
           <div className="absolute inset-0 flex flex-col justify-start items-center text-center text-slate-800 dark:text-slate-800 px-4 pt-7">
             <h1 className="hidden sm:block text-4xl font-bold">
-              I'm Dhiyaa Al Jorf, and welcome to my personal page!
+              I&apos;m Dhiyaa Al Jorf, and welcome to my personal page!
             </h1>
 
             <h1 className="sm:hidden text-4xl font-bold">
