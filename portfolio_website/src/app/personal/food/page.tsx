@@ -8,7 +8,7 @@ export default function FoodPage() {
       <h1 className="text-3xl font-bold mb-4 text-center">Food</h1>
 
       {/* Full-width image */}
-      <div className="relative h-50 w-full sm:h-180 mb-4">
+      <div className="relative h-50 w-80 sm:w-200 lg:w-200 sm:h-180  mb-4">
         <Image
           src="/img/food_banner.jpg" // replace with your desired image
           alt="Food banner"

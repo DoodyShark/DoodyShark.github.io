@@ -1,44 +1,128 @@
 [
   {
-    "slug": "post1",
-    "title": "منشوري الأول",
-    "image": "/career.jpg",
-    "description": "ملخص قصير للمنشور الأول",
+    "slug": "reliable-prosthetic-control",
+    "title": "نظام تحكم موثوق وسلس للأطراف الاصطناعية",
+    "image": "/img/prosthetic_control.png",
+    "description": "نظام أطراف اصطناعية متكامل مع الواقع الافتراضي يعتمد على إشارات العضلات والرؤية للتنبؤ بالنوايا.",
     "linked": true
   },
   {
-    "slug": "post2",
-    "title": "المنشور الثاني",
-    "image": "/white_home.png",
-    "description": "ملخص قصير للمنشور الثاني",
+    "slug": "team-triton",
+    "title": "فريق ترايتون",
+    "image": "/img/triton_robot.png",
+    "description": "روبوت عائم ذاتي القيادة لجمع النفايات من المحيط باستخدام نماذج YOLO للرؤية الحاسوبية.",
     "linked": true
   },
   {
-    "slug": "post3",
-    "title": "منشوري الثالث",
-    "image": "/DoodlyFox.png",
-    "description": "ملخص قصير للمنشور الثالث",
+    "slug": "nasa-hold-down-release",
+    "title": "آلية الإطلاق الخاصة بناسا",
+    "image": "/img/nasa_jpl.png",
+    "description": "نظام إطلاق ميكانيكي منخفض التكلفة تم تطويره بالتعاون مع مهندسي NASA JPL.",
     "linked": true
   },
   {
-    "slug": "post4",
-    "title": "المنشور الرابع",
-    "image": "/img/CAIR_logo.png",
-    "description": "ملخص قصير للمنشور الرابع",
+    "slug": "haloship-spaceport",
+    "title": "صاروخ Haloship — Spaceport America Cup",
+    "image": "/img/haloship.png",
+    "description": "صاروخ قابل للحمل في حقيبة مزود بإلكترونيات مخصصة وتجميعات تم اختبارها بالتحليل الهيكلي.",
     "linked": true
   },
   {
-    "slug": "post5",
-    "title": "منشوري الخامس",
-    "image": "/img/linkedin.png",
-    "description": "ملخص قصير للمنشور الخامس",
+    "slug": "two-channel-telerobotics",
+    "title": "محاكاة نظام التحكم المزدوج عن بُعد",
+    "image": "/img/telerobotics.png",
+    "description": "نظام تيليروبوتيكي محاكى باستخدام متحكم TDMP للحركة المنسقة.",
     "linked": true
   },
   {
-    "slug": "post6",
-    "title": "المنشور السادس",
-    "image": "/img/me_cropped.jpg",
-    "description": "ملخص قصير للمنشور السادس",
+    "slug": "treasure-trove",
+    "title": "Treasure Trove",
+    "image": "/img/treasure_trove.png",
+    "description": "منصة ترفيهية تحول تقديم الهدايا إلى تجربة شخصية تفاعلية وممتعة.",
+    "linked": true
+  },
+  {
+    "slug": "portfoliopier",
+    "title": "Portfoliopier",
+    "image": "/img/portfoliopier.png",
+    "description": "أداة لإنشاء مواقع شخصية تساعد المستخدمين على تصميم صفحاتهم المهنية بسهولة.",
+    "linked": true
+  },
+  {
+    "slug": "blackjack-webapp",
+    "title": "تطبيق الويب BlackJack",
+    "image": "/img/blackjack.png",
+    "description": "لعبة بلاك جاك عبر المتصفح بواجهة بسيطة ومنطق رهانات أساسي.",
+    "linked": true
+  },
+  {
+    "slug": "crazy-eights-webapp",
+    "title": "تطبيق الويب Crazy Eights",
+    "image": "/img/crazyeights.png",
+    "description": "نسخة متعددة اللاعبين من لعبة الورق الشهيرة Crazy Eights.",
+    "linked": true
+  },
+  {
+    "slug": "virtual-pet",
+    "title": "حزمة Virtual Pet بلغة بايثون",
+    "image": "/img/virtual_pet.png",
+    "description": "حزمة Python لإنشاء ورعاية حيوانات افتراضية ذات سلوك يعتمد على نوعها.",
+    "linked": true
+  },
+  {
+    "slug": "monolingo",
+    "title": "Monolingo",
+    "image": "/img/monolingo.png",
+    "description": "تطبيق لتعلم النطق الإنجليزي باستخدام نموذج Meta AI’s Speech2Text وقاعدة بيانات MongoDB.",
+    "linked": true
+  },
+  {
+    "slug": "fizzbuzzdraw",
+    "title": "FizzBuzzDraw",
+    "image": "/img/fizzbuzzdraw.png",
+    "description": "لعبة رسم جماعية عبر الإنترنت تشبه Pictionary مع غرف لعب مخصصة.",
+    "linked": true
+  },
+  {
+    "slug": "airline-reservation-system",
+    "title": "نظام حجز الرحلات الجوية",
+    "image": "/img/ars.png",
+    "description": "نظام حجز وإدارة الرحلات بواجهتين وظيفيتين مختلفتين.",
+    "linked": true
+  },
+  {
+    "slug": "number-theory-crypto-toolkit",
+    "title": "مجموعة أدوات نظرية الأعداد والتشفير",
+    "image": "/img/crypto_toolkit.png",
+    "description": "تطبيق خوارزميات Miller-Rabin وECC وBaby-step Giant-step.",
+    "linked": true
+  },
+  {
+    "slug": "ma-tahtahu-khat",
+    "title": "ما-تحتَه-خط",
+    "image": "/img/arabic_nlp.png",
+    "description": "أداة إعراب آلية للجمل العربية الفصحى باستخدام تقنيات معالجة اللغة الطبيعية.",
+    "linked": true
+  },
+  {
+    "slug": "the-beehive",
+    "title": "The Beehive — تحدي الأنظمة المضمنة",
+    "image": "/img/beehive.png",
+    "description": "نظام للتعرف على الإيماءات باستخدام بيانات المسرّع على لوحة Arduino.",
+    "linked": true
+  },
+  {
+    "slug": "a-fine-day",
+    "title": "A Fine Day — إعادة تأهيل مصابي السكتة الدماغية",
+    "image": "/img/afineday.png",
+    "description": "لعبة علاجية تساعد المرضى على استعادة مهارات الحركة بطريقة ممتعة وتفاعلية.",
+    "linked": true
+  },
+  {
+    "slug": "inverse-forwards-kinematics",
+    "title": "الحركيات الأمامية والعكسية",
+    "image": "/img/kinematics.png",
+    "description": "مشروع لحساب الحركيات في الروبوتات متعددة المقاطع باستخدام أساليب رياضية دقيقة.",
     "linked": true
   }
 ]

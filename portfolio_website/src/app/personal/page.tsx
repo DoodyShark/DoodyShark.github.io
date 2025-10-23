@@ -27,7 +27,7 @@ export default function PersonalAboutPage() {
         {showOverlay && (
           <div className="absolute inset-0 flex flex-col justify-start items-center text-center text-slate-800 dark:text-slate-800 px-4 pt-7">
             <h1 className="hidden sm:block text-4xl font-bold">
-              I&apos;m Dhiyaa Al Jorf, and welcome to my personal page!
+              Hi! I&apos;m Dhiyaa Al Jorf!
             </h1>
 
             <h1 className="sm:hidden text-4xl font-bold">
@@ -39,7 +39,7 @@ export default function PersonalAboutPage() {
       </div>
 
       {/* Intro Section */}
-      <section className="flex flex-col md:flex-row md:space-x-8 items-start">
+      <section className="p-10 flex flex-col md:flex-row md:space-x-8 items-start">
         {/* Text */}
         <div className="flex-1 space-y-4">
           <h2 className="text-3xl font-bold">About Me</h2>
@@ -72,7 +72,7 @@ export default function PersonalAboutPage() {
       </section>
 
       {/* Links Section */}
-      <section className="mb-10">
+      <section className="p-10 mb-10">
         <h2 className="text-2xl font-semibold mb-4">Personal Links</h2>
         <ul className="flex space-x-6">
           <li>

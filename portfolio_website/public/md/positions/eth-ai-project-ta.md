@@ -1,0 +1,3 @@
+[**Masters of Advanced Studies in Artificial Intelligence and Digital Technology (MAS AID)**](https://mas-aid.ethz.ch/)
+
+Teacher Assistant for the AI Project course, an integral component of the Master of Advanced Studies (MAS) in Artificial Intelligence and Digital technology (AID) at ETH Zurich. Responsibilities include designing materials for both lectures and the project, as well as delivering the course in the Spring semester.

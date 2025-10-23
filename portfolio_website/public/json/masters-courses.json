@@ -1,16 +1,6 @@
 [
-  {
-    "slug": "Advanced Machine Learning",
-    "title": "Advanced Machine Learning",
-    "image": "",
-    "description": "ENGUH-1000",
-    "linked": false
-  },
-  {
-    "slug": "test",
-    "title": "Second?",
-    "image": "",
-    "description": "ENGUH-1000",
-    "linked": false
-  }
+  { "slug": "263-5210-00", "title": "Probabilistic Artificial Intelligence", "image": "", "description": "263-5210-00", "linked": false },
+  { "slug": "252-0535-00", "title": "Advanced Machine Learning", "image": "", "description": "252-0535-00", "linked": false },
+  { "slug": "227-0417-00", "title": "Information Theory I", "image": "", "description": "227-0417-00", "linked": false },
+  { "slug": "263-0009-00", "title": "Information Security Lab", "image": "", "description": "263-0009-00", "linked": false }
 ]

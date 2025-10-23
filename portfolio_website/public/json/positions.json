@@ -1,44 +1,72 @@
 [
   {
-    "slug": "post1",
-    "title": "My First Post",
-    "image": "/career.jpg",
-    "description": "Short abstract of post 1",
+    "slug": "eth-ai-project-ta",
+    "title": "Teaching Assistant — AI Project Course, MAS AID, ETH Zürich",
+    "image": "/img/eth_logo.png",
+    "description": "Sep 2025 – Present",
     "linked": true
   },
   {
-    "slug": "post2",
-    "title": "Second Post",
-    "image": "/white_home.png",
-    "description": "Short abstract of post 2",
+    "slug": "oxai",
+    "title": "Tutor — Oxford Center for Artificial Intelligence",
+    "image": "/img/oxai.png",
+    "description": "May 2025 – Present",
     "linked": true
   },
   {
-    "slug": "post3",
-    "title": "My Third Post",
-    "image": "/DoodlyFox.png",
-    "description": "Short abstract of post 1",
-    "linked": true
-  },
-  {
-    "slug": "post4",
-    "title": "Fourth Post",
+    "slug": "clinical",
+    "title": "Research Assistant — Clinical AI Lab, NYUAD",
     "image": "/img/CAIR_logo.png",
-    "description": "Short abstract of post 2",
+    "description": "Aug 2024 – Present",
     "linked": true
   },
   {
-    "slug": "post5",
-    "title": "My Fifth Post",
-    "image": "/img/linkedin.png",
-    "description": "Short abstract of post 1",
+    "slug": "meriit",
+    "title": "Research Assistant — MERIIT Lab, NYU",
+    "image": "/img/CAIR_logo.png",
+    "description": "Feb 2024 – Aug 2024",
     "linked": true
   },
   {
-    "slug": "post6",
-    "title": "Sixth Post",
-    "image": "/img/me_cropped.jpg",
-    "description": "Short abstract of post 2",
-    "linked": true
+    "slug": "oop",
+    "title": "Teaching Assistant — Object-Oriented Programming, NYU Abu Dhabi",
+    "image": "/img/nyuad_logo.png",
+    "description": "Jan 2025 – Mar 2025",
+    "linked": false
+  },
+  {
+    "slug": "afso-precalc",
+    "title": "Teaching Assistant — Precalculus, AFSO",
+    "image": "/img/afso.png",
+    "description": "Jan 2025 – May 2025",
+    "linked": false
+  },
+  {
+    "slug": "afso-calc",
+    "title": "Teaching Assistant — Differential Calculus, AFSO",
+    "image": "/img/nyuad_logo.png",
+    "description": "Sep 2024 – Dec 2024",
+    "linked": false
+  },
+  {
+    "slug": "climbing",
+    "title": "Climbing Wall Supervisor — NYUAD Athletics",
+    "image": "/img/climbing.png",
+    "description": "Aug 2022 – Jun 2023",
+    "linked": false
+  },
+  {
+    "slug": "aimlab",
+    "title": "Research Assistant — Applied Interactive Multimedia (AIM) Lab, NYUAD",
+    "image": "/img/aiml_logo.png",
+    "description": "Feb 2022 – Jul 2022",
+    "linked": false
+  },
+  {
+    "slug": "illustrator",
+    "title": "Illustrator — NYUAD Gazelle",
+    "image": "/img/Gazelle.png",
+    "description": "Sep 2021 – Dec 2021",
+    "linked": false
   }
 ]

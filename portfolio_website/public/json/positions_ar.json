@@ -1,44 +1,72 @@
 [
   {
-    "slug": "post1",
-    "title": "منشوري الأول",
-    "image": "/career.jpg",
-    "description": "ملخص قصير للمنشور الأول",
-    "linked": true
+    "slug": "eth-ai-project-ta",
+    "title": "Teaching Assistant — AI Project Course, MAS AID, ETH Zürich",
+    "image": "/img/eth_logo.png",
+    "description": "Sep 2025 – Present",
+    "linked": false
   },
   {
-    "slug": "post2",
-    "title": "المنشور الثاني",
-    "image": "/white_home.png",
-    "description": "ملخص قصير للمنشور الثاني",
-    "linked": true
+    "slug": "oxai",
+    "title": "Tutor — Oxford Center for Artificial Intelligence",
+    "image": "/img/oxai.png",
+    "description": "May 2025 – Present",
+    "linked": false
   },
   {
-    "slug": "post3",
-    "title": "منشوري الثالث",
-    "image": "/DoodlyFox.png",
-    "description": "ملخص قصير للمنشور الثالث",
-    "linked": true
-  },
-  {
-    "slug": "post4",
-    "title": "المنشور الرابع",
+    "slug": "nyuad-research-assistant-clinical",
+    "title": "Research Assistant — Clinical AI Lab, NYUAD",
     "image": "/img/CAIR_logo.png",
-    "description": "ملخص قصير للمنشور الرابع",
-    "linked": true
+    "description": "Aug 2024 – Present",
+    "linked": false
   },
   {
-    "slug": "post5",
-    "title": "منشوري الخامس",
-    "image": "/img/linkedin.png",
-    "description": "ملخص قصير للمنشور الخامس",
-    "linked": true
+    "slug": "nyuad-research-assistant-meriit",
+    "title": "Research Assistant — MERIIT Lab, NYU",
+    "image": "/img/CAIR_logo.png",
+    "description": "Feb 2024 – Aug 2024",
+    "linked": false
   },
   {
-    "slug": "post6",
-    "title": "المنشور السادس",
-    "image": "/img/me_cropped.jpg",
-    "description": "ملخص قصير للمنشور السادس",
-    "linked": true
+    "slug": "nyuad-teaching-assistant-oop",
+    "title": "Teaching Assistant — Object-Oriented Programming, NYU Abu Dhabi",
+    "image": "/img/nyuad_logo.png",
+    "description": "Jan 2025 – Mar 2025",
+    "linked": false
+  },
+  {
+    "slug": "afso-precalc",
+    "title": "Teaching Assistant — Precalculus, AFSO",
+    "image": "/img/afso.png",
+    "description": "Jan 2025 – May 2025",
+    "linked": false
+  },
+  {
+    "slug": "afso-calc",
+    "title": "Teaching Assistant — Differential Calculus, AFSO",
+    "image": "/img/nyuad_logo.png",
+    "description": "Sep 2024 – Dec 2024",
+    "linked": false
+  },
+  {
+    "slug": "climbing-wall-supervisor",
+    "title": "Climbing Wall Supervisor — NYUAD Athletics",
+    "image": "/img/climbing.png",
+    "description": "Aug 2022 – Jun 2023",
+    "linked": false
+  },
+  {
+    "slug": "nyuad-research-assistant-aiml",
+    "title": "Research Assistant — Applied Interactive Multimedia (AIM) Lab, NYUAD",
+    "image": "/img/aiml_logo.png",
+    "description": "Feb 2022 – Jul 2022",
+    "linked": false
+  },
+  {
+    "slug": "illustrator",
+    "title": "Illustrator — NYUAD Gazelle",
+    "image": "/img/Gazelle.png",
+    "description": "Sep 2021 – Dec 2021",
+    "linked": false
   }
 ]

@@ -1,44 +1,128 @@
 [
   {
-    "slug": "post1",
-    "title": "My First Post",
-    "image": "/career.jpg",
-    "description": "Short abstract of post 1",
+    "slug": "reliable-prosthetic-control",
+    "title": "Reliable & Intuitive Prosthetic Control System",
+    "image": "/img/prosthetic_control.png",
+    "description": "VR-integrated prosthetic system using EMG and vision-based intent prediction.",
     "linked": true
   },
   {
-    "slug": "post2",
-    "title": "Second Post",
-    "image": "/white_home.png",
-    "description": "Short abstract of post 2",
+    "slug": "team-triton",
+    "title": "Team Triton",
+    "image": "/img/triton_robot.png",
+    "description": "Autonomous floating robot for ocean trash collection using YOLO models.",
     "linked": true
   },
   {
-    "slug": "post3",
-    "title": "My Third Post",
-    "image": "/DoodlyFox.png",
-    "description": "Short abstract of post 1",
+    "slug": "nasa-hold-down-release",
+    "title": "NASA Hold-Down Release Mechanism",
+    "image": "/img/nasa_jpl.png",
+    "description": "Low-cost mechanical release system developed with NASA JPL engineers.",
     "linked": true
   },
   {
-    "slug": "post4",
-    "title": "Fourth Post",
-    "image": "/img/CAIR_logo.png",
-    "description": "Short abstract of post 2",
+    "slug": "haloship-spaceport",
+    "title": "Haloship Rocket — Spaceport America Cup",
+    "image": "/img/haloship.png",
+    "description": "Suitcase-packable rocket with custom avionics and FEM-tested assemblies.",
     "linked": true
   },
   {
-    "slug": "post5",
-    "title": "My Fifth Post",
-    "image": "/img/linkedin.png",
-    "description": "Short abstract of post 1",
+    "slug": "two-channel-telerobotics",
+    "title": "Two-Channel Telerobotics Simulation",
+    "image": "/img/telerobotics.png",
+    "description": "Simulated TDMP-controlled telerobotic system for coordinated motion.",
     "linked": true
   },
   {
-    "slug": "post6",
-    "title": "Sixth Post",
-    "image": "/img/me_cropped.jpg",
-    "description": "Short abstract of post 2",
+    "slug": "treasure-trove",
+    "title": "Treasure Trove",
+    "image": "/img/treasure_trove.png",
+    "description": "Gamified platform turning gift-giving into a personalized, collaborative experience.",
+    "linked": true
+  },
+  {
+    "slug": "portfoliopier",
+    "title": "Portfoliopier",
+    "image": "/img/portfoliopier.png",
+    "description": "Website builder that helps users design personalized portfolio sites.",
+    "linked": true
+  },
+  {
+    "slug": "blackjack-webapp",
+    "title": "Blackjack Web App",
+    "image": "/img/blackjack.png",
+    "description": "Browser-based blackjack game with clean UI and basic betting logic.",
+    "linked": true
+  },
+  {
+    "slug": "crazy-eights-webapp",
+    "title": "Crazy Eights Web App",
+    "image": "/img/crazyeights.png",
+    "description": "Multiplayer web version of the classic Crazy Eights card game.",
+    "linked": true
+  },
+  {
+    "slug": "virtual-pet",
+    "title": "Virtual Pet Python Package",
+    "image": "/img/virtual_pet.png",
+    "description": "Python package for maintaining interactive pets with species-based behaviors.",
+    "linked": true
+  },
+  {
+    "slug": "monolingo",
+    "title": "Monolingo",
+    "image": "/img/monolingo.png",
+    "description": "English pronunciation app using Meta AI’s Speech2Text model and MongoDB.",
+    "linked": true
+  },
+  {
+    "slug": "fizzbuzzdraw",
+    "title": "FizzBuzzDraw",
+    "image": "/img/fizzbuzzdraw.png",
+    "description": "Online multiplayer Pictionary-like game with custom lobbies and word sets.",
+    "linked": true
+  },
+  {
+    "slug": "airline-reservation-system",
+    "title": "Airline Reservation System",
+    "image": "/img/ars.png",
+    "description": "Dual-interface airline booking and management system.",
+    "linked": true
+  },
+  {
+    "slug": "number-theory-crypto-toolkit",
+    "title": "Number Theory & Cryptography Toolkit",
+    "image": "/img/crypto_toolkit.png",
+    "description": "Implements Miller-Rabin, ECC, and Baby-step Giant-step algorithms.",
+    "linked": true
+  },
+  {
+    "slug": "ma-tahtahu-khat",
+    "title": "Ma-Tahtahu-Khat",
+    "image": "/img/arabic_nlp.png",
+    "description": "Arabic I3rab tool that analyzes MSA syntax using NLP techniques.",
+    "linked": true
+  },
+  {
+    "slug": "the-beehive",
+    "title": "The Beehive — Embedded Systems Challenge",
+    "image": "/img/beehive.png",
+    "description": "Gesture recognition on Arduino boards using accelerometer data.",
+    "linked": true
+  },
+  {
+    "slug": "a-fine-day",
+    "title": "A Fine Day — Gamified Stroke Rehab",
+    "image": "/img/afineday.png",
+    "description": "Rehabilitation game helping stroke patients regain motor skills remotely.",
+    "linked": true
+  },
+  {
+    "slug": "inverse-forwards-kinematics",
+    "title": "Inverse & Forwards Kinematics",
+    "image": "/img/kinematics.png",
+    "description": "CPE project performing kinematics calculations on multi-segment robots.",
     "linked": true
   }
 ]

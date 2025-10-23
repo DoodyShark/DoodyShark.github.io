@@ -8,7 +8,7 @@ export default function BlogPageAr() {
       <h1 className="text-3xl font-bold mb-4 text-center">مدونتي</h1>
 
       {/* صورة بعرض كامل */}
-      <div className="relative w-full h-130 mb-4">
+      <div className="relative w-full h-50 sm:h-90 lg:h-100  mb-4">
         <Image
           src="/blog_banner.jpg" // استبدل بالصورة المطلوبة
           alt="بانر المدونة"

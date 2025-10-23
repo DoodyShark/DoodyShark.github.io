@@ -8,7 +8,7 @@ export default function BlogPage() {
       <h1 className="text-3xl font-bold mb-4 text-center">Personal Blog</h1>
 
       {/* Full-width image */}
-      <div className="relative h-50 w-full sm:h-130 mb-4">
+      <div className="relative h-50 w-80 sm:w-200 lg:w-200 sm:h-130  mb-4">
         <Image
           src="/img/personal_blog_banner.jpg" // replace with your desired image
           alt="Blog banner"

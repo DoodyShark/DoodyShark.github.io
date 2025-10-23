@@ -1,16 +1,317 @@
 [
   {
-    "slug": "Computer Programming for Engineers",
-    "title": "Computer Programming for Engineers",
+    "slug": "ENGR-UH 4322",
+    "title": "Introduction to Systems Security",
     "image": "",
-    "description": "ENGUH-1000",
+    "description": "ENGR-UH 4322",
     "linked": false
   },
   {
-    "slug": "test",
-    "title": "Second?",
+    "slug": "ENGR-UH 4020",
+    "title": "Senior Design Capstone Project II",
     "image": "",
-    "description": "ENGUH-1000",
+    "description": "ENGR-UH 4020",
+    "linked": false
+  },
+  {
+    "slug": "ACS-UH 1011X",
+    "title": "Introduction to Modern Arabic Literature",
+    "image": "",
+    "description": "ACS-UH 1011X",
+    "linked": false
+  },
+  {
+    "slug": "ENGR-UH 4011",
+    "title": "Senior Design Capstone Project I",
+    "image": "",
+    "description": "ENGR-UH 4011",
+    "linked": false
+  },
+  {
+    "slug": "CSTS-UH 1009",
+    "title": "Theory of Everything",
+    "image": "",
+    "description": "CSTS-UH 1009",
+    "linked": false
+  },
+  {
+    "slug": "CCOL-UH 1010",
+    "title": "Future of Medicine",
+    "image": "",
+    "description": "CCOL-UH 1010",
+    "linked": false
+  },
+  {
+    "slug": "ARTH-UH 1511",
+    "title": "Foundations of 2D",
+    "image": "",
+    "description": "ARTH-UH 1511",
+    "linked": false
+  },
+  {
+    "slug": "ECE-UY 3613",
+    "title": "Communication Networks",
+    "image": "",
+    "description": "ECE-UY 3613",
+    "linked": false
+  },
+  {
+    "slug": "CSCI-UA 474",
+    "title": "Software Engineering",
+    "image": "",
+    "description": "CSCI-UA 474",
+    "linked": false
+  },
+  {
+    "slug": "CSCI-UA 467",
+    "title": "Applied Internet Technology",
+    "image": "",
+    "description": "CSCI-UA 467",
+    "linked": false
+  },
+  {
+    "slug": "CSCI-UA 202",
+    "title": "Operating Systems",
+    "image": "",
+    "description": "CSCI-UA 202",
+    "linked": false
+  },
+  {
+    "slug": "CCEA-UH 1099J",
+    "title": "Theatre and Immigration",
+    "image": "",
+    "description": "CCEA-UH 1099J",
+    "linked": false
+  },
+  {
+    "slug": "ROB-UY 3404",
+    "title": "Introduction to Haptics and Telerobotics in Medicine",
+    "image": "",
+    "description": "ROB-UY 3404",
+    "linked": false
+  },
+  {
+    "slug": "ECE-UY 4144",
+    "title": "Introduction to Embedded Systems Design",
+    "image": "",
+    "description": "ECE-UY 4144",
+    "linked": false
+  },
+  {
+    "slug": "CSCI-UA 480",
+    "title": "Special Topics",
+    "image": "",
+    "description": "CSCI-UA 480",
+    "linked": false
+  },
+  {
+    "slug": "CS-UY 2214",
+    "title": "Computer Architecture and Organization",
+    "image": "",
+    "description": "CS-UY 2214",
+    "linked": false
+  },
+  {
+    "slug": "CS-UY 1134",
+    "title": "Data Structures and Algorithms",
+    "image": "",
+    "description": "CS-UY 1134",
+    "linked": false
+  },
+  {
+    "slug": "MATH-UH 1024",
+    "title": "Fundamentals of Ordinary Differential Equations",
+    "image": "",
+    "description": "MATH-UH 1024",
+    "linked": false
+  },
+  {
+    "slug": "ENGR-UH 3130",
+    "title": "Quantitative Synthetic Biology",
+    "image": "",
+    "description": "ENGR-UH 3130",
+    "linked": false
+  },
+  {
+    "slug": "ENGR-UH 2510",
+    "title": "Object-Oriented Programming",
+    "image": "",
+    "description": "ENGR-UH 2510",
+    "linked": false
+  },
+  {
+    "slug": "ENGR-UH 2311",
+    "title": "Advanced Circuits",
+    "image": "",
+    "description": "ENGR-UH 2311",
+    "linked": false
+  },
+  {
+    "slug": "ENGR-UH 2310",
+    "title": "Advanced Digital Logic",
+    "image": "",
+    "description": "ENGR-UH 2310",
+    "linked": false
+  },
+  {
+    "slug": "ENGR-UH 2017",
+    "title": "Numerical Methods",
+    "image": "",
+    "description": "ENGR-UH 2017",
+    "linked": false
+  },
+  {
+    "slug": "ENGR-UH 2010Q",
+    "title": "Probability and Statistics for Engineers",
+    "image": "",
+    "description": "ENGR-UH 2010Q",
+    "linked": false
+  },
+  {
+    "slug": "ENGR-UH 1010",
+    "title": "Engineering Ethics",
+    "image": "",
+    "description": "ENGR-UH 1010",
+    "linked": false
+  },
+  {
+    "slug": "CDAD-UH 1070J",
+    "title": "Sustainable Urban Transportation Planning for the 21st Century",
+    "image": "",
+    "description": "CDAD-UH 1070J",
+    "linked": false
+  },
+  {
+    "slug": "MATH-UH 3410",
+    "title": "Number Theory and Cryptography",
+    "image": "",
+    "description": "MATH-UH 3410",
+    "linked": false
+  },
+  {
+    "slug": "ENGR-UH 2019",
+    "title": "Circuits Fundamentals",
+    "image": "",
+    "description": "ENGR-UH 2019",
+    "linked": false
+  },
+  {
+    "slug": "ENGR-UH 2013",
+    "title": "Digital Logic",
+    "image": "",
+    "description": "ENGR-UH 2013",
+    "linked": false
+  },
+  {
+    "slug": "ENGR-UH 2012",
+    "title": "Conservation Laws in Engineering",
+    "image": "",
+    "description": "ENGR-UH 2012",
+    "linked": false
+  },
+  {
+    "slug": "ENGR-UH 2011",
+    "title": "Engineering Statics",
+    "image": "",
+    "description": "ENGR-UH 2011",
+    "linked": false
+  },
+  {
+    "slug": "CCOL-UH 1024Q",
+    "title": "Life in the Universe",
+    "image": "",
+    "description": "CCOL-UH 1024Q",
+    "linked": false
+  },
+  {
+    "slug": "WRIT-UH 1129",
+    "title": "FYWS: The World of Babel: Translation Before the Modern Age",
+    "image": "",
+    "description": "WRIT-UH 1129",
+    "linked": false
+  },
+  {
+    "slug": "MATH-UH 1022",
+    "title": "Linear Algebra",
+    "image": "",
+    "description": "MATH-UH 1022",
+    "linked": false
+  },
+  {
+    "slug": "CS-UH 1002",
+    "title": "Discrete Mathematics",
+    "image": "",
+    "description": "CS-UH 1002",
+    "linked": false
+  },
+  {
+    "slug": "CADT-UH 1001",
+    "title": "Manus et Machina",
+    "image": "",
+    "description": "CADT-UH 1001",
+    "linked": false
+  },
+  {
+    "slug": "ENGR-UH 1021J",
+    "title": "Design and Innovation",
+    "image": "",
+    "description": "ENGR-UH 1021J",
+    "linked": false
+  },
+  {
+    "slug": "SCIEN-UH 1203",
+    "title": "Foundations of Science 2 Lab",
+    "image": "",
+    "description": "SCIEN-UH 1203",
+    "linked": false
+  },
+  {
+    "slug": "SCIEN-UH 1202EQ",
+    "title": "Foundations of Science 2: Forces and Interactions (Chemistry)",
+    "image": "",
+    "description": "SCIEN-UH 1202EQ",
+    "linked": false
+  },
+  {
+    "slug": "SCIEN-UH 1201EQ",
+    "title": "Foundations of Science 2: Forces and Interactions (Physics)",
+    "image": "",
+    "description": "SCIEN-UH 1201EQ",
+    "linked": false
+  },
+  {
+    "slug": "SCIEN-UH 1103",
+    "title": "Foundations of Science 1 Lab",
+    "image": "",
+    "description": "SCIEN-UH 1103",
+    "linked": false
+  },
+  {
+    "slug": "SCIEN-UH 1102EQ",
+    "title": "Foundations of Science 1: Energy and Matter (Chemistry)",
+    "image": "",
+    "description": "SCIEN-UH 1102EQ",
+    "linked": false
+  },
+  {
+    "slug": "SCIEN-UH 1101EQ",
+    "title": "Foundations of Science 1: Energy and Matter (Physics)",
+    "image": "",
+    "description": "SCIEN-UH 1101EQ",
+    "linked": false
+  },
+  {
+    "slug": "MATH-UH 1020",
+    "title": "Multivariable Calculus with Applications to Science and Engineering",
+    "image": "",
+    "description": "MATH-UH 1020",
+    "linked": false
+  },
+  {
+    "slug": "ENGR-UH 1000",
+    "title": "Computer Programming for Engineers",
+    "image": "",
+    "description": "ENGR-UH 1000",
     "linked": false
   }
 ]

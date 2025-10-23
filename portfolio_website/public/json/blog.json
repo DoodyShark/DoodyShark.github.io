@@ -8,6 +8,7 @@
   },
   {
     "slug": "post2",
+    "link": "http://www.elsewhere.com",
     "title": "Second Post",
     "image": "/white_home.png",
     "description": "Short abstract of post 2",

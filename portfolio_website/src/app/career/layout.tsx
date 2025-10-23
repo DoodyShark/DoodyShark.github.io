@@ -20,5 +20,5 @@ export default function CareerLayout({ children }: { children: React.ReactNode }
     setNavItems(careerNavItems);
   }, [setNavItems]);
 
-  return <div className="p-10 sm:pr-50 sm:pl-50 lg:pr-100 lg:pl-100">{children}</div>;
+  return <div suppressHydrationWarning className="p-10 sm:pr-50 sm:pl-50 lg:pr-100 lg:pl-100">{children}</div>;
 }
