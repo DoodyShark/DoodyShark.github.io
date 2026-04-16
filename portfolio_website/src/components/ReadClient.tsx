@@ -2,30 +2,49 @@
 
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useLocale } from "next-intl";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 
-export default function ReadClient({ md_path }: { md_path: string}) {
-  const searchParams = useSearchParams();
-  const postSlug = searchParams.get("post");
+type CardData = {
+  slug: string;
+  title?: string;
+  body?: string;
+};
 
-  const [content, setContent] = useState<string | null>(null);
+export default function ReadClient({
+  collection,
+  locale_override,
+}: {
+  collection: string;
+  locale_override?: string;
+}) {
+  const searchParams = useSearchParams();
+  const slug = searchParams.get("post");
+  const locale = useLocale();
+  const effectiveLocale = locale_override ?? locale;
+
+  const [card, setCard] = useState<CardData | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!postSlug) return;
-
-    fetch(`/md/${md_path}/${postSlug}.md`)
-      .then((res) => {
-        if (!res.ok) throw new Error("Markdown not found");
-        return res.text();
-      })
-      .then((text) => setContent(text))
-      .catch(() => setContent("Markdown file not found."))
+    if (!slug) return;
+    fetch(
+      `/api/content?collection=${collection}&locale=${effectiveLocale}&slug=${encodeURIComponent(slug)}&body=true`
+    )
+      .then((r) => r.json())
+      .then((data: CardData[]) => setCard(data[0] ?? null))
+      .catch(() => setCard(null))
       .finally(() => setLoading(false));
-  }, [postSlug, md_path]); // <--- add md_path here
+  }, [slug, collection, effectiveLocale]);
 
-  if (!postSlug) return <p>No post specified.</p>;
+  if (!slug) return <p>No post specified.</p>;
   if (loading) return <p>Loading...</p>;
+  if (!card || !card.body) return <p>Content not found.</p>;
 
-  return <MarkdownRenderer content={content!} />;
+  return (
+    <div>
+      {card.title && <h1 className="text-3xl font-bold mb-6">{card.title}</h1>}
+      <MarkdownRenderer content={card.body} />
+    </div>
+  );
 }

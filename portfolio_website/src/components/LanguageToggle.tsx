@@ -1,32 +1,23 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
+import { useRouter, usePathname } from "@/i18n/navigation";
 
 export default function LanguageToggle() {
-  const pathname = usePathname();
+  const locale = useLocale();
   const router = useRouter();
+  const pathname = usePathname();
 
-  // Detect current locale
-  const isArabic = pathname.startsWith("/ar");
-
-  const switchLang = () => {
-    if (isArabic) {
-      // Remove /ar prefix → go back to English
-      const newPath = pathname.replace(/^\/ar/, "") || "/";
-      router.push(newPath);
-    } else {
-      // Add /ar prefix
-      const newPath = `/ar${pathname}`;
-      router.push(newPath);
-    }
+  const switchLocale = () => {
+    router.replace(pathname, { locale: locale === "ar" ? "en" : "ar" });
   };
 
   return (
     <button
-      onClick={switchLang}
-      className="px-3 py-1 rounded text-white hover:text-gray-200 transition-colors"
+      onClick={switchLocale}
+      className="px-3 py-1.5 rounded-lg text-white/75 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium"
     >
-      {isArabic ? "EN" : "AR"}
+      {locale === "ar" ? "EN" : "AR"}
     </button>
   );
 }

@@ -1,7 +1,10 @@
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',   // 👈 tells Next.js to generate static files
-  images: { unoptimized: true }, // required for GitHub Pages
+  images: { unoptimized: true },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

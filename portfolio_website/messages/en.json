@@ -1,0 +1,79 @@
+{
+  "career": {
+    "nav": {
+      "about": "About",
+      "blog": "Blog",
+      "projects": "Projects",
+      "positions": "Positions",
+      "publications": "Publications",
+      "coursework": "Coursework",
+      "cv": "CV"
+    },
+    "about": {
+      "title": "Dhiyaa Al Jorf",
+      "bio1": "I'm a researcher and educator exploring Causal Learning and Uncertainty Quantification, with applications in rehabilitation engineering and trustworthy AI. I'm currently pursuing an MSc in Computer Science at ETH Zürich, specializing in Machine Intelligence, and working as a Teaching Assistant in the MAS in Artificial Intelligence and Digital Technology (MAS AID) program, where I help develop and deliver project-based AI courses.",
+      "bio2": "My research focuses on making machine learning models interpretable, reliable, and human-centered, particularly in assistive and clinical contexts. I'm also deeply interested in education and curriculum design, having co-developed and taught AI executive programs with the Oxford Centre for Artificial Intelligence and the UAE Office of Artificial Intelligence.",
+      "interests": "Research & Work Interests",
+      "interest1": "Causal and Uncertainty-Aware Learning: Developing robust models that reason about cause, effect, and confidence, with a focus on safety-critical domains like healthcare and rehabilitation.",
+      "interest2": "AI for Rehabilitation Engineering: Using multimodal and physiological data (e.g., EMG, vision) to design intuitive, reliable control systems for assistive and prosthetic devices.",
+      "interest3": "AI Education & Curriculum Design: Creating interdisciplinary programs that empower learners to engage with AI responsibly and creatively.",
+      "news": "News",
+      "links": "Links"
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Here is where I like to share my professional opinions, paper reviews, and other thoughts."
+    },
+    "projects": { "title": "Projects" },
+    "positions": { "title": "Positions" },
+    "publications": {
+      "title": "Publications",
+      "description": "Publications by categories in reversed chronological order.",
+      "filterPlaceholder": "Type to filter",
+      "noResults": "No matching publications found."
+    },
+    "coursework": {
+      "title": "Coursework",
+      "masters": "Master's Coursework",
+      "bachelors": "Bachelor's Coursework"
+    },
+    "cv": {
+      "title": "My CV",
+      "download": "Download CV",
+      "loading": "Loading PDF..."
+    }
+  },
+  "personal": {
+    "nav": {
+      "about": "About",
+      "blog": "Blog",
+      "art": "Art",
+      "food": "Food"
+    },
+    "about": {
+      "title": "About Me",
+      "linksTitle": "Personal Links"
+    },
+    "blog": {
+      "title": "Personal Blog",
+      "description": "Maybe a diary? Or a field log? Idk :P"
+    },
+    "art": {
+      "title": "Arts??",
+      "description": "I love to do art art. Yeah that's pretty much it",
+      "illustration": "Illustration",
+      "sewing": "Sewing",
+      "painting": "Painting"
+    },
+    "food": {
+      "title": "Food",
+      "description": "A little digital recipe book of sorts :)",
+      "arabic": "Arabic",
+      "desserts": "Desserts"
+    }
+  },
+  "home": {
+    "career": "career",
+    "personal": "personal"
+  }
+}
