@@ -18,6 +18,7 @@ export default function GravityToggle() {
   const rafRef = useRef<number | null>(null);
   const capturedRef = useRef<Captured[]>([]);
   const wallsRef = useRef<Matter.Body[]>([]);
+  const dragLayerRef = useRef<HTMLDivElement | null>(null);
 
   const teardown = () => {
     if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
@@ -32,6 +33,8 @@ export default function GravityToggle() {
     }
     capturedRef.current = [];
     wallsRef.current = [];
+    dragLayerRef.current?.remove();
+    dragLayerRef.current = null;
     document.body.style.overflow = '';
   };
 
@@ -113,6 +116,26 @@ export default function GravityToggle() {
     Matter.World.add(engine.world, captured.map((c) => c.body));
     capturedRef.current = captured;
     document.body.style.overflow = 'hidden';
+
+    // Transparent capture layer so you can grab and drag any fallen element around —
+    // dragging one naturally shoves whatever else is in its way, same as the rest of the sim.
+    const dragLayer = document.createElement('div');
+    dragLayer.style.position = 'fixed';
+    dragLayer.style.inset = '0';
+    dragLayer.style.zIndex = '195';
+    dragLayer.style.cursor = 'grab';
+    document.body.appendChild(dragLayer);
+    dragLayerRef.current = dragLayer;
+
+    const mouse = Matter.Mouse.create(dragLayer);
+    mouse.pixelRatio = window.devicePixelRatio || 1;
+    const mouseConstraint = Matter.MouseConstraint.create(engine, {
+      mouse,
+      constraint: { stiffness: 0.15, damping: 0.15, render: { visible: false } },
+    });
+    Matter.World.add(engine.world, mouseConstraint);
+    Matter.Events.on(mouseConstraint, 'startdrag', () => { dragLayer.style.cursor = 'grabbing'; });
+    Matter.Events.on(mouseConstraint, 'enddrag', () => { dragLayer.style.cursor = 'grab'; });
 
     const tick = () => {
       Matter.Engine.update(engine, 1000 / 60);

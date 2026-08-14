@@ -5,31 +5,6 @@ import { getDb } from "@/lib/mongodb";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 import NewsTimeline from "@/components/NewsTimeline";
 
-// Splits the "## {newsHeading}" section (if present) out of the About page markdown so its
-// entries can render as a timeline instead of plain bullets; everything else stays as markdown.
-function splitNewsSection(markdown: string, newsHeading: string) {
-  const marker = `## ${newsHeading}`;
-  const idx = markdown.indexOf(marker);
-  if (idx === -1) return { mainBody: markdown, newsItems: null as { date: string; text: string }[] | null };
-
-  const mainBody = markdown.slice(0, idx).trimEnd();
-  const afterHeading = markdown.slice(idx + marker.length);
-  const nextHeadingIdx = afterHeading.search(/\n##\s/);
-  const newsSection = (nextHeadingIdx === -1 ? afterHeading : afterHeading.slice(0, nextHeadingIdx)).trim();
-
-  const items = newsSection
-    .split(/\n\s*\n/)
-    .map((p) => p.trim())
-    .filter(Boolean)
-    .map((p) => {
-      const match = p.match(/^\*\*(.+?)\*\*\s*[–—-]\s*([\s\S]+)$/);
-      return match ? { date: match[1].trim(), text: match[2].trim() } : null;
-    })
-    .filter((x): x is { date: string; text: string } => x !== null);
-
-  return { mainBody, newsItems: items.length ? items : null };
-}
-
 export default async function CareerAboutPage({
   params,
 }: {
@@ -42,9 +17,8 @@ export default async function CareerAboutPage({
   const db = await getDb();
   const pageContent = await db.collection('page_content').findOne({ page: 'career-about', locale });
   const customBody = pageContent?.body ?? null;
-  const { mainBody, newsItems } = customBody
-    ? splitNewsSection(customBody, t("news"))
-    : { mainBody: null as string | null, newsItems: null };
+  const mainBody = customBody;
+  const newsItems = (pageContent?.news ?? null) as { date: string; text: string }[] | null;
 
   const linkCls = "text-[#5898a0] hover:underline";
 
@@ -89,12 +63,12 @@ export default async function CareerAboutPage({
         </div>
       </section>
 
-      {newsItems ? (
+      {newsItems && newsItems.length > 0 ? (
         <section>
           <h2 className="text-2xl font-semibold mb-6">{t("news")}</h2>
           <NewsTimeline items={newsItems} />
         </section>
-      ) : !customBody && (
+      ) : !pageContent && (
         <section>
           <h2 className="text-2xl font-semibold mb-4">{t("news")}</h2>
           <ul className="space-y-4" style={{ color: 'var(--m-text2)' }}>

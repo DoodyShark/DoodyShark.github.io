@@ -18,16 +18,6 @@ ${t('bio2')}
 - ${t('interest1')}
 - ${t('interest2')}
 - ${t('interest3')}
-
-## ${t('news')}
-
-**Sept 20, 2025** – Joined the MASAID program as a Teaching Assistant co-developing materials for the AI Project course.
-
-**Sept 15, 2025** – First day at my MSc in CS program at ETH Zürich.
-
-**Aug 28, 2025** – Co-developing an executive education program in Oxford for a delegation from South Korea.
-
-**Jun 14, 2025** – Supporting the UAE Chief Artificial Intelligence Officers Program 2025.
 `;
   }
   if (page === 'personal-about') {
@@ -37,6 +27,13 @@ ${t('bio2')}
   }
   return '';
 }
+
+const DEFAULT_NEWS = [
+  { date: 'Sept 20, 2025', text: 'Joined the MASAID program as a Teaching Assistant co-developing materials for the AI Project course.' },
+  { date: 'Sept 15, 2025', text: 'First day at my MSc in CS program at ETH Zürich.' },
+  { date: 'Aug 28, 2025', text: 'Co-developing an executive education program in Oxford for a delegation from South Korea.' },
+  { date: 'Jun 14, 2025', text: 'Supporting the UAE Chief Artificial Intelligence Officers Program 2025.' },
+];
 
 const PAGE_META: Record<string, { label: string; replaces: string }> = {
   'career-about':   { label: 'Career About',  replaces: 'Bio, research interests, and news. Profile photo and social links always stay.' },
@@ -59,6 +56,8 @@ export default async function PageContentEditPage({ params }: Params) {
 
   const initialEn = enDoc?.body ?? await getDefaultContent(id, 'en');
   const initialAr = arDoc?.body ?? await getDefaultContent(id, 'ar');
+  const initialNewsEn = (id === 'career-about' ? enDoc?.news ?? DEFAULT_NEWS : undefined) as { date: string; text: string }[] | undefined;
+  const initialNewsAr = (id === 'career-about' ? arDoc?.news ?? [] : undefined) as { date: string; text: string }[] | undefined;
 
   return (
     <div className="max-w-4xl mx-auto p-8">
@@ -70,6 +69,8 @@ export default async function PageContentEditPage({ params }: Params) {
         page={id}
         initialEn={initialEn}
         initialAr={initialAr}
+        initialNewsEn={initialNewsEn}
+        initialNewsAr={initialNewsAr}
         backUrl="/admin/pages"
       />
     </div>

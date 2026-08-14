@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   description: "Personal portfolio",
 };
 
+// Wind chimes easter egg — code kept in place, just switched off.
+const WIND_CHIMES_ENABLED = false;
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
@@ -53,7 +56,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <FloatingGardenButton />
             <HoverAdminTrigger />
             <GravityToggle />
-            <WindChimes />
+            {WIND_CHIMES_ENABLED && <WindChimes />}
             <Analytics />
             <SpeedInsights />
           </NextIntlClientProvider>
