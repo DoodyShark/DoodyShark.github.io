@@ -5,7 +5,7 @@ export default function FoodReadPage() {
   return (
     <div className="w-full max-w-3xl mx-auto">
       <Suspense fallback={<div>Loading...</div>}>
-        <ReadClient collection="food_arabic" locale_override="en" />
+        <ReadClient locale_override="en" />
       </Suspense>
     </div>
   );

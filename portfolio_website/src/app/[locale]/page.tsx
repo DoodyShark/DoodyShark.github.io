@@ -1,58 +1,61 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import { useEffect, useRef, useState, useCallback } from "react";
+import Image, { type StaticImageData } from "next/image";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
+import { spawnConfetti, type ConfettiPiece } from "@/lib/confetti";
+import careerImg from "../../../public/career.jpg";
+import career2Img from "../../../public/career2.jpg";
+import personalImg from "../../../public/personal.jpg";
+import personal2Img from "../../../public/personal2.jpg";
 
 type Slide = {
   titleKey: "home.career" | "home.personal";
-  img: string;
-  img2: string;
+  img: StaticImageData;
+  img2: StaticImageData;
   logo: string;
   href: "/career" | "/personal";
 };
 
 const slides: Slide[] = [
-  { titleKey: "home.career",   img: "/career.jpg",   img2: "/career2.jpg",   logo: "/DoodyShark.png", href: "/career"   },
-  { titleKey: "home.personal", img: "/personal.jpg", img2: "/personal2.jpg", logo: "/DoodlyFox.png",  href: "/personal" },
+  { titleKey: "home.career",   img: careerImg,  img2: career2Img,  logo: "/DoodyShark.png", href: "/career"   },
+  { titleKey: "home.personal", img: personalImg, img2: personal2Img, logo: "/DoodlyFox.png",  href: "/personal" },
 ];
+
+const SLIDE_LABELS: Record<string, string> = {
+  "home.career":   "Career",
+  "home.personal": "Personal",
+};
 
 export default function HomeCarousel() {
   const t = useTranslations();
   const router = useRouter();
   const n = slides.length;
 
-  const [internalIndex, setInternalIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [transitionEnabled, setTransitionEnabled] = useState(true);
   const rowRef = useRef<HTMLDivElement | null>(null);
+  const [confettiMap, setConfettiMap] = useState<Record<number, ConfettiPiece[]>>({});
 
-  const activeIndex = ((internalIndex - 1) % n + n) % n;
+  const triggerConfetti = useCallback((idx: number) => {
+    const pieces = spawnConfetti();
+    setConfettiMap(m => ({ ...m, [idx]: [...(m[idx] ?? []), ...pieces] }));
+    setTimeout(() => {
+      const ids = new Set(pieces.map(p => p.id));
+      setConfettiMap(m => ({ ...m, [idx]: (m[idx] ?? []).filter(p => !ids.has(p.id)) }));
+    }, 1500);
+  }, []);
 
-  const next = () => { setTransitionEnabled(true); setInternalIndex((i) => i + 1); };
-  const prev = () => { setTransitionEnabled(true); setInternalIndex((i) => i - 1); };
-  const goTo = (idx: number) => { setTransitionEnabled(true); setInternalIndex(idx + 1); };
+  const next = () => { setTransitionEnabled(true); setActiveIndex(i => (i + 1) % n); };
+  const prev = () => { setTransitionEnabled(true); setActiveIndex(i => (i - 1 + n) % n); };
+  const goTo = (idx: number) => { setTransitionEnabled(true); setActiveIndex(idx); };
 
+  // Lock body scroll on home page
   useEffect(() => {
-    const el = rowRef.current;
-    if (!el) return;
-    const handleTransitionEnd = () => {
-      if (internalIndex === 0) {
-        setTransitionEnabled(false);
-        setInternalIndex(n);
-        requestAnimationFrame(() => requestAnimationFrame(() => setTransitionEnabled(true)));
-      }
-      if (internalIndex === n + 1) {
-        setTransitionEnabled(false);
-        setInternalIndex(1);
-        requestAnimationFrame(() => requestAnimationFrame(() => setTransitionEnabled(true)));
-      }
-    };
-    el.addEventListener("transitionend", handleTransitionEnd);
-    return () => el.removeEventListener("transitionend", handleTransitionEnd);
-  }, [internalIndex, n]);
-
-  const clonedSlides = [slides[n - 1], ...slides, slides[0]];
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = ''; };
+  }, []);
 
   const touchStartXRef = useRef<number | null>(null);
   const touchDeltaRef = useRef(0);
@@ -67,8 +70,8 @@ export default function HomeCarousel() {
     const x = e.touches[0].clientX;
     touchDeltaRef.current = x - touchStartXRef.current;
     if (rowRef.current) {
-      const width = rowRef.current.clientWidth / (n + 2);
-      const base = -internalIndex * 100;
+      const width = rowRef.current.clientWidth / n;
+      const base = -activeIndex * 100;
       const offset = (touchDeltaRef.current / width) * 100;
       rowRef.current.style.transform = `translateX(${base + offset}%)`;
     }
@@ -77,32 +80,30 @@ export default function HomeCarousel() {
     const delta = touchDeltaRef.current;
     touchStartXRef.current = null;
     touchDeltaRef.current = 0;
+    setTransitionEnabled(true);
     if (Math.abs(delta) > 50) {
       delta < 0 ? next() : prev();
-    } else {
-      setTransitionEnabled(true);
-      setInternalIndex((i) => i + 0); // snap back (force re-render)
+    } else if (rowRef.current) {
+      rowRef.current.style.transform = `translateX(-${activeIndex * 100}%)`;
     }
   };
 
-  const transformStyle = { transform: `translateX(-${internalIndex * 100}%)` };
+  const transformStyle = { transform: `translateX(-${activeIndex * 100}%)` };
   const transitionClass = transitionEnabled ? "transition-transform duration-500 ease-in-out" : "";
 
   return (
-    <div className="flex flex-col items-center overflow-hidden">
-      {/* Active slide header */}
+    <div className="flex flex-col items-center justify-center overflow-hidden w-full" style={{ minHeight: 'calc(100dvh - 52px)' }}>
+      {/* Active slide label */}
       <div
-        className="text-center mb-8 cursor-pointer"
+        className="text-center mb-8 cursor-pointer select-none"
         onClick={() => router.push(slides[activeIndex].href)}
       >
-        <Image
-          src={slides[activeIndex].logo}
-          alt={t(slides[activeIndex].titleKey)}
-          width={60}
-          height={60}
-          className="mx-auto mb-3 rounded-full shadow-2xl"
-        />
-        <h2 className="text-2xl font-semibold">{t(slides[activeIndex].titleKey)}</h2>
+        <h2
+          className="text-3xl font-light tracking-widest uppercase"
+          style={{ color: 'var(--m-text2)', letterSpacing: '0.25em' }}
+        >
+          {SLIDE_LABELS[slides[activeIndex].titleKey]}
+        </h2>
       </div>
 
       {/* Slider */}
@@ -123,27 +124,67 @@ export default function HomeCarousel() {
           className={`flex ${transitionClass}`}
           style={transformStyle as React.CSSProperties}
         >
-          {clonedSlides.map((slide, idx) => (
+          {slides.map((slide, idx) => (
             <div
               key={idx}
               className="w-full shrink-0 flex justify-center cursor-pointer"
               onClick={() => router.push(slide.href)}
             >
-              <div className="relative w-[160px] h-[280px] sm:w-[240px] sm:h-[420px] md:w-[280px] md:h-[490px]">
-                <Image
-                  src={slide.img}
-                  alt={t(slide.titleKey)}
-                  fill
-                  className="object-contain dark:bg-white transition-opacity duration-300 hover:opacity-0 shadow-lg hover:shadow-slate-700 dark:hover:shadow-black rounded-3xl"
-                  sizes="(max-width: 500px) 200px, 400px"
-                />
-                <Image
-                  src={slide.img2}
-                  alt={t(slide.titleKey)}
-                  fill
-                  className="object-contain dark:bg-white opacity-0 transition-opacity duration-300 hover:opacity-100 shadow-lg hover:shadow-slate-700 dark:hover:shadow-black rounded-3xl"
-                  sizes="(max-width: 500px) 200px, 400px"
-                />
+              <div className="flex flex-col items-center gap-4">
+                {/* Circular card with confetti */}
+                <div
+                  className="relative overflow-visible"
+                  onMouseEnter={() => triggerConfetti(idx)}
+                >
+                  {/* Confetti layer */}
+                  <div className="absolute inset-0 pointer-events-none overflow-visible" style={{ zIndex: 5 }}>
+                    {(confettiMap[idx] ?? []).map(p => (
+                      <div
+                        key={p.id}
+                        className="absolute"
+                        style={{
+                          left: `${p.x}%`,
+                          top: '50%',
+                          width: p.size,
+                          height: p.round ? p.size : p.size * 0.55,
+                          borderRadius: p.round ? '50%' : '2px',
+                          background: p.color,
+                          '--cdx': p.cdx,
+                          '--cdy': p.cdy,
+                          '--crot': p.crot,
+                          animation: `confetti-fly ${p.duration}s ease-out forwards`,
+                        } as React.CSSProperties}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Circle image */}
+                  <div className="relative w-[160px] h-[160px] sm:w-[240px] sm:h-[240px] md:w-[280px] md:h-[280px] rounded-full overflow-hidden shadow-xl">
+                    <Image
+                      src={slide.img}
+                      alt={SLIDE_LABELS[slide.titleKey]}
+                      fill
+                      placeholder="blur"
+                      className="object-cover transition-opacity duration-300 hover:opacity-0"
+                      sizes="(max-width: 500px) 160px, 280px"
+                    />
+                    <Image
+                      src={slide.img2}
+                      alt={SLIDE_LABELS[slide.titleKey]}
+                      fill
+                      placeholder="blur"
+                      className="object-cover opacity-0 transition-opacity duration-300 hover:opacity-100"
+                      sizes="(max-width: 500px) 160px, 280px"
+                    />
+                  </div>
+                </div>
+
+                <span
+                  className="text-sm tracking-widest uppercase"
+                  style={{ color: 'var(--m-text2)' }}
+                >
+                  {SLIDE_LABELS[slide.titleKey]}
+                </span>
               </div>
             </div>
           ))}

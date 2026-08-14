@@ -1,5 +1,6 @@
 import { getSession } from './session';
 import { redirect } from 'next/navigation';
+import { getDb } from './mongodb';
 
 export async function requireAdminSession() {
   const session = await getSession();
@@ -8,20 +9,40 @@ export async function requireAdminSession() {
 }
 
 export const CARD_COLLECTIONS = [
-  { id: 'blog-en',              collection: 'blog',               locale: 'en', label: 'Blog (EN)',            hasBody: true  },
-  { id: 'blog-ar',              collection: 'blog',               locale: 'ar', label: 'Blog (AR)',            hasBody: true  },
-  { id: 'blog-personal',        collection: 'blog_personal',      locale: 'en', label: 'Personal Blog',        hasBody: true  },
-  { id: 'projects-en',          collection: 'projects',           locale: 'en', label: 'Projects (EN)',        hasBody: true  },
-  { id: 'projects-ar',          collection: 'projects',           locale: 'ar', label: 'Projects (AR)',        hasBody: true  },
-  { id: 'positions-en',         collection: 'positions',          locale: 'en', label: 'Positions (EN)',       hasBody: true  },
-  { id: 'positions-ar',         collection: 'positions',          locale: 'ar', label: 'Positions (AR)',       hasBody: true  },
-  { id: 'coursework-masters',   collection: 'coursework_masters', locale: 'en', label: 'Masters Coursework',  hasBody: false },
-  { id: 'coursework-bachelors', collection: 'coursework_bachelors', locale: 'en', label: "Bachelor's Coursework", hasBody: false },
-  { id: 'art-illustration',     collection: 'art_illustration',   locale: 'en', label: 'Art – Illustration',  hasBody: false },
-  { id: 'art-sewing',           collection: 'art_sewing',         locale: 'en', label: 'Art – Sewing',        hasBody: false },
-  { id: 'art-painting',         collection: 'art_painting',       locale: 'en', label: 'Art – Painting',      hasBody: false },
-  { id: 'food-arabic',          collection: 'food_arabic',        locale: 'en', label: 'Food – Arabic',       hasBody: true  },
-  { id: 'food-dessert',         collection: 'food_dessert',       locale: 'en', label: 'Food – Desserts',     hasBody: true  },
+  // AR is handled inline via the bilingual CardForm — no separate AR rows needed
+  { id: 'blog',                 collection: 'blog',               locale: 'en', label: 'Blog',                 hasBody: true,  supportsAr: true  },
+  { id: 'blog-personal',        collection: 'blog_personal',      locale: 'en', label: 'Personal Blog',        hasBody: true,  supportsAr: false },
+  { id: 'projects',             collection: 'projects',           locale: 'en', label: 'Projects',             hasBody: true,  supportsAr: true  },
+  { id: 'positions',            collection: 'positions',          locale: 'en', label: 'Positions',            hasBody: true,  supportsAr: true  },
+  { id: 'coursework-masters',   collection: 'coursework_masters', locale: 'en', label: 'Masters Coursework',  hasBody: true,  supportsAr: false },
+  { id: 'coursework-bachelors', collection: 'coursework_bachelors', locale: 'en', label: "Bachelor's Coursework", hasBody: true,  supportsAr: false },
+  { id: 'awards',               collection: 'awards',              locale: 'en', label: 'Awards & Honors',      hasBody: false, supportsAr: true  },
+  // Art & Food sections are fully dynamic (created via /admin/sections) and resolve through
+  // the section_defs fallback below — do not add static entries for them here. A static
+  // entry whose id happens to match a section_defs key (as the old food-arabic/food-dessert
+  // entries did) shadows the dynamic lookup and silently saves cards under the wrong
+  // collection name, making them invisible on the public site.
 ] as const;
 
 export type CollectionId = (typeof CARD_COLLECTIONS)[number]['id'];
+
+// Lookup by id — checks static list then dynamic MongoDB section_defs
+export async function getCollectionMeta(id: string) {
+  const staticMeta = CARD_COLLECTIONS.find(c => c.id === id);
+  if (staticMeta) return staticMeta;
+
+  // Dynamic section (created by user in admin/sections)
+  const db  = await getDb();
+  const doc = await db.collection('section_defs').findOne({ key: id });
+  if (doc) {
+    return {
+      id:         doc.key as string,
+      collection: doc.key as string,
+      locale:     'en',
+      label:      doc.label as string,
+      hasBody:    true,
+      supportsAr: false,
+    };
+  }
+  return null;
+}

@@ -2,8 +2,93 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* ── Morandi colour system ────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --m-bg:        #f0ebe2;
+  --m-bg2:       #e8e2d8;
+  --m-surface:   #dfd8ce;
+  --m-border:    #cec7bb;
+
+  /* Typography */
+  --m-text:      #38302a;
+  --m-text2:     #7a6e62;
+
+  /* Varied accent palette */
+  --m-rose:      #c49088;
+  --m-blush:     #d8a898;
+  --m-peach:     #d0a870;
+  --m-gold:      #c8b858;
+  --m-sage:      #7aaa90;
+  --m-teal:      #5898a0;
+  --m-sky:       #7898c0;
+  --m-blue:      #6880b0;
+  --m-lavender:  #9a80b8;
+  --m-mauve:     #b07888;
+  --m-terracotta:#b86848;
+
+  /* Career section tint (cooler) */
+  --m-career-bg: #eaebf0;
+  --m-career-bg2:#e0e2ea;
+
+  /* Personal section tint (warmer) */
+  --m-personal-bg:#f2ede4;
+  --m-personal-bg2:#ece5d8;
+}
+
+.dark {
+  --m-bg:        #272118;
+  --m-bg2:       #312b20;
+  --m-surface:   #3b342a;
+  --m-border:    #504838;
+
+  --m-text:      #ece4d5;
+  --m-text2:     #a89880;
+
+  --m-rose:      #d0a8a0;
+  --m-blush:     #e0b8a8;
+  --m-peach:     #d8b880;
+  --m-gold:      #d8c870;
+  --m-sage:      #90b8a0;
+  --m-teal:      #70a8b0;
+  --m-sky:       #90a8d0;
+  --m-blue:      #8090c0;
+  --m-lavender:  #b098c8;
+  --m-mauve:     #c08898;
+  --m-terracotta:#d08060;
+
+  --m-career-bg: #1e2030;
+  --m-career-bg2:#282a3a;
+
+  --m-personal-bg:#28211a;
+  --m-personal-bg2:#322a22;
+}
 
 html, body {
   overflow-x: hidden;
   width: 100%;
+  background-color: var(--m-bg);
+  color: var(--m-text);
+}
+
+/* ── Garden button wiggle ─────────────────────────────── */
+@keyframes garden-wiggle {
+  0%,  55%, 100% { transform: rotate(0deg) scale(1); }
+  57%  { transform: rotate(-18deg) scale(1.15); }
+  60%  { transform: rotate(16deg)  scale(1.15); }
+  63%  { transform: rotate(-12deg) scale(1.1);  }
+  66%  { transform: rotate(10deg)  scale(1.1);  }
+  69%  { transform: rotate(-6deg)  scale(1.05); }
+  72%  { transform: rotate(4deg)   scale(1.05); }
+  75%  { transform: rotate(0deg)   scale(1);    }
+}
+
+.garden-btn-wiggle {
+  animation: garden-wiggle 6s ease-in-out infinite;
+}
+
+/* ── Confetti burst ───────────────────────────────────── */
+@keyframes confetti-fly {
+  0%   { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 1; }
+  100% { transform: translate(var(--cdx), var(--cdy)) rotate(var(--crot)) scale(0.4); opacity: 0; }
 }

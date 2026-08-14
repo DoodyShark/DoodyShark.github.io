@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import ImageUploadField from "./ImageUploadField";
 
 type PubData = {
   year: number;
@@ -9,6 +10,7 @@ type PubData = {
   authors: string;
   venue: string;
   image: string;
+  imageBlur?: string;
   link: string;
 };
 
@@ -26,6 +28,7 @@ export default function PubForm({
     authors: initial?.authors ?? "",
     venue:   initial?.venue   ?? "",
     image:   initial?.image   ?? "",
+    imageBlur: initial?.imageBlur ?? "",
     link:    initial?.link    ?? "",
   });
   const [saving, setSaving] = useState(false);
@@ -72,7 +75,11 @@ export default function PubForm({
       {field("Title", "title")}
       {field("Authors", "authors")}
       {field("Venue / Conference / Journal", "venue")}
-      {field("Image URL (optional)", "image")}
+      <ImageUploadField
+        label="Image (optional)"
+        value={form.image}
+        onChange={(url, blurDataURL) => setForm(f => ({ ...f, image: url, imageBlur: blurDataURL ?? '' }))}
+      />
       {field("Link URL (optional)", "link")}
 
       {error && <p className="text-red-400 text-sm">{error}</p>}

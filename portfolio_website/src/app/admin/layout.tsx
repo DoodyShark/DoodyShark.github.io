@@ -9,7 +9,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className="bg-zinc-950 text-zinc-100 min-h-screen">
+      <body className="min-h-screen" style={{ background: '#09090b', color: '#e4e4e7' }}>
         {children}
       </body>
     </html>

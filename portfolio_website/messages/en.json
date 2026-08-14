@@ -6,6 +6,7 @@
       "projects": "Projects",
       "positions": "Positions",
       "publications": "Publications",
+      "awards": "Awards",
       "coursework": "Coursework",
       "cv": "CV"
     },
@@ -31,6 +32,9 @@
       "description": "Publications by categories in reversed chronological order.",
       "filterPlaceholder": "Type to filter",
       "noResults": "No matching publications found."
+    },
+    "awards": {
+      "title": "Awards & Honors"
     },
     "coursework": {
       "title": "Coursework",

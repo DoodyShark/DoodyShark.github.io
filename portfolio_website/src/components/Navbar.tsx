@@ -19,11 +19,8 @@ export default function Navbar() {
   const isCareer = pathname.startsWith("/career");
   const isPersonal = pathname.startsWith("/personal");
 
-  const navBg = isCareer
-    ? "bg-slate-900 dark:bg-slate-950"
-    : isPersonal
-    ? "bg-teal-600 dark:bg-teal-800"
-    : "bg-zinc-700 dark:bg-zinc-800";
+  // Same warm brown navbar across all sections — consistent with home page
+  const navBg = "bg-[#685850]/92 dark:bg-[#524438]/96 backdrop-blur-md border-b border-white/10";
 
   const navItems = isCareer
     ? [
@@ -32,6 +29,7 @@ export default function Navbar() {
         { href: "/career/projects" as const,     label: t("career.nav.projects")     },
         { href: "/career/positions" as const,    label: t("career.nav.positions")    },
         { href: "/career/publications" as const, label: t("career.nav.publications") },
+        { href: "/career/awards" as const,       label: t("career.nav.awards")       },
         { href: "/career/coursework" as const,   label: t("career.nav.coursework")   },
         { href: "/career/cv" as const,           label: t("career.nav.cv")           },
       ]

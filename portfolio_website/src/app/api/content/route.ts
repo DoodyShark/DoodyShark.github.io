@@ -9,13 +9,15 @@ export async function GET(req: NextRequest) {
   const slug = searchParams.get('slug');
   const includeBody = searchParams.get('body') === 'true';
 
-  if (!collection) {
-    return NextResponse.json({ error: 'collection is required' }, { status: 400 });
-  }
-
   const db = await getDb();
-  const query: Record<string, string> = { collection, locale };
+  // If no collection but slug is given, search by slug+locale across all collections
+  const query: Record<string, string> = { locale };
+  if (collection) query.collection = collection;
   if (slug) query.slug = slug;
+
+  if (!collection && !slug) {
+    return NextResponse.json({ error: 'collection or slug is required' }, { status: 400 });
+  }
 
   const projection = includeBody ? {} : { body: 0 };
   const docs = await db

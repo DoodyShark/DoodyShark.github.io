@@ -15,7 +15,7 @@ export default function ReadClient({
   collection,
   locale_override,
 }: {
-  collection: string;
+  collection?: string;
   locale_override?: string;
 }) {
   const searchParams = useSearchParams();
@@ -28,8 +28,9 @@ export default function ReadClient({
 
   useEffect(() => {
     if (!slug) return;
+    const collectionParam = collection ? `&collection=${collection}` : '';
     fetch(
-      `/api/content?collection=${collection}&locale=${effectiveLocale}&slug=${encodeURIComponent(slug)}&body=true`
+      `/api/content?locale=${effectiveLocale}&slug=${encodeURIComponent(slug)}&body=true${collectionParam}`
     )
       .then((r) => r.json())
       .then((data: CardData[]) => setCard(data[0] ?? null))

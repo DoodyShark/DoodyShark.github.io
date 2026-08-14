@@ -10,6 +10,7 @@ type CardData = {
   slug: string;
   title: string;
   image: string;
+  imageBlur?: string;
   description: string;
   linked: boolean;
   link?: string;
@@ -66,7 +67,7 @@ export default function MarkdownCards({
             {...linkProps}
             className={`${
               !card.linked && "pointer-events-none"
-            } group relative rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:scale-[1.02] bg-gray-800 dark:bg-gray-700`}
+            } group relative rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:scale-[1.02] bg-[#685850] dark:bg-[#524438]`}
           >
             {hasImage ? (
               <>
@@ -75,6 +76,9 @@ export default function MarkdownCards({
                     src={card.image}
                     alt={card.title || card.slug}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    placeholder={card.imageBlur ? "blur" : "empty"}
+                    blurDataURL={card.imageBlur}
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
@@ -90,7 +94,7 @@ export default function MarkdownCards({
                 </div>
               </>
             ) : (
-              <div className="bg-gray-700 dark:bg-gray-600 p-4 h-full flex flex-col justify-center hover:bg-gray-700 dark:hover:bg-gray-500 transition-colors">
+              <div className="p-4 h-full flex flex-col justify-center transition-colors" style={{ background: 'inherit' }}>
                 {card.title && (
                   <h2 className="text-gray-100 text-xl font-semibold mb-2">
                     {card.title}

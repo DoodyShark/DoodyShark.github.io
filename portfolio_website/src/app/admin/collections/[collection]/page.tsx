@@ -1,15 +1,16 @@
-import { requireAdminSession, CARD_COLLECTIONS } from "@/lib/admin";
+import { requireAdminSession, getCollectionMeta } from "@/lib/admin";
 import { getDb } from "@/lib/mongodb";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import DeleteCardButton from "@/components/admin/DeleteCardButton";
+import SortableCardList from "@/components/admin/SortableCardList";
+import SectionTitleEditor from "@/components/admin/SectionTitleEditor";
 
 type Params = { params: Promise<{ collection: string }> };
 
 export default async function CollectionPage({ params }: Params) {
   await requireAdminSession();
   const { collection: collectionId } = await params;
-  const meta = CARD_COLLECTIONS.find((c) => c.id === collectionId);
+  const meta = await getCollectionMeta(collectionId);
   if (!meta) notFound();
 
   const db = await getDb();
@@ -18,6 +19,12 @@ export default async function CollectionPage({ params }: Params) {
     .find({ collection: meta.collection, locale: meta.locale }, { projection: { body: 0 } })
     .sort({ order: 1 })
     .toArray();
+
+  // Check if this collection has an editable section_def (art/food sections)
+  const sectionDef = await db.collection('section_defs').findOne({ key: collectionId });
+  const sectionDefClean = sectionDef
+    ? { key: sectionDef.key as string, label: sectionDef.label as string, labelAr: (sectionDef.labelAr ?? '') as string }
+    : null;
 
   return (
     <div className="max-w-4xl mx-auto p-8">
@@ -34,34 +41,23 @@ export default async function CollectionPage({ params }: Params) {
         </Link>
       </div>
 
-      {docs.length === 0 ? (
-        <p className="text-zinc-400">No items yet. Create your first one.</p>
-      ) : (
-        <div className="space-y-3">
-          {docs.map((doc) => (
-            <div
-              key={doc._id.toString()}
-              className="flex justify-between items-center bg-zinc-900 border border-zinc-700 rounded-xl px-6 py-4"
-            >
-              <div>
-                <p className="font-medium">{doc.title || doc.slug}</p>
-                {doc.description && (
-                  <p className="text-zinc-400 text-sm mt-0.5 truncate max-w-md">{doc.description}</p>
-                )}
-              </div>
-              <div className="flex gap-2 flex-shrink-0">
-                <Link
-                  href={`/admin/collections/${collectionId}/${doc._id.toString()}`}
-                  className="px-3 py-1.5 bg-zinc-700 hover:bg-zinc-600 rounded-lg text-sm transition-colors"
-                >
-                  Edit
-                </Link>
-                <DeleteCardButton id={doc._id.toString()} />
-              </div>
-            </div>
-          ))}
-        </div>
+      {sectionDefClean && (
+        <SectionTitleEditor
+          sectionKey={sectionDefClean.key}
+          initialLabel={sectionDefClean.label}
+          initialLabelAr={sectionDefClean.labelAr}
+        />
       )}
+      <p className="text-zinc-500 text-xs mb-4">Drag ⠿ to reorder items.</p>
+      <SortableCardList
+        docs={docs.map(d => ({
+          _id: d._id.toString(),
+          title: d.title,
+          slug: d.slug,
+          description: d.description,
+        }))}
+        collectionId={collectionId}
+      />
     </div>
   );
 }

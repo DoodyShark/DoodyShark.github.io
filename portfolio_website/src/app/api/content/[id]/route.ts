@@ -18,7 +18,8 @@ export async function PUT(req: NextRequest, { params }: Params) {
   const session = await getSession();
   if (!session.isLoggedIn) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   const { id } = await params;
-  const body = await req.json();
+  // Strip _id from body — MongoDB forbids updating the immutable _id field
+  const { _id: _ignored, ...body } = await req.json();
   const db = await getDb();
   await db
     .collection('cards')
