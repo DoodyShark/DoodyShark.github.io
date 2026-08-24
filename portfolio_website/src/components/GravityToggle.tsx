@@ -4,6 +4,26 @@ import Matter from 'matter-js';
 
 const FALL_SELECTOR = 'img, h1, h2, h3, h4, p, li, button, a, blockquote, td, th';
 
+// Some images (e.g. the home page's circular hover-swap photos) get their visible shape —
+// rounded corners, a shadow, sometimes a second stacked image — from a wrapping <div> that
+// isn't itself in FALL_SELECTOR. Falling the bare <img> alone leaves that wrapper behind as an
+// empty shadowed husk and drops the crop, so walk up to the nearest ancestor that actually
+// defines the clipped shape and fall that instead.
+function resolveFallTarget(el: HTMLElement): HTMLElement {
+  if (el.tagName !== 'IMG') return el;
+  let node: HTMLElement | null = el.parentElement;
+  const imgArea = el.getBoundingClientRect().width * el.getBoundingClientRect().height;
+  for (let depth = 0; node && depth < 3; depth++, node = node.parentElement) {
+    const cs = window.getComputedStyle(node);
+    const isClippedAndRounded = cs.overflow.includes('hidden') && parseFloat(cs.borderRadius) > 0;
+    if (!isClippedAndRounded) continue;
+    const rect = node.getBoundingClientRect();
+    if (rect.width * rect.height <= imgArea * 2) return node;
+    break;
+  }
+  return el;
+}
+
 type Captured = {
   original: HTMLElement;
   clone: HTMLElement;
@@ -56,7 +76,8 @@ export default function GravityToggle() {
     const main = document.querySelector('main');
     if (!main) return;
 
-    const candidates = Array.from(main.querySelectorAll<HTMLElement>(FALL_SELECTOR));
+    const rawCandidates = Array.from(main.querySelectorAll<HTMLElement>(FALL_SELECTOR));
+    const candidates = Array.from(new Set(rawCandidates.map(resolveFallTarget)));
     const selected = candidates.filter((el) => {
       if (candidates.some((other) => other !== el && other.contains(el))) return false;
       const rect = el.getBoundingClientRect();
@@ -127,8 +148,11 @@ export default function GravityToggle() {
     document.body.appendChild(dragLayer);
     dragLayerRef.current = dragLayer;
 
+    // Mouse.pixelRatio is for canvas backing-store scaling, not plain DOM elements — leave it
+    // at the default of 1, since dragLayer is a div, not a canvas. Setting it to
+    // window.devicePixelRatio (the intuitive-seeming choice) silently misaligns the computed
+    // mouse position from real body positions on any display where that ratio isn't 1.
     const mouse = Matter.Mouse.create(dragLayer);
-    mouse.pixelRatio = window.devicePixelRatio || 1;
     const mouseConstraint = Matter.MouseConstraint.create(engine, {
       mouse,
       constraint: { stiffness: 0.15, damping: 0.15, render: { visible: false } },
