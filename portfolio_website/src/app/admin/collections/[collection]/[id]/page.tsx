@@ -1,7 +1,7 @@
 import { requireAdminSession, getCollectionMeta } from "@/lib/admin";
 import { getDb } from "@/lib/mongodb";
 import { notFound } from "next/navigation";
-import { ObjectId } from "mongodb";
+import { parseObjectId } from "@/lib/objectid";
 import Link from "next/link";
 import CardForm from "@/components/admin/CardForm";
 
@@ -14,7 +14,7 @@ export default async function EditCardPage({ params }: Params) {
   if (!meta) notFound();
 
   const db  = await getDb();
-  const doc = await db.collection("cards").findOne({ _id: new ObjectId(id) });
+  const doc = await db.collection("cards").findOne({ _id: parseObjectId(id) ?? notFound() });
   if (!doc) notFound();
 
   const initial = { ...doc, _id: doc._id.toString() };

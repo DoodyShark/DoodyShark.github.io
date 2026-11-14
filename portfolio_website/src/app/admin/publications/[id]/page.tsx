@@ -1,6 +1,6 @@
 import { requireAdminSession } from "@/lib/admin";
 import { getDb } from "@/lib/mongodb";
-import { ObjectId } from "mongodb";
+import { parseObjectId } from "@/lib/objectid";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import PubForm from "@/components/admin/PubForm";
@@ -9,7 +9,7 @@ export default async function EditPubPage({ params }: { params: Promise<{ id: st
   await requireAdminSession();
   const { id } = await params;
   const db = await getDb();
-  const doc = await db.collection("publications").findOne({ _id: new ObjectId(id) });
+  const doc = await db.collection("publications").findOne({ _id: parseObjectId(id) ?? notFound() });
   if (!doc) notFound();
 
   return (

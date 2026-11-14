@@ -37,13 +37,6 @@ function DrawingReplay({
   const [confetti, setConfetti] = useState<ConfettiPiece[]>([]);
 
   useEffect(() => {
-    if (!showSuccess) return;
-    const pieces = spawnConfetti(28);
-    setConfetti(pieces);
-    setTimeout(() => setConfetti([]), 1600);
-  }, [showSuccess]);
-
-  useEffect(() => {
     const canvas = replayRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -98,7 +91,11 @@ function DrawingReplay({
       if (progress < 1) {
         raf = requestAnimationFrame(tick);
       } else {
-        setTimeout(() => setShowSuccess(true), 350);
+        setTimeout(() => {
+          setShowSuccess(true);
+          setConfetti(spawnConfetti(28));
+          setTimeout(() => setConfetti([]), 1600);
+        }, 350);
       }
     };
 
@@ -238,7 +235,7 @@ export default function FlowerDrawer({ apiEndpoint = '/api/flowers' }: Props) {
       currentPtsRef.current = [...currentPtsRef.current, getPos(e)];
       redraw();
     };
-    const onUp = (e: PointerEvent) => {
+    const onUp = () => {
       if (!isDrawingRef.current) return;
       isDrawingRef.current = false;
       const pts = currentPtsRef.current;

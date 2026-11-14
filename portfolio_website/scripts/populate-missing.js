@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- plain Node CommonJS script */
 const { MongoClient } = require('mongodb');
 const { join } = require('path');
 require('dotenv').config({ path: join(__dirname, '../.env.local') });

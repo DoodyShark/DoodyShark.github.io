@@ -3,7 +3,7 @@ import { MongoClient, Db } from 'mongodb';
 const uri = process.env.MONGODB_URI!;
 
 declare global {
-  var _mongoClient: MongoClient | undefined; // eslint-disable-line no-var
+  var _mongoClient: MongoClient | undefined;
 }
 
 let client: MongoClient;

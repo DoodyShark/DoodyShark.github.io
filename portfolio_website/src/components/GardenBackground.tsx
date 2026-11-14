@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
+import { useGardenHidden } from '@/lib/garden-pref';
 
 interface Point { x: number; y: number }
 interface Stroke { points: Point[]; color: string; width: number }
@@ -29,6 +30,9 @@ const FRONT_CHANCE = 0.25; // 25% of spawns go to the front layer
 
 export default function GardenBackground() {
   const pathname = usePathname();
+  const hidden   = useGardenHidden();
+  const hiddenRef = useRef(hidden);
+  useEffect(() => { hiddenRef.current = hidden; }, [hidden]);
   const backRef  = useRef<HTMLCanvasElement>(null);
   const frontRef = useRef<HTMLCanvasElement>(null);
 
@@ -160,6 +164,13 @@ export default function GardenBackground() {
       backCtx.clearRect(0,  0, back.width,  back.height);
       frontCtx.clearRect(0, 0, front.width, front.height);
 
+      // Hidden by the visitor: drop everything on screen and idle
+      if (hiddenRef.current) {
+        s.active = [];
+        s.raf = requestAnimationFrame(tick);
+        return;
+      }
+
       // Spawn
       if (s.drawings.length > 0) {
         s.spawnTimer += dt;
@@ -208,13 +219,13 @@ export default function GardenBackground() {
       <canvas
         ref={backRef}
         className="absolute inset-0 w-full h-full pointer-events-none"
-        style={{ zIndex: 0 }}
+        style={{ zIndex: 0, visibility: hidden ? 'hidden' : undefined }}
       />
       {/* Front layer — fixed above all content */}
       <canvas
         ref={frontRef}
         className="fixed inset-0 w-full h-full pointer-events-none"
-        style={{ zIndex: 30 }}
+        style={{ zIndex: 30, visibility: hidden ? 'hidden' : undefined }}
       />
     </>
   );

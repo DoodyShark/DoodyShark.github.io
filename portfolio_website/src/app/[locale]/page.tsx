@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import Image, { type StaticImageData } from "next/image";
-import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { spawnConfetti, type ConfettiPiece } from "@/lib/confetti";
 import careerImg from "../../../public/career.jpg";
@@ -29,7 +28,6 @@ const SLIDE_LABELS: Record<string, string> = {
 };
 
 export default function HomeCarousel() {
-  const t = useTranslations();
   const router = useRouter();
   const n = slides.length;
 
@@ -82,7 +80,7 @@ export default function HomeCarousel() {
     touchDeltaRef.current = 0;
     setTransitionEnabled(true);
     if (Math.abs(delta) > 50) {
-      delta < 0 ? next() : prev();
+      if (delta < 0) next(); else prev();
     } else if (rowRef.current) {
       rowRef.current.style.transform = `translateX(-${activeIndex * 100}%)`;
     }

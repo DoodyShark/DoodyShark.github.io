@@ -1,11 +1,14 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import { Eye, EyeOff } from 'lucide-react';
 import FlowerDrawer from './FlowerDrawer';
+import { useGardenHidden, setGardenHidden } from '@/lib/garden-pref';
 
 export default function FloatingGardenButton() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const gardenHidden = useGardenHidden();
 
   const isCareer   = pathname.includes('/career');
   const isPersonal = pathname.includes('/personal');
@@ -28,6 +31,23 @@ export default function FloatingGardenButton() {
 
   return (
     <>
+      {/* Hide/show the animated garden doodles (remembered per browser) */}
+      <button
+        onClick={() => setGardenHidden(!gardenHidden)}
+        title={gardenHidden ? 'Show the garden doodles' : 'Hide the garden doodles'}
+        aria-label={gardenHidden ? 'Show the garden doodles' : 'Hide the garden doodles'}
+        aria-pressed={gardenHidden}
+        className="fixed bottom-[5.5rem] right-[1.875rem] w-8 h-8 rounded-full shadow flex items-center justify-center hover:scale-110 active:scale-95 transition-transform"
+        style={{
+          zIndex: 210,
+          background: 'var(--m-surface)',
+          border: '1px solid var(--m-border)',
+          color: 'var(--m-text2)',
+        }}
+      >
+        {gardenHidden ? <EyeOff size={15} aria-hidden /> : <Eye size={15} aria-hidden />}
+      </button>
+
       {/* Floating button */}
       <button
         onClick={() => setOpen(true)}
