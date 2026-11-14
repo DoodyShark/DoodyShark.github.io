@@ -42,6 +42,10 @@ export default async function DashboardPage() {
             <span className="font-medium">CV / Résumé</span>
             <span className="text-zinc-400">Upload PDF →</span>
           </Link>
+          <Link href="/admin/transcripts" className="flex justify-between items-center bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 rounded-xl px-6 py-4 transition-colors">
+            <span className="font-medium">Transcripts</span>
+            <span className="text-zinc-400">Upload PDFs →</span>
+          </Link>
           <Link href="/admin/sections" className="flex justify-between items-center bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 rounded-xl px-6 py-4 transition-colors">
             <span className="font-medium">Art & Food Sections</span>
             <span className="text-zinc-400">Add subsections →</span>

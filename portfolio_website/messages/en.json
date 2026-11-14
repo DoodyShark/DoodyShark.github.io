@@ -39,7 +39,9 @@
     "coursework": {
       "title": "Coursework",
       "masters": "Master's Coursework",
-      "bachelors": "Bachelor's Coursework"
+      "bachelors": "Bachelor's Coursework",
+      "transcript": "Transcript",
+      "fullTranscript": "Full Transcript"
     },
     "cv": {
       "title": "My CV",

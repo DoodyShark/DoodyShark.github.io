@@ -1,15 +1,25 @@
 import { getTranslations } from "next-intl/server";
 import MarkdownCards from "@/components/MarkdownCards";
+import TranscriptLink from "@/components/TranscriptLink";
 
 export default async function CourseworkPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "career.coursework" });
   return (
     <div className="w-full">
-      <h1 className="text-3xl font-bold mb-6">{t("title")}</h1>
-      <h2 className="text-xl font-bold mb-6">{t("masters")}</h2>
+      <div className="flex flex-wrap items-center gap-3 mb-6">
+        <h1 className="text-3xl font-bold">{t("title")}</h1>
+        <TranscriptLink pageKey="transcript-merged-url" label={t("fullTranscript")} />
+      </div>
+      <div className="flex flex-wrap items-center gap-3 mb-6">
+        <h2 className="text-xl font-bold">{t("masters")}</h2>
+        <TranscriptLink pageKey="transcript-masters-url" label={t("transcript")} />
+      </div>
       <MarkdownCards collection="coursework_masters" locale_override="en" href_path="/career/coursework/read" row_width={3} />
-      <h2 className="text-xl font-bold mt-6 mb-6">{t("bachelors")}</h2>
+      <div className="flex flex-wrap items-center gap-3 mt-6 mb-6">
+        <h2 className="text-xl font-bold">{t("bachelors")}</h2>
+        <TranscriptLink pageKey="transcript-bachelors-url" label={t("transcript")} />
+      </div>
       <MarkdownCards collection="coursework_bachelors" locale_override="en" href_path="/career/coursework/read" row_width={3} />
     </div>
   );

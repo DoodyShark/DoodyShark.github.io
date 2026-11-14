@@ -48,6 +48,11 @@ export default async function CollectionPage({ params }: Params) {
           initialLabelAr={sectionDefClean.labelAr}
         />
       )}
+      {collectionId.startsWith('coursework-') && (
+        <Link href="/admin/transcripts" className="inline-block text-sm text-teal-400 hover:text-teal-300 mb-4">
+          📄 Manage transcript PDFs →
+        </Link>
+      )}
       <p className="text-zinc-500 text-xs mb-4">Drag ⠿ to reorder items.</p>
       <SortableCardList
         docs={docs.map(d => ({

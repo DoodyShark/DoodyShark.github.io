@@ -30,15 +30,18 @@ export default function MarkdownCards({
   const locale = useLocale();
   const effectiveLocale = locale_override ?? locale;
   const [cards, setCards] = useState<CardData[]>([]);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     fetch(`/api/content?collection=${collection}&locale=${effectiveLocale}`)
       .then((r) => r.json())
-      .then((data: CardData[]) => setCards(data))
-      .catch(console.error);
+      .then((data: CardData[]) => setCards(Array.isArray(data) ? data : []))
+      .catch(console.error)
+      .finally(() => setLoaded(true));
   }, [collection, effectiveLocale]);
 
-  if (!cards.length) return <p className="text-sm opacity-60">Loading...</p>;
+  if (!loaded) return <p className="text-sm opacity-60">Loading...</p>;
+  if (!cards.length) return null;
 
   const gridClass =
     row_width === 1
