@@ -1,4 +1,3 @@
-"use client";
 
 import React from "react";
 import ReactMarkdown from "react-markdown";
@@ -7,7 +6,7 @@ import rehypeRaw from "rehype-raw";
 
 export default function MarkdownRenderer({ content }: { content: string }) {
   return (
-    <article className="prose prose-invert max-w-none">
+    <article className="prose prose-site max-w-none">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw]}

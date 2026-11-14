@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { getDb } from '@/lib/mongodb';
 import { getSession } from '@/lib/session';
+import { revalidateTag } from 'next/cache';
+import { TAGS } from '@/lib/data';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -32,5 +34,6 @@ export async function POST(request: Request) {
     { $set: setFields, $setOnInsert: { createdAt: now } },
     { upsert: true },
   );
+  revalidateTag(TAGS.pageContent);
   return NextResponse.json({ ok: true });
 }

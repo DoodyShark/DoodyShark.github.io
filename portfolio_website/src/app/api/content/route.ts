@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getDb } from '@/lib/mongodb';
 import { getSession } from '@/lib/session';
+import { revalidateTag } from 'next/cache';
+import { TAGS } from '@/lib/data';
 
 export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl;
@@ -40,5 +42,6 @@ export async function POST(req: NextRequest) {
   const db = await getDb();
   const now = new Date();
   const result = await db.collection('cards').insertOne({ ...body, createdAt: now, updatedAt: now });
+  revalidateTag(TAGS.cards);
   return NextResponse.json({ _id: result.insertedId.toString() }, { status: 201 });
 }

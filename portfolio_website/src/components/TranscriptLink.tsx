@@ -1,21 +1,11 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import { FileText } from "lucide-react";
+import { getPageUrl } from "@/lib/data";
 import type { TranscriptKey } from "@/lib/transcripts";
 
-// Renders a "Transcript" pill linking to the PDF stored under `pageKey`,
+// Server component: a "Transcript" pill linking to the PDF stored under `pageKey`,
 // or nothing if no transcript has been set in the admin.
-export default function TranscriptLink({ pageKey, label }: { pageKey: TranscriptKey; label: string }) {
-  const [url, setUrl] = useState("");
-
-  useEffect(() => {
-    fetch(`/api/page-content?page=${pageKey}&locale=en`)
-      .then((r) => r.json())
-      .then((data) => setUrl(data?.body?.trim() ?? ""))
-      .catch(() => {});
-  }, [pageKey]);
-
+export default async function TranscriptLink({ pageKey, label }: { pageKey: TranscriptKey; label: string }) {
+  const url = await getPageUrl(pageKey);
   if (!url) return null;
 
   return (

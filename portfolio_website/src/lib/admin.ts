@@ -16,6 +16,8 @@ export const CARD_COLLECTIONS = [
   { id: 'positions',            collection: 'positions',          locale: 'en', label: 'Positions',            hasBody: true,  supportsAr: true  },
   { id: 'coursework-masters',   collection: 'coursework_masters', locale: 'en', label: 'Masters Coursework',  hasBody: true,  supportsAr: false },
   { id: 'coursework-bachelors', collection: 'coursework_bachelors', locale: 'en', label: "Bachelor's Coursework", hasBody: true,  supportsAr: false },
+  // Unlisted: never shown in any public card grid; readable via /career/blog/read?post=<slug>
+  { id: 'drafts',               collection: 'drafts',             locale: 'en', label: 'Drafts (unlisted)',    hasBody: true,  supportsAr: false },
   { id: 'awards',               collection: 'awards',              locale: 'en', label: 'Awards & Honors',      hasBody: false, supportsAr: true  },
   // Art & Food sections are fully dynamic (created via /admin/sections) and resolve through
   // the section_defs fallback below — do not add static entries for them here. A static

@@ -1,9 +1,10 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import MarkdownCards from "@/components/MarkdownCards";
 import Image from "next/image";
 
 export default async function PersonalBlogPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "personal.blog" });
   return (
     <div className="w-full pt-10">
@@ -12,7 +13,7 @@ export default async function PersonalBlogPage({ params }: { params: Promise<{ l
         <Image src="/img/personal_blog_banner.jpg" alt="Blog banner" fill className="object-cover rounded-2xl" />
       </div>
       <p className="text-center text-stone-600 dark:text-stone-300 mb-8">{t("description")}</p>
-      <MarkdownCards collection="blog_personal" locale_override="en" href_path="/personal/blog/read" row_width={3} />
+      <MarkdownCards collection="blog_personal" href_path="/personal/blog/read" row_width={3} />
     </div>
   );
 }

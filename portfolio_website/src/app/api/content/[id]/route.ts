@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getDb } from '@/lib/mongodb';
 import { getSession } from '@/lib/session';
+import { revalidateTag } from 'next/cache';
+import { TAGS } from '@/lib/data';
 import { parseObjectId, notFound } from '@/lib/objectid';
 
 type Params = { params: Promise<{ id: string }> };
@@ -25,6 +27,7 @@ export async function PUT(req: NextRequest, { params }: Params) {
   const db = await getDb();
   const res = await db.collection('cards').updateOne({ _id }, { $set: { ...body, updatedAt: new Date() } });
   if (!res.matchedCount) return notFound();
+  revalidateTag(TAGS.cards);
   return NextResponse.json({ ok: true });
 }
 
@@ -36,5 +39,6 @@ export async function DELETE(_req: NextRequest, { params }: Params) {
   const db = await getDb();
   const res = await db.collection('cards').deleteOne({ _id });
   if (!res.deletedCount) return notFound();
+  revalidateTag(TAGS.cards);
   return NextResponse.json({ ok: true });
 }

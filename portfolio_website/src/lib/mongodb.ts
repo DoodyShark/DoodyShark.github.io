@@ -1,28 +1,23 @@
 import { MongoClient, Db } from 'mongodb';
 
-const uri = process.env.MONGODB_URI!;
-
 declare global {
-  var _mongoClient: MongoClient | undefined;
+  var _mongoDb: Promise<Db> | undefined;
 }
 
-let client: MongoClient;
-let db: Db;
-
-export async function getDb(): Promise<Db> {
-  if (db) return db;
-
-  if (process.env.NODE_ENV === 'development') {
-    if (!global._mongoClient) {
-      global._mongoClient = new MongoClient(uri);
-      await global._mongoClient.connect();
-    }
-    client = global._mongoClient;
-  } else {
-    client = new MongoClient(uri);
-    await client.connect();
+// Cache the connection *promise* (not the resolved client) so concurrent first
+// requests share one connection instead of each opening their own. Kept on
+// globalThis so it also survives dev hot-reloads.
+export function getDb(): Promise<Db> {
+  if (!globalThis._mongoDb) {
+    const uri = process.env.MONGODB_URI;
+    if (!uri) throw new Error('MONGODB_URI is not set');
+    globalThis._mongoDb = new MongoClient(uri)
+      .connect()
+      .then(client => client.db('portfolio'))
+      .catch(err => {
+        globalThis._mongoDb = undefined; // allow a retry on the next request
+        throw err;
+      });
   }
-
-  db = client.db('portfolio');
-  return db;
+  return globalThis._mongoDb;
 }

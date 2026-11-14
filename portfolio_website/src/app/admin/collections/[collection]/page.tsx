@@ -53,6 +53,20 @@ export default async function CollectionPage({ params }: Params) {
           📄 Manage transcript PDFs →
         </Link>
       )}
+      {collectionId === 'drafts' && (
+        <div className="text-sm text-zinc-400 bg-zinc-900 border border-zinc-700 rounded-xl p-4 mb-4 space-y-2">
+          <p>Drafts are never listed on the site. Preview one at <code className="text-zinc-300">/career/blog/read?post=&lt;slug&gt;</code>:</p>
+          <ul className="space-y-1">
+            {docs.map(d => (
+              <li key={d._id.toString()}>
+                <a href={`/career/blog/read?post=${encodeURIComponent(d.slug)}`} target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-teal-300">
+                  {d.title || d.slug} ↗
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       <p className="text-zinc-500 text-xs mb-4">Drag ⠿ to reorder items.</p>
       <SortableCardList
         docs={docs.map(d => ({

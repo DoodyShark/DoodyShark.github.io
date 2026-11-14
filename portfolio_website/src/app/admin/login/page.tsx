@@ -21,6 +21,9 @@ export default function LoginPage() {
     setLoading(false);
     if (res.ok) {
       router.push("/admin/dashboard");
+    } else if (res.status === 429) {
+      const data = await res.json().catch(() => ({}));
+      setError(data.error ?? "Too many failed attempts. Try again later.");
     } else {
       setError("Incorrect password.");
     }

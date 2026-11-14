@@ -1,12 +1,6 @@
-import { Suspense } from "react";
-import ReadClient from "@/components/ReadClient";
+import { makeReadPage } from "@/components/ReadPost";
 
-export default function FoodReadPage() {
-  return (
-    <div className="w-full max-w-3xl mx-auto">
-      <Suspense fallback={<div>Loading...</div>}>
-        <ReadClient locale_override="en" />
-      </Suspense>
-    </div>
-  );
-}
+const { ReadPage, generateMetadata } = makeReadPage({ collections: null, fixedLocale: "en" });
+
+export { generateMetadata };
+export default ReadPage;

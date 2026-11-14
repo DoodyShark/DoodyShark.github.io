@@ -1,44 +1,22 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { useTranslations, useLocale } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
+import { getPageContent } from "@/lib/data";
+import WelcomeVideo from "./WelcomeVideo";
 
-export default function PersonalAboutPage() {
-  const t      = useTranslations("personal.about");
-  const locale = useLocale();
-  const [showOverlay, setShowOverlay] = useState(false);
-  const [customBody,  setCustomBody]  = useState<string | null>(null);
-
-  useEffect(() => {
-    fetch(`/api/page-content?page=personal-about&locale=${locale}`)
-      .then(r => r.json())
-      .then(data => { if (data?.body) setCustomBody(data.body); })
-      .catch(() => {});
-  }, [locale]);
+export default async function PersonalAboutPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "personal.about" });
+  const customBody = (await getPageContent("personal-about", locale))?.body ?? null;
 
   const linkCls = "text-[#5898a0] hover:underline";
 
   return (
     <div className="space-y-12">
       {/* Video Intro */}
-      <div className="relative w-full h-110">
-        <video
-          src="/mp4/personal_welcome.mp4"
-          autoPlay
-          muted
-          onEnded={() => setShowOverlay(true)}
-          className="w-full h-full rounded-b-xl object-cover"
-        />
-        {showOverlay && (
-          <div className="absolute inset-0 flex flex-col justify-start items-center text-center px-4 pt-7">
-            <h1 className="hidden sm:block text-4xl font-bold">Hi! I&apos;m Dhiyaa Al Jorf!</h1>
-            <h1 className="sm:hidden text-4xl font-bold">Hi!</h1>
-          </div>
-        )}
-      </div>
+      <WelcomeVideo />
 
       {/* About */}
       <section className="flex flex-col md:flex-row md:space-x-8 items-start">

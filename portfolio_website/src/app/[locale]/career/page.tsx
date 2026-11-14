@@ -1,7 +1,7 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
-import { getDb } from "@/lib/mongodb";
+import { getPageContent } from "@/lib/data";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 import NewsTimeline from "@/components/NewsTimeline";
 
@@ -11,11 +11,11 @@ export default async function CareerAboutPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "career.about" });
   const isArabic = locale === "ar";
 
-  const db = await getDb();
-  const pageContent = await db.collection('page_content').findOne({ page: 'career-about', locale });
+  const pageContent = await getPageContent('career-about', locale);
   const customBody = pageContent?.body ?? null;
   const mainBody = customBody;
   const newsItems = (pageContent?.news ?? null) as { date: string; text: string }[] | null;

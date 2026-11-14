@@ -1,14 +1,14 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import MarkdownCards from "@/components/MarkdownCards";
 import Image from "next/image";
-import { getDb } from "@/lib/mongodb";
+import { getSectionDefs } from "@/lib/data";
 
 export default async function ArtPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "personal.art" });
 
-  const db = await getDb();
-  const sections = await db.collection('section_defs').find({ type: 'art' }).sort({ order: 1 }).toArray();
+  const sections = await getSectionDefs('art');
 
   return (
     <div className="w-full pt-10">
@@ -19,13 +19,12 @@ export default async function ArtPage({ params }: { params: Promise<{ locale: st
       <p className="text-center mb-8" style={{ color: 'var(--m-text2)' }}>{t("description")}</p>
 
       {sections.map(s => (
-        <div key={String(s._id)} className="mb-10">
+        <div key={s._id} className="mb-10">
           <h2 className="text-xl font-bold mb-6">
             {locale === 'ar' && s.labelAr ? s.labelAr : s.label}
           </h2>
           <MarkdownCards
-            collection={s.key as string}
-            locale_override="en"
+            collection={s.key}
             href_path="/personal/art/read"
             row_width={3}
           />

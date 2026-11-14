@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { getDb } from '@/lib/mongodb';
 import { getSession } from '@/lib/session';
+import { revalidateTag } from 'next/cache';
+import { TAGS } from '@/lib/data';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -28,6 +30,7 @@ export async function POST(request: Request) {
     createdAt: new Date().toISOString(),
   });
 
+  revalidateTag(TAGS.sectionDefs);
   return NextResponse.json({ ok: true, key });
 }
 
@@ -43,6 +46,7 @@ export async function PATCH(request: Request) {
     { key },
     { $set: { label, labelAr: labelAr ?? '', updatedAt: new Date().toISOString() } },
   );
+  revalidateTag(TAGS.sectionDefs);
   return NextResponse.json({ ok: true });
 }
 
@@ -53,5 +57,6 @@ export async function DELETE(request: Request) {
   const { key } = await request.json();
   const db = await getDb();
   await db.collection('section_defs').deleteOne({ key });
+  revalidateTag(TAGS.sectionDefs);
   return NextResponse.json({ ok: true });
 }

@@ -1,46 +1,21 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { useLocale } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
+import { getCards } from "@/lib/data";
 
-type CardData = {
-  _id: string;
-  slug: string;
-  title: string;
-  image: string;
-  imageBlur?: string;
-  description: string;
-  linked: boolean;
-  link?: string;
-};
-
-export default function MarkdownCards({
+// Server component: cards are read from the tagged cache and rendered into the HTML,
+// so they appear with the page instead of after a client-side fetch.
+export default async function MarkdownCards({
   collection,
-  locale_override,
+  locale = "en",
   href_path,
   row_width,
 }: {
   collection: string;
-  locale_override?: string;
+  locale?: string;
   href_path: string;
   row_width: number;
 }) {
-  const locale = useLocale();
-  const effectiveLocale = locale_override ?? locale;
-  const [cards, setCards] = useState<CardData[]>([]);
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    fetch(`/api/content?collection=${collection}&locale=${effectiveLocale}`)
-      .then((r) => r.json())
-      .then((data: CardData[]) => setCards(Array.isArray(data) ? data : []))
-      .catch(console.error)
-      .finally(() => setLoaded(true));
-  }, [collection, effectiveLocale]);
-
-  if (!loaded) return <p className="text-sm opacity-60">Loading...</p>;
+  const cards = await getCards(collection, locale);
   if (!cards.length) return null;
 
   const gridClass =

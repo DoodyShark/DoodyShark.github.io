@@ -1,12 +1,6 @@
-import { Suspense } from "react";
-import ReadClient from "@/components/ReadClient";
+import { makeReadPage } from "@/components/ReadPost";
 
-export default function PositionsReadPage() {
-  return (
-    <div className="w-full max-w-3xl mx-auto">
-      <Suspense fallback={<div>Loading...</div>}>
-        <ReadClient collection="positions" />
-      </Suspense>
-    </div>
-  );
-}
+const { ReadPage, generateMetadata } = makeReadPage({ collections: ["positions"] });
+
+export { generateMetadata };
+export default ReadPage;
